@@ -5,6 +5,7 @@ import * as subscriptions from './graphql/subscriptions';
 export default function Subscriptions() {
   React.useEffect(() => {
     return () => {
+      console.log('tesds')
       console.log('Unsubscribe events');
     };
   }, []);
