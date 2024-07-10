@@ -4,7 +4,7 @@ import * as subscriptions from "./amplify/graphql/subscriptions";
 
 const client = generateClient();
 
-const ID_FILTER = "SLR";
+const ID_FILTER = "1438050512220-01";
 
 export default function Subscriptions() {
   const [styleContainer, setStyleContainer] = React.useState({
@@ -58,6 +58,22 @@ export default function Subscriptions() {
       });
 
     // Subscribe to update of Todo
+    const updateSubFilter = client
+      .graphql({
+        query: subscriptions.onUpdateOrder, variables: {
+          filter: {
+            orderId: {
+              eq: ID_FILTER
+            }
+          }
+        }
+      })
+      .subscribe({
+        next: (data) => handleEvent("onUpdate", data),
+        error: (error) => console.warn(error),
+      });
+
+    // Subscribe to update of Todo
     const updateSub = client
       .graphql({ query: subscriptions.onUpdateOrder })
       .subscribe({
@@ -77,6 +93,7 @@ export default function Subscriptions() {
 
       createSub?.unsubscribe();
       updateSub?.unsubscribe();
+      updateSubFilter?.unsubscribe();
       deleteSub?.unsubscribe();
     };
   }, []);
