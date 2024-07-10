@@ -69,7 +69,7 @@ export default function Subscriptions() {
         }
       })
       .subscribe({
-        next: (data) => handleEvent("onUpdate", data),
+        next: (data) => handleEvent("onUpdateOrderByID", data),
         error: (error) => console.warn(error),
       });
 
