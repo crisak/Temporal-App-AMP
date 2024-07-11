@@ -120,11 +120,12 @@ export default function ButtonUdate(props: any) {
         const newQuery = parseQuery(
             {
                 query: mutations.updateOrder,
-                include: true
             },
-            'orderId',
-            'packages.items.id',
-            'packages.items.name',
+            'address',
+            'packages',
+            'customer',
+            'appliedAutomations',
+            'items'
         );
         console.log('filterQuery:', '\n', newQuery);
     };

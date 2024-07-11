@@ -36,6 +36,7 @@ export default function Subscriptions(props: any) {
       event,
       time: new Date().toLocaleString(),
     });
+
     setEvents([
       ...events,
       {
@@ -50,72 +51,81 @@ export default function Subscriptions(props: any) {
 
   React.useEffect(() => {
     console.log("🚀 Subscribing...");
-    // Subscribe to creation of Todo
-    const onCreateOrder = client
-      .graphql({ query: subscriptions.onCreateOrder })
-      .subscribe({
-        next: (data) => handleEvent("onCreateOrder", data),
-        error: (error) => console.warn(error),
-      });
+    // // Subscribe to creation of Todo
+    // const onCreateOrder = client
+    //   .graphql({ query: subscriptions.onCreateOrder })
+    //   .subscribe({
+    //     next: (data) => handleEvent("onCreateOrder", data),
+    //     error: (error) => console.warn(error),
+    //   });
+
+    // // Subscribe to update of Todo
+    // const updateSubFilter = client
+    //   .graphql({
+    //     query: subscriptions.onUpdateOrder, variables: {
+    //       filter: {
+    //         orderId: {
+    //           eq: props.id
+    //         }
+    //       }
+    //     }
+    //   })
+    //   .subscribe({
+    //     next: (data) => handleEvent("onUpdateOrderByID", data),
+    //     error: (error) => console.warn(error),
+    //   });
+
+    // // Subscribe to update of Todo
+    // const onUpdateOrder = client
+    //   .graphql({ query: subscriptions.onUpdateOrder })
+    //   .subscribe({
+    //     next: (data) => handleEvent("onUpdateOrder", data),
+    //     error: (error) => console.warn(error),
+    //   });
 
     // Subscribe to update of Todo
-    const updateSubFilter = client
-      .graphql({
-        query: subscriptions.onUpdateOrder, variables: {
-          filter: {
-            orderId: {
-              eq: props.id
-            }
-          }
-        }
-      })
+    const onUpdateOrderCustom = client
+      .graphql({ query: subscriptions.onUpdateOrderCustom })
       .subscribe({
-        next: (data) => handleEvent("onUpdateOrderByID", data),
+        next: (data) => handleEvent("onUpdateOrderCustom", data),
         error: (error) => console.warn(error),
       });
 
-    // Subscribe to update of Todo
-    const updateSub = client
-      .graphql({ query: subscriptions.onUpdateOrder })
-      .subscribe({
-        next: (data) => handleEvent("onUpdateOrder", data),
-        error: (error) => console.warn(error),
-      });
-
-    // Subscribe to deletion of Todo
-    const onDeleteOrder = client
-      .graphql({ query: subscriptions.onDeleteOrder })
-      .subscribe({
-        next: (data) => handleEvent("onDeleteOrder", data),
-        error: (error) => console.warn(error),
-      });
+    // // Subscribe to deletion of Todo
+    // const onDeleteOrder = client
+    //   .graphql({ query: subscriptions.onDeleteOrder })
+    //   .subscribe({
+    //     next: (data) => handleEvent("onDeleteOrder", data),
+    //     error: (error) => console.warn(error),
+    //   });
 
 
-    /**
-     * WEBHOOK
-     */
-    const onUpdateWebhook = client
-      .graphql({ query: subscriptions.onUpdateWebhook })
-      .subscribe({
-        next: (data) => handleEvent("onUpdateWebhook", data),
-        error: (error) => console.warn(error),
-      });
-    const onCreateWebhook = client
-      .graphql({ query: subscriptions.onCreateWebhook })
-      .subscribe({
-        next: (data) => handleEvent("onCreateWebhook", data),
-        error: (error) => console.warn(error),
-      });
+    // /**
+    //  * WEBHOOK
+    //  */
+    // const onUpdateWebhook = client
+    //   .graphql({ query: subscriptions.onUpdateWebhook })
+    //   .subscribe({
+    //     next: (data) => handleEvent("onUpdateWebhook", data),
+    //     error: (error) => console.warn(error),
+    //   });
+    // const onCreateWebhook = client
+    //   .graphql({ query: subscriptions.onCreateWebhook })
+    //   .subscribe({
+    //     next: (data) => handleEvent("onCreateWebhook", data),
+    //     error: (error) => console.warn(error),
+    //   });
 
     return () => {
       console.log("🚷  Unsubscribing...");
 
-      onCreateOrder?.unsubscribe();
-      updateSub?.unsubscribe();
-      updateSubFilter?.unsubscribe();
-      onDeleteOrder?.unsubscribe();
-      onUpdateWebhook?.unsubscribe();
-      onCreateWebhook?.unsubscribe();
+      // onCreateOrder?.unsubscribe();
+      // onUpdateOrder?.unsubscribe();
+      // updateSubFilter?.unsubscribe();
+      // onDeleteOrder?.unsubscribe();
+      // onUpdateWebhook?.unsubscribe();
+      // onCreateWebhook?.unsubscribe();
+      onUpdateOrderCustom?.unsubscribe();
     };
   }, []);
 

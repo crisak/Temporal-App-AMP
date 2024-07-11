@@ -17,13 +17,14 @@ console.log('ENV', env)
 function App({ signOut, user }) {
   return (
     <>
-      <h3>ENV ({String(env)})</h3>
       <header
         style={{
+          fontSize: '.7rem',
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'center',
           gap: '1rem',
+          padding: '.2rem 1rem'
         }}
       >
         <span>Hello {user.username}</span>
@@ -31,13 +32,21 @@ function App({ signOut, user }) {
       </header>
 
       <hr />
-      <br />
+
       <main>
         <br />
         <ButtonUdate id={ID_FILTER} />
         <br />
         <Subscriptions id={ID_FILTER} />
       </main>
+      <footer style={{
+        position: 'fixed',
+        bottom: 0,
+        textAlign: 'right',
+        width: '100%'
+      }}>
+        ENV ({String(env)})
+      </footer>
     </>
   );
 }

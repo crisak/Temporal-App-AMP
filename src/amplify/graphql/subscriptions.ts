@@ -2986,6 +2986,17 @@ export const onCreateOrder = /* GraphQL */ `subscription OnCreateOrder($filter: 
   APITypes.OnCreateOrderSubscriptionVariables,
   APITypes.OnCreateOrderSubscription
 >;
+export const onUpdateOrderCustom = /* GraphQL */ `subscription OnUpdateOrder($filter: ModelSubscriptionOrderFilterInput) {
+  onUpdateOrder(filter: $filter) {
+    groups
+    id
+    orderId
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateOrderSubscriptionVariables,
+  APITypes.OnUpdateOrderSubscription
+>;
 export const onUpdateOrder = /* GraphQL */ `subscription OnUpdateOrder($filter: ModelSubscriptionOrderFilterInput) {
   onUpdateOrder(filter: $filter) {
     groups
