@@ -1,6 +1,7 @@
 import * as React from "react";
 import { generateClient } from "aws-amplify/api";
 import * as subscriptions from "./amplify/graphql/subscriptions";
+import filterMutation from "./utils/filterMutation";
 
 const client = generateClient();
 
@@ -51,81 +52,82 @@ export default function Subscriptions(props: any) {
 
   React.useEffect(() => {
     console.log("🚀 Subscribing...");
-    // // Subscribe to creation of Todo
-    // const onCreateOrder = client
-    //   .graphql({ query: subscriptions.onCreateOrder })
-    //   .subscribe({
-    //     next: (data) => handleEvent("onCreateOrder", data),
-    //     error: (error) => console.warn(error),
-    //   });
-
-    // // Subscribe to update of Todo
-    // const updateSubFilter = client
-    //   .graphql({
-    //     query: subscriptions.onUpdateOrder, variables: {
-    //       filter: {
-    //         orderId: {
-    //           eq: props.id
-    //         }
-    //       }
-    //     }
-    //   })
-    //   .subscribe({
-    //     next: (data) => handleEvent("onUpdateOrderByID", data),
-    //     error: (error) => console.warn(error),
-    //   });
-
-    // // Subscribe to update of Todo
-    // const onUpdateOrder = client
-    //   .graphql({ query: subscriptions.onUpdateOrder })
-    //   .subscribe({
-    //     next: (data) => handleEvent("onUpdateOrder", data),
-    //     error: (error) => console.warn(error),
-    //   });
-
-    // Subscribe to update of Todo
-    const onUpdateOrderCustom = client
-      .graphql({ query: subscriptions.onUpdateOrderCustom })
+    // Subscribe to creation of Todo
+    const onCreateOrder = client
+      .graphql({
+        query: subscriptions.onCreateOrder,
+      })
       .subscribe({
-        next: (data) => handleEvent("onUpdateOrderCustom", data),
-        error: (error) => console.warn(error),
+        next: (data) => handleEvent("onCreateOrder", data),
+        error: (error) => console.error('🔴 ERROR: ', error),
       });
 
-    // // Subscribe to deletion of Todo
-    // const onDeleteOrder = client
-    //   .graphql({ query: subscriptions.onDeleteOrder })
-    //   .subscribe({
-    //     next: (data) => handleEvent("onDeleteOrder", data),
-    //     error: (error) => console.warn(error),
-    //   });
+    // Subscribe to update of Todo
+    const updateSubFilter = client
+      .graphql({
+        query: subscriptions.onUpdateOrder, variables: {
+          filter: {
+            orderId: {
+              eq: props.id
+            }
+          }
+        }
+      })
+      .subscribe({
+        next: (data) => handleEvent("onUpdateOrderByID", data),
+        error: (error) => console.error('🔴 ERROR: ', error),
+      });
+
+    // Subscribe to update of Todo
+    const onUpdateOrder = client
+      .graphql({
+        query: filterMutation({
+          include: true,
+          query: subscriptions.onUpdateOrder
+        }, 'orderId', 'id', 'totals.name', 'invoices.invoiceKey'),
+        authMode: 'apiKey'
+      })
+      .subscribe({
+        next: (data) => handleEvent("onUpdateOrder", data),
+        error: (error) => console.error('🔴 ERROR: ', error),
+      });
 
 
-    // /**
-    //  * WEBHOOK
-    //  */
-    // const onUpdateWebhook = client
-    //   .graphql({ query: subscriptions.onUpdateWebhook })
-    //   .subscribe({
-    //     next: (data) => handleEvent("onUpdateWebhook", data),
-    //     error: (error) => console.warn(error),
-    //   });
-    // const onCreateWebhook = client
-    //   .graphql({ query: subscriptions.onCreateWebhook })
-    //   .subscribe({
-    //     next: (data) => handleEvent("onCreateWebhook", data),
-    //     error: (error) => console.warn(error),
-    //   });
+    // Subscribe to deletion of Todo
+    const onDeleteOrder = client
+      .graphql({ query: subscriptions.onDeleteOrder })
+      .subscribe({
+        next: (data) => handleEvent("onDeleteOrder", data),
+        error: (error) => console.error('🔴 ERROR: ', error),
+      });
+
+
+    /**
+     * WEBHOOK
+     */
+    const onUpdateWebhook = client
+      .graphql({ query: subscriptions.onUpdateWebhook })
+      .subscribe({
+        next: (data) => handleEvent("onUpdateWebhook", data),
+        error: (error) => console.error('🔴 ERROR: ', error),
+      });
+    const onCreateWebhook = client
+      .graphql({ query: subscriptions.onCreateWebhook })
+      .subscribe({
+        next: (data) => handleEvent("onCreateWebhook", data),
+        error: (error) => console.error('🔴 ERROR: ', error),
+      });
 
     return () => {
       console.log("🚷  Unsubscribing...");
 
-      // onCreateOrder?.unsubscribe();
-      // onUpdateOrder?.unsubscribe();
-      // updateSubFilter?.unsubscribe();
-      // onDeleteOrder?.unsubscribe();
-      // onUpdateWebhook?.unsubscribe();
-      // onCreateWebhook?.unsubscribe();
-      onUpdateOrderCustom?.unsubscribe();
+      onCreateOrder?.unsubscribe();
+      onUpdateOrder?.unsubscribe();
+      updateSubFilter?.unsubscribe();
+      onDeleteOrder?.unsubscribe();
+      onUpdateWebhook?.unsubscribe();
+      onCreateWebhook?.unsubscribe();
+      // onUpdateOrderCustom?.unsubscribe();
     };
   }, []);
 
@@ -168,10 +170,9 @@ export default function Subscriptions(props: any) {
       <div>
         <h4>History Events</h4>
         <ul>
-          {events.map((event, index) => (
-            <li key={index}>
-              <p>Event: {event.type}</p>
-              <p>Time: {event.time}</p>
+          {events.map((event) => (
+            <li key={JSON.stringify(event)}>
+              <p>[<span style={{ color: 'gray' }}>{event.time}</span>] Event: {event.type} </p>
             </li>
           ))}
         </ul>
