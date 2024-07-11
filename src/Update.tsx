@@ -48,18 +48,7 @@ function parseQuery(query: string, ...fieldToRemove: string[]) {
 
             // Eliminar el campo no deseado
             const field = node.name.value;
-
-            // console.log(`[${field}] node: `, node);
-            // console.log(`[${field}] x: `, x);
-            // console.log(`[${field}] y: `, y);
-            // console.log(`[${field}] history: `, history);
-            // console.log(`[${field}] c: `, c);
-            // console.log(`[${field}] v: `, v);
-
-
-
-            const hasValue = fieldToRemove.includes(field);
-
+            const hasValue = fieldToRemove.includes(buildPath);
 
             listLogs.push({
                 "Current field": field,
@@ -84,19 +73,26 @@ export default function ButtonUdate(props: any) {
     const handlerUpdate = () => {
         console.log("queryUpdate:", queryUpdate);
         const newQuery = parseQuery(
-            queryUpdate,
+            mutations.updateOrder,
+            'customer',
+            'address',
+            'items',
+            'packages',
+            'historicalOrder',
+            'appliedAutomations.__typename',
             'billing.__typename',
-            'customer.addresses.__typename',
-            "_version",
-            "_deleted",
-            "_lastChangedAt",
-            "updatedAt",
-            "updatedAt",
-            'customer.addresses.__typename',
-            'customer.addresses.startedAt',
-            'customer.addresses.nextToken',
+            'marketingData.__typename',
+            'payment',
+            'shipping',
+            'invoices.__typename',
+            'notes.__typename',
+            'totals.__typename',
+            'totals.alternativeTotals',
+            'orderAssignment.__typename',
+
+            '__typename', 'createdAt', 'updatedAt', '_version', '_deleted', '_lastChangedAt'
         );
-        console.log("filterQuery, ", newQuery);
+        console.log("filterQuery:", '\n', newQuery);
     };
     return <button onClick={handlerUpdate}>Update</button>;
 }

@@ -7,8 +7,8 @@ const client = generateClient();
 
 
 export default function Subscriptions(props: any) {
-  const [styleContainer, setStyleContainer] = React.useState({
-    border: "1px solid transparent",
+  const [styleContainer, setStyleContainer] = React.useState<any>({
+    border: "3px solid transparent",
   });
   const [events, setEvents] = React.useState([] as any[]);
 
@@ -19,10 +19,11 @@ export default function Subscriptions(props: any) {
   });
 
   const timeoutStyle = () => {
-    setStyleContainer({ border: "1px solid green" });
+    setStyleContainer({ border: "3px solid green", backgroundColor: '#00ff940f' });
+
     setTimeout(() => {
-      setStyleContainer({ border: "1px solid transparent" });
-    }, 1000);
+      setStyleContainer({ border: "3px solid transparent", backgroundColor: 'transparent' });
+    }, 5000);
   };
 
   const handleEvent = (typeEvent: string, event: any) => {
@@ -43,8 +44,6 @@ export default function Subscriptions(props: any) {
         time: new Date().toLocaleString(),
       },
     ]);
-
-    setStyleContainer({ border: "1px solid green" });
   };
 
 
@@ -122,7 +121,7 @@ export default function Subscriptions(props: any) {
 
   return (
     <>
-      <h3>Listening to events</h3>
+      <h3 >Listening to events</h3>
       <fieldset>
         <legend>
           Filters
@@ -133,16 +132,26 @@ export default function Subscriptions(props: any) {
 
       </fieldset>
       <br />
-      <br />
+
       <div
         style={{
+          border: "3px solid transparent",
+          backgroundColor: 'transparent',
           padding: "10px",
           ...styleContainer,
         }}
       >
-        <p>Last Event: {lastEvent.type}</p>
+        <h3>Last Event: {lastEvent.type}</h3>
         <p>Time: {lastEvent.time}</p>
-        <pre>{JSON.stringify(lastEvent.event, null, 2)}</pre>
+
+        <pre style={{
+          maxWidth: '90%',
+          overflow: 'auto'
+        }}>
+          <code>
+            {JSON.stringify(lastEvent.event, null, 2)}
+          </code>
+        </pre>
       </div>
       <br />
       <div>
