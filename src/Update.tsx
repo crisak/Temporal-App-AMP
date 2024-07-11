@@ -1,170 +1,138 @@
-//@ts-nocheck
+
 import * as mutations from './amplify/graphql/mutations';
-import gql from 'graphql-tag';
-import { visit, print } from 'graphql';
+import { visit, print, parse } from 'graphql';
 import { ParseGql } from './types/ParseGql';
-// import { removeField } from 'graphql-ast-tools';
 
 const queryUpdate = mutations.updateOrderCustom;
 
 // Función para parsear y modificar la query
 function parseQuery(options: string | any, ...filteredFields: string[]) {
-  let query = options;
-  let include = false;
+    let query = options;
+    let include = false;
 
-  if (typeof options === 'object') {
-    query = options.query;
-    include = options?.include ?? false;
-  }
+    if (typeof options === 'object') {
+        query = options.query;
+        include = options?.include ?? false;
+    }
 
-  const parsedQuery = gql`
-    ${query}
-  `;
+    const parsedQuery = parse(query)
+    console.log('Query filter: ', parsedQuery)
+    console.log('Query string: ', query)
+    //      gql`
+    //     ${query}
+    //   `;
 
-  const listLogs = [];
+    const listLogs = [];
 
-  const histories = parsedQuery;
+    const histories = parsedQuery;
 
-  console.log('histories:', histories);
+    console.log('histories:', histories);
 
-  const modifiedQuery = visit(parsedQuery, {
-    Field(currentNode, index, y, historyPaths) {
-      const isTitleQuery =
-        JSON.stringify(historyPaths) ===
-        JSON.stringify(['definitions', 0, 'selectionSet', 'selections', 0]);
-      if (isTitleQuery) {
-        return undefined;
-      }
+    const modifiedQuery = visit(parsedQuery, {
+        Field(currentNode, index, y, historyPaths) {
+            const isTitleQuery =
+                JSON.stringify(historyPaths) ===
+                JSON.stringify(['definitions', 0, 'selectionSet', 'selections', 0]);
 
-      const buildPath = (() => {
-        /**
-         * {definition, kind,loc}
-         */
-        const historyInvocation = histories[0];
-        // ['definitions', 0, 'selectionSet', 'selections', 0]
-        let objConcat = historyInvocation;
-        let pathConcat = '';
-
-        historyPaths.forEach((keyPath) => {
-          objConcat = objConcat[keyPath];
-
-          if (objConcat?.name?.kind === 'Name' && objConcat?.name?.value) {
-            let keyField = objConcat?.name?.value;
-            if (pathConcat) {
-              keyField = `.${keyField}`;
+            if (isTitleQuery) {
+                return undefined;
             }
 
-            pathConcat += keyField;
-          }
-        });
+            const buildPath = (() => {
+                /**
+                 * {definition, kind,loc}
+                 */
+                // ['definitions', 0, 'selectionSet', 'selections', 0]
+                let objConcat = histories;
+                let pathConcat = '';
 
-        const [titleCustom, titleQM, ...propertiesResponse] =
-          pathConcat?.split('.');
+                historyPaths.forEach((keyPath) => {
+                    objConcat = objConcat[keyPath];
 
-        return propertiesResponse?.join('.');
-      })();
+                    if (objConcat?.name?.kind === 'Name' && objConcat?.name?.value) {
+                        let keyField = objConcat?.name?.value;
+                        if (pathConcat) {
+                            keyField = `.${keyField}`;
+                        }
 
-      console.log(
-        `[${index}] isTitleMutation(${isTitleQuery ? '🟢' : '🔴'}) / Path: `,
-        buildPath
-      );
+                        pathConcat += keyField;
+                    }
+                });
 
-      const field = currentNode.name.value;
+                const [titleCustom, titleQM, ...propertiesResponse] =
+                    pathConcat?.split('.');
 
-      if (include) {
-        const hasValue = filteredFields.includes(buildPath);
+                return propertiesResponse?.join('.');
+            })();
 
-        listLogs.push({
-          'Current field': field,
-          'Dynamic path': buildPath,
-          toMatch: hasValue ? '🟢' : '🔴',
-        });
 
-        /**
-         * Realizar lógica para incluir los campos que hace match con los campos
-         * de los filtros
-         *
-         * La validación tiene que validar que no elimine los tipos padres en
-         * este caso 'packages' y 'items' ya que se necesita para que se pueda
-         * realizar la mutación de los tipos hijos
-         *
-         * eg.
-         * Input: filteredFields = ['packages.items.name', 'orderId', 'name ]
-         *
-         * undefined -> Es valido
-         * null -> Es invalido
-         *
-         * - [0] buildPath = 'packages' -> Retorna undefined(es valido) porque es un tipo padre
-         * - [1] buildPath = 'packages.items' -> Retorna undefined(es valido) porque es un tipo padre
-         * - [2] buildPath = 'packages.products.id' -> Retorna null un match(no es invalido) porque no hace match con el filtro
-         * - [3] buildPath = 'orderId' -> Retorna undefined(es valido)
-         * - [4] buildPath = 'packages.items.name' -> Retorna undefined(es valido) porque hace match con el filtro
-         * - [5] buildPath = 'packages.items.id' -> Retorna null un match(no es invalido) porque no hace match con el filtro
-         * - [6] buildPath = 'name' -> Retorna undefined(es valido) porque hace match con el filtro
-         * - [7] buildPath = 'status' -> Retorna null un match(no es invalido) porque no hace match con el filtro
-         */
+            const field = currentNode.name.value;
 
-        const hasMatchPath = filteredFields.some((pathFilter) => {
-          /**
-           * pathFilterSplit = filteredFields[0] = ['packages', 'items', 'name']
-           */
-          const pathFilterSplit = pathFilter.split('.');
+            if (include) {
 
-          return pathFilterSplit.every((pathFilterItem, index) => {
+                const hasMatchPath = filteredFields.some((pathFilter) => {
+                    if (buildPath === pathFilter) {
+                        return true;
+                    }
+
+                    return pathFilter.startsWith(buildPath)
+                });
+
+                listLogs.push({
+                    'Current field': field,
+                    'Build path': buildPath,
+                    toMatch: hasMatchPath ? '🟢' : '🔴',
+                });
+
+                if (hasMatchPath) {
+                    return undefined
+                }
+
+
+
+                return null
+            }
+
             /**
-             * buildPathSplit = buildPath = ['packages']
+             * Flujo para definir los campos excluyendos
              */
-            const buildPathSplit = buildPath.split('.');
+            const hasValue = filteredFields.includes(buildPath);
 
-            return pathFilterItem === buildPathSplit[index];
-          });
-        });
+            listLogs.push({
+                'Current field': field,
+                'Dynamic path': buildPath,
+                toMatch: hasValue ? '🔴' : '🟢',
+            });
 
-        if (hasMatchPath) {
-          return undefined;
-        }
+            if (hasValue) {
+                /** Ignora el campo */
+                return null;
+            }
+        },
+    }) as ParseGql;
 
-        return null;
-      }
+    console.log('Filter input:', filteredFields);
+    console.table(listLogs);
+    console.log('modifiedQuery:', modifiedQuery);
 
-      /**
-       * Flujo para definir los campos excluyendos
-       */
-      const hasValue = filteredFields.includes(buildPath);
-
-      listLogs.push({
-        'Current field': field,
-        'Dynamic path': buildPath,
-        toMatch: hasValue ? '🔴' : '🟢',
-      });
-
-      if (hasValue) {
-        /** Ignora el campo */
-        return null;
-      }
-    },
-  }) as ParseGql;
-
-  console.log('Filter input:', filteredFields);
-  console.table(listLogs);
-  console.log('modifiedQuery:', modifiedQuery);
-
-  return print(modifiedQuery);
+    return print(modifiedQuery);
 }
 
 export default function ButtonUdate(props: any) {
-  const handlerUpdate = () => {
-    console.log('queryUpdate:', queryUpdate);
-    const newQuery = parseQuery(
-      {
-        query: mutations.updateOrder,
-        include: true,
-      },
-      'orderId',
-      'packages.items.id',
-      'packages.items.name'
-    );
-    console.log('filterQuery:', '\n', newQuery);
-  };
-  return <button onClick={handlerUpdate}>Update</button>;
+    const handlerUpdate = () => {
+        console.log('queryUpdate:', queryUpdate);
+        const newQuery = parseQuery(
+            {
+                query: mutations.updateOrder,
+            },
+            'customer',
+            'address',
+            'items',
+            'packages',
+            'historicalOrder',
+            'appliedAutomations',
+        );
+        console.log('filterQuery:', '\n', newQuery);
+    };
+    return <button onClick={handlerUpdate}>Update</button>;
 }

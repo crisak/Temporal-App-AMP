@@ -78,7 +78,7 @@ export default function Subscriptions(props: any) {
     const updateSub = client
       .graphql({ query: subscriptions.onUpdateOrder })
       .subscribe({
-        next: (data) => handleEvent("onUpdate", data),
+        next: (data) => handleEvent("onUpdateOrder", data),
         error: (error) => console.warn(error),
       });
 
