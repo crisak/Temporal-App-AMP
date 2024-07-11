@@ -135,6 +135,7 @@ export default function Subscriptions(props: any) {
 
       <div
         style={{
+          transition: 'all .5s',
           border: "3px solid transparent",
           backgroundColor: 'transparent',
           padding: "10px",
