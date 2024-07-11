@@ -11233,6 +11233,62 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
   APITypes.UpdateOrderMutationVariables,
   APITypes.UpdateOrderMutation
 >;
+
+export const updateOrderCustom = /* GraphQL */ `mutation UpdateOrder(
+  $input: UpdateOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  updateOrder(input: $input, condition: $condition) {
+    groups
+    id
+    billing {
+      id
+      discount
+      __typename
+    }
+    affiliateId
+    conversationID
+    notificationsID
+    customer {
+      groups
+      id
+      profileId
+      publicName
+      addresses {
+        items {
+          groups
+          id
+          contactName
+        }
+        nextToken
+        startedAt
+        __typename
+      }
+    }
+    customerId
+    address {
+      groups
+      id
+      contactName
+      contactPhone
+      customer {
+        groups
+        id
+        lastName
+      }
+    }
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateOrderMutationVariables,
+  APITypes.UpdateOrderMutation
+>;
+
 export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
   $input: DeleteOrderInput!
   $condition: ModelOrderConditionInput

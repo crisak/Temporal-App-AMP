@@ -4,8 +4,11 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import config from './config';
 import Subscriptions from './Subscriptions';
+import ButtonUdate from './Update';
 
 Amplify.configure(config);
+
+const ID_FILTER = "1438050512220-01";
 
 const env = import.meta.env.MODE
 
@@ -30,7 +33,10 @@ function App({ signOut, user }) {
       <hr />
       <br />
       <main>
-        <Subscriptions />
+        <br />
+        <ButtonUdate id={ID_FILTER} />
+        <br />
+        <Subscriptions id={ID_FILTER} />
       </main>
     </>
   );

@@ -1,15 +1,12 @@
 import * as React from "react";
 import { generateClient } from "aws-amplify/api";
 import * as subscriptions from "./amplify/graphql/subscriptions";
-import * as mutations from './amplify/graphql/mutations';
 
 const client = generateClient();
 
-const ID_FILTER = "1438050512220-01";
 
-const qu = mutations.updateOrder;
 
-export default function Subscriptions() {
+export default function Subscriptions(props: any) {
   const [styleContainer, setStyleContainer] = React.useState({
     border: "1px solid transparent",
   });
@@ -68,7 +65,7 @@ export default function Subscriptions() {
         query: subscriptions.onUpdateOrder, variables: {
           filter: {
             orderId: {
-              eq: ID_FILTER
+              eq: props.id
             }
           }
         }
@@ -131,7 +128,7 @@ export default function Subscriptions() {
           Filters
         </legend>
         <div>
-          On Create=<span style={{ color: 'gray' }}>{ID_FILTER}</span>
+          On Create=<span style={{ color: 'gray' }}>{props.id}</span>
         </div>
 
       </fieldset>
