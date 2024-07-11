@@ -2,13 +2,15 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../API";
+import * as APITypes from '../API';
+
 type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationInput: InputType;
   __generatedMutationOutput: OutputType;
 };
 
-export const toggleUserMyAccount = /* GraphQL */ `mutation ToggleUserMyAccount($account: String!, $isActive: Boolean!) {
+export const toggleUserMyAccount =
+  /* GraphQL */ `mutation ToggleUserMyAccount($account: String!, $isActive: Boolean!) {
   toggleUserMyAccount(account: $account, isActive: $isActive) {
     status
     message
@@ -16,10 +18,11 @@ export const toggleUserMyAccount = /* GraphQL */ `mutation ToggleUserMyAccount($
   }
 }
 ` as GeneratedMutation<
-  APITypes.ToggleUserMyAccountMutationVariables,
-  APITypes.ToggleUserMyAccountMutation
->;
-export const downloadOrderReport = /* GraphQL */ `mutation DownloadOrderReport($sort: OrderSort, $filters: OrderFilters) {
+    APITypes.ToggleUserMyAccountMutationVariables,
+    APITypes.ToggleUserMyAccountMutation
+  >;
+export const downloadOrderReport =
+  /* GraphQL */ `mutation DownloadOrderReport($sort: OrderSort, $filters: OrderFilters) {
   downloadOrderReport(sort: $sort, filters: $filters) {
     status
     message
@@ -27,9 +30,9 @@ export const downloadOrderReport = /* GraphQL */ `mutation DownloadOrderReport($
   }
 }
 ` as GeneratedMutation<
-  APITypes.DownloadOrderReportMutationVariables,
-  APITypes.DownloadOrderReportMutation
->;
+    APITypes.DownloadOrderReportMutationVariables,
+    APITypes.DownloadOrderReportMutation
+  >;
 export const updateCategories = /* GraphQL */ `mutation UpdateCategories(
   $storeConfigId: String!
   $categories: [CategoriesConfigurationInput]!
@@ -103,6 +106,176 @@ export const updateCategories = /* GraphQL */ `mutation UpdateCategories(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -137,7 +310,8 @@ export const updateCategories = /* GraphQL */ `mutation UpdateCategories(
   APITypes.UpdateCategoriesMutationVariables,
   APITypes.UpdateCategoriesMutation
 >;
-export const restorePackages = /* GraphQL */ `mutation RestorePackages($packageId: String!, $worksheetId: String!) {
+export const restorePackages =
+  /* GraphQL */ `mutation RestorePackages($packageId: String!, $worksheetId: String!) {
   restorePackages(packageId: $packageId, worksheetId: $worksheetId) {
     groups
     id
@@ -182,10 +356,11 @@ export const restorePackages = /* GraphQL */ `mutation RestorePackages($packageI
   }
 }
 ` as GeneratedMutation<
-  APITypes.RestorePackagesMutationVariables,
-  APITypes.RestorePackagesMutation
->;
-export const createPackageAndUpdateOrder = /* GraphQL */ `mutation CreatePackageAndUpdateOrder(
+    APITypes.RestorePackagesMutationVariables,
+    APITypes.RestorePackagesMutation
+  >;
+export const createPackageAndUpdateOrder =
+  /* GraphQL */ `mutation CreatePackageAndUpdateOrder(
   $orderId: String!
   $envelope: String!
   $dimensions: DimensionsInput
@@ -246,9 +421,9 @@ export const createPackageAndUpdateOrder = /* GraphQL */ `mutation CreatePackage
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreatePackageAndUpdateOrderMutationVariables,
-  APITypes.CreatePackageAndUpdateOrderMutation
->;
+    APITypes.CreatePackageAndUpdateOrderMutationVariables,
+    APITypes.CreatePackageAndUpdateOrderMutation
+  >;
 export const addItemsToPackage = /* GraphQL */ `mutation AddItemsToPackage(
   $packageId: String!
   $itemsToPack: [ItemsToPackInput]!
@@ -305,7 +480,8 @@ export const addItemsToPackage = /* GraphQL */ `mutation AddItemsToPackage(
   APITypes.AddItemsToPackageMutationVariables,
   APITypes.AddItemsToPackageMutation
 >;
-export const removeItemsFromPackage = /* GraphQL */ `mutation RemoveItemsFromPackage(
+export const removeItemsFromPackage =
+  /* GraphQL */ `mutation RemoveItemsFromPackage(
   $packageId: String!
   $itemsToPack: [ItemsToPackInput]!
   $worksheetId: String!
@@ -358,10 +534,11 @@ export const removeItemsFromPackage = /* GraphQL */ `mutation RemoveItemsFromPac
   }
 }
 ` as GeneratedMutation<
-  APITypes.RemoveItemsFromPackageMutationVariables,
-  APITypes.RemoveItemsFromPackageMutation
->;
-export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [String]!, $worksheetId: String!) {
+    APITypes.RemoveItemsFromPackageMutationVariables,
+    APITypes.RemoveItemsFromPackageMutation
+  >;
+export const closePackages =
+  /* GraphQL */ `mutation ClosePackages($orderIds: [String]!, $worksheetId: String!) {
   closePackages(orderIds: $orderIds, worksheetId: $worksheetId) {
     data {
       groups
@@ -390,6 +567,87 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -403,6 +661,36 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
         id
         contactName
         contactPhone
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
         publicContactName
         city
@@ -414,6 +702,65 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
         reference
         number
         zipCode
+        location {
+          lat
+          lng
+          alt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -445,6 +792,114 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
       totalCompletedItems
       totalCompletedUnits
       items {
+        items {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -490,6 +945,16 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -499,6 +964,16 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       prepareDate
@@ -508,7 +983,34 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
       commercialPolicy
       sequence
       shipping {
+        shippingInfo {
+          itemId
+          shippingType
+          schedule {
+            fromDate
+            toDate
+            __typename
+          }
+          selectedSla {
+            id
+            courierName
+            name
+            __typename
+          }
+          __typename
+        }
         orderUniqueAddress
+        tracking {
+          id
+          trackingKey
+          trackingUrl
+          carrier
+          packages
+          delivered
+          createDate
+          deliveredDate
+          __typename
+        }
         __typename
       }
       shippingEstimatedDateMin
@@ -522,11 +1024,69 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
       packingStartedAt
       packedAt
       packages {
+        items {
+          groups
+          id
+          orderId
+          envelope
+          courier
+          type
+          name
+          description
+          items {
+            id
+            ean
+            refId
+            quantity
+            description
+            imageUrl
+            __typename
+          }
+          dimensions {
+            width
+            height
+            length
+            weight
+            cubicweight
+            __typename
+          }
+          status
+          storeConfigId
+          packageLocation {
+            storeConfigId
+            location
+            assignedDate
+            current
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       historicalOrder {
+        items {
+          id
+          orderId
+          lastStatus
+          orderStatus
+          source
+          user
+          description
+          metadata
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -546,6 +1106,12 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
         id
         name
         value
+        alternativeTotals {
+          id
+          name
+          value
+          __typename
+        }
         __typename
       }
       hasPendingRmas
@@ -566,10 +1132,11 @@ export const closePackages = /* GraphQL */ `mutation ClosePackages($orderIds: [S
   }
 }
 ` as GeneratedMutation<
-  APITypes.ClosePackagesMutationVariables,
-  APITypes.ClosePackagesMutation
->;
-export const packAllItems = /* GraphQL */ `mutation PackAllItems($orderId: String!) {
+    APITypes.ClosePackagesMutationVariables,
+    APITypes.ClosePackagesMutation
+  >;
+export const packAllItems =
+  /* GraphQL */ `mutation PackAllItems($orderId: String!) {
   packAllItems(orderId: $orderId) {
     groups
     id
@@ -614,10 +1181,11 @@ export const packAllItems = /* GraphQL */ `mutation PackAllItems($orderId: Strin
   }
 }
 ` as GeneratedMutation<
-  APITypes.PackAllItemsMutationVariables,
-  APITypes.PackAllItemsMutation
->;
-export const suggestPacking = /* GraphQL */ `mutation SuggestPacking($orderId: String!) {
+    APITypes.PackAllItemsMutationVariables,
+    APITypes.PackAllItemsMutation
+  >;
+export const suggestPacking =
+  /* GraphQL */ `mutation SuggestPacking($orderId: String!) {
   suggestPacking(orderId: $orderId) {
     packedBins {
       id
@@ -634,9 +1202,9 @@ export const suggestPacking = /* GraphQL */ `mutation SuggestPacking($orderId: S
   }
 }
 ` as GeneratedMutation<
-  APITypes.SuggestPackingMutationVariables,
-  APITypes.SuggestPackingMutation
->;
+    APITypes.SuggestPackingMutationVariables,
+    APITypes.SuggestPackingMutation
+  >;
 export const replaceItem = /* GraphQL */ `mutation ReplaceItem(
   $itemsToAdd: [ItemToAdd]!
   $orderId: String
@@ -662,6 +1230,95 @@ export const replaceItem = /* GraphQL */ `mutation ReplaceItem(
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -681,11 +1338,31 @@ export const replaceItem = /* GraphQL */ `mutation ReplaceItem(
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -791,6 +1468,11 @@ export const replaceItem = /* GraphQL */ `mutation ReplaceItem(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -799,10 +1481,24 @@ export const replaceItem = /* GraphQL */ `mutation ReplaceItem(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -811,6 +1507,11 @@ export const replaceItem = /* GraphQL */ `mutation ReplaceItem(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -870,6 +1571,95 @@ export const restoreReplacedItem = /* GraphQL */ `mutation RestoreReplacedItem(
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -889,11 +1679,31 @@ export const restoreReplacedItem = /* GraphQL */ `mutation RestoreReplacedItem(
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -999,6 +1809,11 @@ export const restoreReplacedItem = /* GraphQL */ `mutation RestoreReplacedItem(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -1007,10 +1822,24 @@ export const restoreReplacedItem = /* GraphQL */ `mutation RestoreReplacedItem(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -1019,6 +1848,11 @@ export const restoreReplacedItem = /* GraphQL */ `mutation RestoreReplacedItem(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -1078,6 +1912,114 @@ export const addNoteToWorksheet = /* GraphQL */ `mutation AddNoteToWorksheet(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -1086,6 +2028,11 @@ export const addNoteToWorksheet = /* GraphQL */ `mutation AddNoteToWorksheet(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -1096,6 +2043,53 @@ export const addNoteToWorksheet = /* GraphQL */ `mutation AddNoteToWorksheet(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -1233,7 +2227,8 @@ export const addNoteToWorksheet = /* GraphQL */ `mutation AddNoteToWorksheet(
   APITypes.AddNoteToWorksheetMutationVariables,
   APITypes.AddNoteToWorksheetMutation
 >;
-export const startWorksheet = /* GraphQL */ `mutation StartWorksheet($worksheetId: String!) {
+export const startWorksheet =
+  /* GraphQL */ `mutation StartWorksheet($worksheetId: String!) {
   startWorksheet(worksheetId: $worksheetId) {
     groups
     storeConfig
@@ -1242,6 +2237,114 @@ export const startWorksheet = /* GraphQL */ `mutation StartWorksheet($worksheetI
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -1250,6 +2353,11 @@ export const startWorksheet = /* GraphQL */ `mutation StartWorksheet($worksheetI
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -1260,6 +2368,53 @@ export const startWorksheet = /* GraphQL */ `mutation StartWorksheet($worksheetI
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -1394,10 +2549,11 @@ export const startWorksheet = /* GraphQL */ `mutation StartWorksheet($worksheetI
   }
 }
 ` as GeneratedMutation<
-  APITypes.StartWorksheetMutationVariables,
-  APITypes.StartWorksheetMutation
->;
-export const pauseWorksheet = /* GraphQL */ `mutation PauseWorksheet($worksheetId: String!) {
+    APITypes.StartWorksheetMutationVariables,
+    APITypes.StartWorksheetMutation
+  >;
+export const pauseWorksheet =
+  /* GraphQL */ `mutation PauseWorksheet($worksheetId: String!) {
   pauseWorksheet(worksheetId: $worksheetId) {
     groups
     storeConfig
@@ -1406,6 +2562,114 @@ export const pauseWorksheet = /* GraphQL */ `mutation PauseWorksheet($worksheetI
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -1414,6 +2678,11 @@ export const pauseWorksheet = /* GraphQL */ `mutation PauseWorksheet($worksheetI
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -1424,6 +2693,53 @@ export const pauseWorksheet = /* GraphQL */ `mutation PauseWorksheet($worksheetI
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -1558,10 +2874,11 @@ export const pauseWorksheet = /* GraphQL */ `mutation PauseWorksheet($worksheetI
   }
 }
 ` as GeneratedMutation<
-  APITypes.PauseWorksheetMutationVariables,
-  APITypes.PauseWorksheetMutation
->;
-export const resumeWorksheet = /* GraphQL */ `mutation ResumeWorksheet($worksheetId: String!) {
+    APITypes.PauseWorksheetMutationVariables,
+    APITypes.PauseWorksheetMutation
+  >;
+export const resumeWorksheet =
+  /* GraphQL */ `mutation ResumeWorksheet($worksheetId: String!) {
   resumeWorksheet(worksheetId: $worksheetId) {
     groups
     storeConfig
@@ -1570,6 +2887,114 @@ export const resumeWorksheet = /* GraphQL */ `mutation ResumeWorksheet($workshee
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -1578,6 +3003,11 @@ export const resumeWorksheet = /* GraphQL */ `mutation ResumeWorksheet($workshee
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -1588,6 +3018,53 @@ export const resumeWorksheet = /* GraphQL */ `mutation ResumeWorksheet($workshee
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -1722,9 +3199,9 @@ export const resumeWorksheet = /* GraphQL */ `mutation ResumeWorksheet($workshee
   }
 }
 ` as GeneratedMutation<
-  APITypes.ResumeWorksheetMutationVariables,
-  APITypes.ResumeWorksheetMutation
->;
+    APITypes.ResumeWorksheetMutationVariables,
+    APITypes.ResumeWorksheetMutation
+  >;
 export const pickedItems = /* GraphQL */ `mutation PickedItems(
   $worksheetId: String!
   $items: [ItemToFulfill]
@@ -1738,6 +3215,114 @@ export const pickedItems = /* GraphQL */ `mutation PickedItems(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -1746,6 +3331,11 @@ export const pickedItems = /* GraphQL */ `mutation PickedItems(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -1756,6 +3346,53 @@ export const pickedItems = /* GraphQL */ `mutation PickedItems(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -1893,7 +3530,8 @@ export const pickedItems = /* GraphQL */ `mutation PickedItems(
   APITypes.PickedItemsMutationVariables,
   APITypes.PickedItemsMutation
 >;
-export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [String]!) {
+export const rejectOrder =
+  /* GraphQL */ `mutation RejectOrder($orderIds: [String]!) {
   rejectOrder(orderIds: $orderIds) {
     groups
     id
@@ -1922,11 +3560,258 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -1957,6 +3842,87 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -1982,6 +3948,199 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -2025,6 +4184,45 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -2037,13 +4235,88 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -2141,6 +4414,17 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -2177,8 +4461,32 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -2244,10 +4552,11 @@ export const rejectOrder = /* GraphQL */ `mutation RejectOrder($orderIds: [Strin
   }
 }
 ` as GeneratedMutation<
-  APITypes.RejectOrderMutationVariables,
-  APITypes.RejectOrderMutation
->;
-export const resetPickedItem = /* GraphQL */ `mutation ResetPickedItem($worksheetId: String!, $items: [ItemToFulfill]) {
+    APITypes.RejectOrderMutationVariables,
+    APITypes.RejectOrderMutation
+  >;
+export const resetPickedItem =
+  /* GraphQL */ `mutation ResetPickedItem($worksheetId: String!, $items: [ItemToFulfill]) {
   resetPickedItem(worksheetId: $worksheetId, items: $items) {
     groups
     storeConfig
@@ -2256,6 +4565,114 @@ export const resetPickedItem = /* GraphQL */ `mutation ResetPickedItem($workshee
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -2264,6 +4681,11 @@ export const resetPickedItem = /* GraphQL */ `mutation ResetPickedItem($workshee
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -2274,6 +4696,53 @@ export const resetPickedItem = /* GraphQL */ `mutation ResetPickedItem($workshee
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -2408,9 +4877,9 @@ export const resetPickedItem = /* GraphQL */ `mutation ResetPickedItem($workshee
   }
 }
 ` as GeneratedMutation<
-  APITypes.ResetPickedItemMutationVariables,
-  APITypes.ResetPickedItemMutation
->;
+    APITypes.ResetPickedItemMutationVariables,
+    APITypes.ResetPickedItemMutation
+  >;
 export const rejectItem = /* GraphQL */ `mutation RejectItem(
   $worksheetId: String!
   $items: [ItemToFulfill]
@@ -2424,6 +4893,114 @@ export const rejectItem = /* GraphQL */ `mutation RejectItem(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -2432,6 +5009,11 @@ export const rejectItem = /* GraphQL */ `mutation RejectItem(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -2442,6 +5024,53 @@ export const rejectItem = /* GraphQL */ `mutation RejectItem(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -2579,7 +5208,8 @@ export const rejectItem = /* GraphQL */ `mutation RejectItem(
   APITypes.RejectItemMutationVariables,
   APITypes.RejectItemMutation
 >;
-export const resetRejectedItem = /* GraphQL */ `mutation ResetRejectedItem($worksheetId: String!, $items: [ItemToFulfill]) {
+export const resetRejectedItem =
+  /* GraphQL */ `mutation ResetRejectedItem($worksheetId: String!, $items: [ItemToFulfill]) {
   resetRejectedItem(worksheetId: $worksheetId, items: $items) {
     groups
     storeConfig
@@ -2588,6 +5218,114 @@ export const resetRejectedItem = /* GraphQL */ `mutation ResetRejectedItem($work
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -2596,6 +5334,11 @@ export const resetRejectedItem = /* GraphQL */ `mutation ResetRejectedItem($work
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -2606,6 +5349,53 @@ export const resetRejectedItem = /* GraphQL */ `mutation ResetRejectedItem($work
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -2740,9 +5530,9 @@ export const resetRejectedItem = /* GraphQL */ `mutation ResetRejectedItem($work
   }
 }
 ` as GeneratedMutation<
-  APITypes.ResetRejectedItemMutationVariables,
-  APITypes.ResetRejectedItemMutation
->;
+    APITypes.ResetRejectedItemMutationVariables,
+    APITypes.ResetRejectedItemMutation
+  >;
 export const sorting = /* GraphQL */ `mutation Sorting($worksheetId: String!) {
   sorting(worksheetId: $worksheetId) {
     groups
@@ -2756,6 +5546,95 @@ export const sorting = /* GraphQL */ `mutation Sorting($worksheetId: String!) {
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -2775,11 +5654,31 @@ export const sorting = /* GraphQL */ `mutation Sorting($worksheetId: String!) {
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -2885,6 +5784,11 @@ export const sorting = /* GraphQL */ `mutation Sorting($worksheetId: String!) {
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -2893,10 +5797,24 @@ export const sorting = /* GraphQL */ `mutation Sorting($worksheetId: String!) {
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -2905,6 +5823,11 @@ export const sorting = /* GraphQL */ `mutation Sorting($worksheetId: String!) {
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -2966,6 +5889,114 @@ export const addNewItem = /* GraphQL */ `mutation AddNewItem(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -2974,6 +6005,11 @@ export const addNewItem = /* GraphQL */ `mutation AddNewItem(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -2984,6 +6020,53 @@ export const addNewItem = /* GraphQL */ `mutation AddNewItem(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -3019,6 +6102,11 @@ export const addNewItem = /* GraphQL */ `mutation AddNewItem(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -3029,6 +6117,11 @@ export const addNewItem = /* GraphQL */ `mutation AddNewItem(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -3148,11 +6241,258 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -3183,6 +6523,87 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -3208,6 +6629,199 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -3251,6 +6865,45 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -3263,13 +6916,88 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -3367,6 +7095,17 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -3403,8 +7142,32 @@ export const resetAddNewItem = /* GraphQL */ `mutation ResetAddNewItem(
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -3518,11 +7281,258 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -3553,6 +7563,87 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -3578,6 +7669,199 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -3621,6 +7905,45 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -3633,13 +7956,88 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -3737,6 +8135,17 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -3773,8 +8182,32 @@ export const changePrice = /* GraphQL */ `mutation ChangePrice(
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -3868,6 +8301,95 @@ export const changeQuantity = /* GraphQL */ `mutation ChangeQuantity(
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -3887,11 +8409,31 @@ export const changeQuantity = /* GraphQL */ `mutation ChangeQuantity(
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -3997,6 +8539,11 @@ export const changeQuantity = /* GraphQL */ `mutation ChangeQuantity(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -4005,10 +8552,24 @@ export const changeQuantity = /* GraphQL */ `mutation ChangeQuantity(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -4017,6 +8578,11 @@ export const changeQuantity = /* GraphQL */ `mutation ChangeQuantity(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -4055,7 +8621,8 @@ export const changeQuantity = /* GraphQL */ `mutation ChangeQuantity(
   APITypes.ChangeQuantityMutationVariables,
   APITypes.ChangeQuantityMutation
 >;
-export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) {
+export const pauseOrder =
+  /* GraphQL */ `mutation PauseOrder($orderId: String!) {
   pauseOrder(orderId: $orderId) {
     groups
     id
@@ -4084,11 +8651,258 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -4119,6 +8933,87 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -4144,6 +9039,199 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -4187,6 +9275,45 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -4199,13 +9326,88 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -4303,6 +9505,17 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -4339,8 +9552,32 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -4406,10 +9643,11 @@ export const pauseOrder = /* GraphQL */ `mutation PauseOrder($orderId: String!) 
   }
 }
 ` as GeneratedMutation<
-  APITypes.PauseOrderMutationVariables,
-  APITypes.PauseOrderMutation
->;
-export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!) {
+    APITypes.PauseOrderMutationVariables,
+    APITypes.PauseOrderMutation
+  >;
+export const resumeOrder =
+  /* GraphQL */ `mutation ResumeOrder($orderId: String!) {
   resumeOrder(orderId: $orderId) {
     groups
     id
@@ -4438,11 +9676,258 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -4473,6 +9958,87 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -4498,6 +10064,199 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -4541,6 +10300,45 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -4553,13 +10351,88 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -4657,6 +10530,17 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -4693,8 +10577,32 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -4760,10 +10668,11 @@ export const resumeOrder = /* GraphQL */ `mutation ResumeOrder($orderId: String!
   }
 }
 ` as GeneratedMutation<
-  APITypes.ResumeOrderMutationVariables,
-  APITypes.ResumeOrderMutation
->;
-export const rejectTransfer = /* GraphQL */ `mutation RejectTransfer($transferId: String!, $userId: String!) {
+    APITypes.ResumeOrderMutationVariables,
+    APITypes.ResumeOrderMutation
+  >;
+export const rejectTransfer =
+  /* GraphQL */ `mutation RejectTransfer($transferId: String!, $userId: String!) {
   rejectTransfer(transferId: $transferId, userId: $userId) {
     id
     status
@@ -4800,10 +10709,11 @@ export const rejectTransfer = /* GraphQL */ `mutation RejectTransfer($transferId
   }
 }
 ` as GeneratedMutation<
-  APITypes.RejectTransferMutationVariables,
-  APITypes.RejectTransferMutation
->;
-export const approveTransfer = /* GraphQL */ `mutation ApproveTransfer($transferId: String!, $userId: String!) {
+    APITypes.RejectTransferMutationVariables,
+    APITypes.RejectTransferMutation
+  >;
+export const approveTransfer =
+  /* GraphQL */ `mutation ApproveTransfer($transferId: String!, $userId: String!) {
   approveTransfer(transferId: $transferId, userId: $userId) {
     id
     status
@@ -4840,10 +10750,11 @@ export const approveTransfer = /* GraphQL */ `mutation ApproveTransfer($transfer
   }
 }
 ` as GeneratedMutation<
-  APITypes.ApproveTransferMutationVariables,
-  APITypes.ApproveTransferMutation
->;
-export const createTransferProcess = /* GraphQL */ `mutation CreateTransferProcess(
+    APITypes.ApproveTransferMutationVariables,
+    APITypes.ApproveTransferMutation
+  >;
+export const createTransferProcess =
+  /* GraphQL */ `mutation CreateTransferProcess(
   $orderId: String!
   $destinationFacility: String!
   $destinationHostname: String!
@@ -4896,10 +10807,11 @@ export const createTransferProcess = /* GraphQL */ `mutation CreateTransferProce
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateTransferProcessMutationVariables,
-  APITypes.CreateTransferProcessMutation
->;
-export const createRMAProcess = /* GraphQL */ `mutation CreateRMAProcess($rmaIds: [String]!) {
+    APITypes.CreateTransferProcessMutationVariables,
+    APITypes.CreateTransferProcessMutation
+  >;
+export const createRMAProcess =
+  /* GraphQL */ `mutation CreateRMAProcess($rmaIds: [String]!) {
   createRMAProcess(rmaIds: $rmaIds) {
     id
     orderId
@@ -4936,10 +10848,26 @@ export const createRMAProcess = /* GraphQL */ `mutation CreateRMAProcess($rmaIds
       store {
         storeConfigId
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       deliveryAddress {
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       shippingServiceId
@@ -4973,8 +10901,223 @@ export const createRMAProcess = /* GraphQL */ `mutation CreateRMAProcess($rmaIds
         status
         storeConfigId
         deliveryReference
+        sage {
+          id
+          rmaId
+          itemId
+          approved
+          storeConfigId
+          images {
+            id
+            URL
+            tags
+            __typename
+          }
+          productMatch {
+            brand
+            model
+            color
+            product
+            size
+            image
+            __typename
+          }
+          justification {
+            imageMatchProduct
+            accurateDescription
+            __typename
+          }
+          accuracy
+          result
+          shortDescription
+          errors
+          lang
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         requestedResolution
         requestType
+        input {
+          reasonId
+          returnReason
+          reasonType
+          quantity
+          attachments {
+            type
+            URL
+            __typename
+          }
+          recommendedItem {
+            id
+            storeId
+            name
+            image
+            quantity
+            sellingPrice
+            adjustedPrice
+            difference
+            additionalCost
+            paymentType
+            __typename
+          }
+          __typename
+        }
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
+        notes {
+          note
+          type
+          createdBy
+          creationDate
+          __typename
+        }
+        resolution {
+          id
+          backToStockQuantity
+          approved
+          type
+          quantity
+          replacement {
+            id
+            itemId
+            rmaId
+            quantity
+            status
+            storeConfigId
+            worksheetId
+            fulfillmentStatus
+            approvedBy
+            action
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            rMAReplacementRefundId
+            rMAReplacementStoreCreditId
+            __typename
+          }
+          refund {
+            id
+            storeConfigId
+            storeId
+            transactionId
+            confirmationId
+            customerId
+            paymentMethod
+            rmaId
+            itemId
+            amount
+            status
+            confirmationDate
+            itemQuantity
+            createdBy
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          storeCredit {
+            id
+            rmaId
+            itemId
+            orderId
+            customerId
+            currencyCode
+            storeConfigId
+            reason
+            type
+            storeCreditId
+            creationDate
+            startDate
+            expirationDate
+            amount
+            quantity
+            status
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          coupon {
+            idCalculatorConfiguration
+            name
+            beginDateUtc
+            endDateUtc
+            utmSource
+            utmCampaign
+            amount
+            __typename
+          }
+          giftcard {
+            id
+            name
+            redemptionCode
+            expiringDate
+            emissionDate
+            amount
+            __typename
+          }
+          attachments {
+            type
+            URL
+            __typename
+          }
+          action
+          transaction {
+            transactionId
+            status
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          rMAItemResolutionReplacementId
+          rMAItemResolutionRefundId
+          rMAItemResolutionStoreCreditId
+          __typename
+        }
+        itemLogs {
+          items {
+            id
+            orderId
+            itemId
+            uniqueId
+            status
+            lastStatus
+            description
+            metadata
+            timestamp
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         policyId
         createdAt
         updatedAt
@@ -5071,10 +11214,11 @@ export const createRMAProcess = /* GraphQL */ `mutation CreateRMAProcess($rmaIds
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAProcessMutationVariables,
-  APITypes.CreateRMAProcessMutation
->;
-export const createWorksheetProcess = /* GraphQL */ `mutation CreateWorksheetProcess(
+    APITypes.CreateRMAProcessMutationVariables,
+    APITypes.CreateRMAProcessMutation
+  >;
+export const createWorksheetProcess =
+  /* GraphQL */ `mutation CreateWorksheetProcess(
   $storeConfigId: String!
   $orderIds: [String]!
   $pickerId: String
@@ -5097,6 +11241,114 @@ export const createWorksheetProcess = /* GraphQL */ `mutation CreateWorksheetPro
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -5105,6 +11357,11 @@ export const createWorksheetProcess = /* GraphQL */ `mutation CreateWorksheetPro
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -5115,6 +11372,53 @@ export const createWorksheetProcess = /* GraphQL */ `mutation CreateWorksheetPro
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -5249,10 +11553,11 @@ export const createWorksheetProcess = /* GraphQL */ `mutation CreateWorksheetPro
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateWorksheetProcessMutationVariables,
-  APITypes.CreateWorksheetProcessMutation
->;
-export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!) {
+    APITypes.CreateWorksheetProcessMutationVariables,
+    APITypes.CreateWorksheetProcessMutation
+  >;
+export const cancelOrder =
+  /* GraphQL */ `mutation CancelOrder($orderId: String!) {
   cancelOrder(orderId: $orderId) {
     groups
     id
@@ -5281,11 +11586,258 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -5316,6 +11868,87 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -5341,6 +11974,199 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -5384,6 +12210,45 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -5396,13 +12261,88 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -5500,6 +12440,17 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -5536,8 +12487,32 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -5603,10 +12578,11 @@ export const cancelOrder = /* GraphQL */ `mutation CancelOrder($orderId: String!
   }
 }
 ` as GeneratedMutation<
-  APITypes.CancelOrderMutationVariables,
-  APITypes.CancelOrderMutation
->;
-export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: String!) {
+    APITypes.CancelOrderMutationVariables,
+    APITypes.CancelOrderMutation
+  >;
+export const deliverOrder =
+  /* GraphQL */ `mutation DeliverOrder($orderId: String!) {
   deliverOrder(orderId: $orderId) {
     groups
     id
@@ -5635,11 +12611,258 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -5670,6 +12893,87 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -5695,6 +12999,199 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -5738,6 +13235,45 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -5750,13 +13286,88 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -5854,6 +13465,17 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -5890,8 +13512,32 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -5957,9 +13603,9 @@ export const deliverOrder = /* GraphQL */ `mutation DeliverOrder($orderId: Strin
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeliverOrderMutationVariables,
-  APITypes.DeliverOrderMutation
->;
+    APITypes.DeliverOrderMutationVariables,
+    APITypes.DeliverOrderMutation
+  >;
 export const assignPicker = /* GraphQL */ `mutation AssignPicker(
   $pickerId: String!
   $worksheetId: String!
@@ -5977,6 +13623,114 @@ export const assignPicker = /* GraphQL */ `mutation AssignPicker(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -5985,6 +13739,11 @@ export const assignPicker = /* GraphQL */ `mutation AssignPicker(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -5995,6 +13754,53 @@ export const assignPicker = /* GraphQL */ `mutation AssignPicker(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -6132,7 +13938,8 @@ export const assignPicker = /* GraphQL */ `mutation AssignPicker(
   APITypes.AssignPickerMutationVariables,
   APITypes.AssignPickerMutation
 >;
-export const removeOrderFromWorksheet = /* GraphQL */ `mutation RemoveOrderFromWorksheet(
+export const removeOrderFromWorksheet =
+  /* GraphQL */ `mutation RemoveOrderFromWorksheet(
   $orderIds: [String]!
   $worksheetId: String!
   $storeConfigId: String!
@@ -6149,6 +13956,114 @@ export const removeOrderFromWorksheet = /* GraphQL */ `mutation RemoveOrderFromW
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -6157,6 +14072,11 @@ export const removeOrderFromWorksheet = /* GraphQL */ `mutation RemoveOrderFromW
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -6167,6 +14087,53 @@ export const removeOrderFromWorksheet = /* GraphQL */ `mutation RemoveOrderFromW
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -6301,9 +14268,9 @@ export const removeOrderFromWorksheet = /* GraphQL */ `mutation RemoveOrderFromW
   }
 }
 ` as GeneratedMutation<
-  APITypes.RemoveOrderFromWorksheetMutationVariables,
-  APITypes.RemoveOrderFromWorksheetMutation
->;
+    APITypes.RemoveOrderFromWorksheetMutationVariables,
+    APITypes.RemoveOrderFromWorksheetMutation
+  >;
 export const addOrderToWorksheet = /* GraphQL */ `mutation AddOrderToWorksheet(
   $orderIds: [String]!
   $worksheetId: String!
@@ -6321,6 +14288,114 @@ export const addOrderToWorksheet = /* GraphQL */ `mutation AddOrderToWorksheet(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -6329,6 +14404,11 @@ export const addOrderToWorksheet = /* GraphQL */ `mutation AddOrderToWorksheet(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -6339,6 +14419,53 @@ export const addOrderToWorksheet = /* GraphQL */ `mutation AddOrderToWorksheet(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -6476,7 +14603,8 @@ export const addOrderToWorksheet = /* GraphQL */ `mutation AddOrderToWorksheet(
   APITypes.AddOrderToWorksheetMutationVariables,
   APITypes.AddOrderToWorksheetMutation
 >;
-export const updateFacilities = /* GraphQL */ `mutation UpdateFacilities($warehouseIds: [String]!, $storeConfigId: String!) {
+export const updateFacilities =
+  /* GraphQL */ `mutation UpdateFacilities($warehouseIds: [String]!, $storeConfigId: String!) {
   updateFacilities(warehouseIds: $warehouseIds, storeConfigId: $storeConfigId) {
     groups
     id
@@ -6546,6 +14674,176 @@ export const updateFacilities = /* GraphQL */ `mutation UpdateFacilities($wareho
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -6577,10 +14875,11 @@ export const updateFacilities = /* GraphQL */ `mutation UpdateFacilities($wareho
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateFacilitiesMutationVariables,
-  APITypes.UpdateFacilitiesMutation
->;
-export const createCatalog = /* GraphQL */ `mutation CreateCatalog($account: String!, $from: String, $to: String) {
+    APITypes.UpdateFacilitiesMutationVariables,
+    APITypes.UpdateFacilitiesMutation
+  >;
+export const createCatalog =
+  /* GraphQL */ `mutation CreateCatalog($account: String!, $from: String, $to: String) {
   createCatalog(account: $account, from: $from, to: $to) {
     status
     message
@@ -6589,9 +14888,9 @@ export const createCatalog = /* GraphQL */ `mutation CreateCatalog($account: Str
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateCatalogMutationVariables,
-  APITypes.CreateCatalogMutation
->;
+    APITypes.CreateCatalogMutationVariables,
+    APITypes.CreateCatalogMutation
+  >;
 export const updateProduct = /* GraphQL */ `mutation UpdateProduct(
   $parentAccount: String!
   $skuId: String!
@@ -6671,14 +14970,16 @@ export const updateProduct = /* GraphQL */ `mutation UpdateProduct(
   APITypes.UpdateProductMutationVariables,
   APITypes.UpdateProductMutation
 >;
-export const createStores = /* GraphQL */ `mutation CreateStores($account: String!, $sellers: [String]!) {
+export const createStores =
+  /* GraphQL */ `mutation CreateStores($account: String!, $sellers: [String]!) {
   createStores(account: $account, sellers: $sellers)
 }
 ` as GeneratedMutation<
-  APITypes.CreateStoresMutationVariables,
-  APITypes.CreateStoresMutation
->;
-export const activeAccountLastMile = /* GraphQL */ `mutation ActiveAccountLastMile($account: String!, $active: Boolean!) {
+    APITypes.CreateStoresMutationVariables,
+    APITypes.CreateStoresMutation
+  >;
+export const activeAccountLastMile =
+  /* GraphQL */ `mutation ActiveAccountLastMile($account: String!, $active: Boolean!) {
   activeAccountLastMile(account: $account, active: $active) {
     id
     carrierId
@@ -6710,9 +15011,9 @@ export const activeAccountLastMile = /* GraphQL */ `mutation ActiveAccountLastMi
   }
 }
 ` as GeneratedMutation<
-  APITypes.ActiveAccountLastMileMutationVariables,
-  APITypes.ActiveAccountLastMileMutation
->;
+    APITypes.ActiveAccountLastMileMutationVariables,
+    APITypes.ActiveAccountLastMileMutation
+  >;
 export const createRMA = /* GraphQL */ `mutation CreateRMA(
   $orderId: String!
   $shippingRequest: ShippingRequestInput!
@@ -6760,10 +15061,26 @@ export const createRMA = /* GraphQL */ `mutation CreateRMA(
       store {
         storeConfigId
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       deliveryAddress {
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       shippingServiceId
@@ -6797,8 +15114,223 @@ export const createRMA = /* GraphQL */ `mutation CreateRMA(
         status
         storeConfigId
         deliveryReference
+        sage {
+          id
+          rmaId
+          itemId
+          approved
+          storeConfigId
+          images {
+            id
+            URL
+            tags
+            __typename
+          }
+          productMatch {
+            brand
+            model
+            color
+            product
+            size
+            image
+            __typename
+          }
+          justification {
+            imageMatchProduct
+            accurateDescription
+            __typename
+          }
+          accuracy
+          result
+          shortDescription
+          errors
+          lang
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         requestedResolution
         requestType
+        input {
+          reasonId
+          returnReason
+          reasonType
+          quantity
+          attachments {
+            type
+            URL
+            __typename
+          }
+          recommendedItem {
+            id
+            storeId
+            name
+            image
+            quantity
+            sellingPrice
+            adjustedPrice
+            difference
+            additionalCost
+            paymentType
+            __typename
+          }
+          __typename
+        }
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
+        notes {
+          note
+          type
+          createdBy
+          creationDate
+          __typename
+        }
+        resolution {
+          id
+          backToStockQuantity
+          approved
+          type
+          quantity
+          replacement {
+            id
+            itemId
+            rmaId
+            quantity
+            status
+            storeConfigId
+            worksheetId
+            fulfillmentStatus
+            approvedBy
+            action
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            rMAReplacementRefundId
+            rMAReplacementStoreCreditId
+            __typename
+          }
+          refund {
+            id
+            storeConfigId
+            storeId
+            transactionId
+            confirmationId
+            customerId
+            paymentMethod
+            rmaId
+            itemId
+            amount
+            status
+            confirmationDate
+            itemQuantity
+            createdBy
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          storeCredit {
+            id
+            rmaId
+            itemId
+            orderId
+            customerId
+            currencyCode
+            storeConfigId
+            reason
+            type
+            storeCreditId
+            creationDate
+            startDate
+            expirationDate
+            amount
+            quantity
+            status
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          coupon {
+            idCalculatorConfiguration
+            name
+            beginDateUtc
+            endDateUtc
+            utmSource
+            utmCampaign
+            amount
+            __typename
+          }
+          giftcard {
+            id
+            name
+            redemptionCode
+            expiringDate
+            emissionDate
+            amount
+            __typename
+          }
+          attachments {
+            type
+            URL
+            __typename
+          }
+          action
+          transaction {
+            transactionId
+            status
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          rMAItemResolutionReplacementId
+          rMAItemResolutionRefundId
+          rMAItemResolutionStoreCreditId
+          __typename
+        }
+        itemLogs {
+          items {
+            id
+            orderId
+            itemId
+            uniqueId
+            status
+            lastStatus
+            description
+            metadata
+            timestamp
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         policyId
         createdAt
         updatedAt
@@ -7011,10 +15543,118 @@ export const updateRMAItemStatus = /* GraphQL */ `mutation UpdateRMAItemStatus(
         itemId
         rmaId
         quantity
+        replacementItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        recommendedItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        refund {
+          id
+          storeConfigId
+          storeId
+          transactionId
+          confirmationId
+          customerId
+          paymentMethod
+          paymentData {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          rmaId
+          itemId
+          amount
+          status
+          confirmationDate
+          itemQuantity
+          createdBy
+          approvedBy
+          metadata
+          attachments {
+            type
+            URL
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        storeCredit {
+          id
+          rmaId
+          itemId
+          orderId
+          customerId
+          currencyCode
+          storeConfigId
+          reason
+          type
+          storeCreditId
+          creationDate
+          startDate
+          expirationDate
+          amount
+          quantity
+          status
+          approvedBy
+          metadata
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         status
         storeConfigId
         worksheetId
         fulfillmentStatus
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
         approvedBy
         action
         createdAt
@@ -7034,6 +15674,46 @@ export const updateRMAItemStatus = /* GraphQL */ `mutation UpdateRMAItemStatus(
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -7043,6 +15723,11 @@ export const updateRMAItemStatus = /* GraphQL */ `mutation UpdateRMAItemStatus(
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -7153,7 +15838,8 @@ export const updateRMAItemStatus = /* GraphQL */ `mutation UpdateRMAItemStatus(
   APITypes.UpdateRMAItemStatusMutationVariables,
   APITypes.UpdateRMAItemStatusMutation
 >;
-export const confirmDeliveryClient = /* GraphQL */ `mutation ConfirmDeliveryClient($rmaId: String!) {
+export const confirmDeliveryClient =
+  /* GraphQL */ `mutation ConfirmDeliveryClient($rmaId: String!) {
   confirmDeliveryClient(rmaId: $rmaId) {
     rmaId
     success
@@ -7161,10 +15847,11 @@ export const confirmDeliveryClient = /* GraphQL */ `mutation ConfirmDeliveryClie
   }
 }
 ` as GeneratedMutation<
-  APITypes.ConfirmDeliveryClientMutationVariables,
-  APITypes.ConfirmDeliveryClientMutation
->;
-export const createRMAResolutionItem = /* GraphQL */ `mutation CreateRMAResolutionItem(
+    APITypes.ConfirmDeliveryClientMutationVariables,
+    APITypes.ConfirmDeliveryClientMutation
+  >;
+export const createRMAResolutionItem =
+  /* GraphQL */ `mutation CreateRMAResolutionItem(
   $rmaId: String!
   $itemId: String!
   $hostname: String!
@@ -7191,10 +15878,118 @@ export const createRMAResolutionItem = /* GraphQL */ `mutation CreateRMAResoluti
         itemId
         rmaId
         quantity
+        replacementItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        recommendedItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        refund {
+          id
+          storeConfigId
+          storeId
+          transactionId
+          confirmationId
+          customerId
+          paymentMethod
+          paymentData {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          rmaId
+          itemId
+          amount
+          status
+          confirmationDate
+          itemQuantity
+          createdBy
+          approvedBy
+          metadata
+          attachments {
+            type
+            URL
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        storeCredit {
+          id
+          rmaId
+          itemId
+          orderId
+          customerId
+          currencyCode
+          storeConfigId
+          reason
+          type
+          storeCreditId
+          creationDate
+          startDate
+          expirationDate
+          amount
+          quantity
+          status
+          approvedBy
+          metadata
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         status
         storeConfigId
         worksheetId
         fulfillmentStatus
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
         approvedBy
         action
         createdAt
@@ -7214,6 +16009,46 @@ export const createRMAResolutionItem = /* GraphQL */ `mutation CreateRMAResoluti
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -7223,6 +16058,11 @@ export const createRMAResolutionItem = /* GraphQL */ `mutation CreateRMAResoluti
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -7302,9 +16142,9 @@ export const createRMAResolutionItem = /* GraphQL */ `mutation CreateRMAResoluti
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAResolutionItemMutationVariables,
-  APITypes.CreateRMAResolutionItemMutation
->;
+    APITypes.CreateRMAResolutionItemMutationVariables,
+    APITypes.CreateRMAResolutionItemMutation
+  >;
 export const confirmResolution = /* GraphQL */ `mutation ConfirmResolution(
   $resolutionIds: [String]!
   $confirmationId: String!
@@ -7389,7 +16229,8 @@ export const deleteAgent = /* GraphQL */ `mutation DeleteAgent(
   APITypes.DeleteAgentMutationVariables,
   APITypes.DeleteAgentMutation
 >;
-export const sendNotificationAgent = /* GraphQL */ `mutation SendNotificationAgent(
+export const sendNotificationAgent =
+  /* GraphQL */ `mutation SendNotificationAgent(
   $query: MutationSendNotificationAgentQueryInput
   $body: MutationSendNotificationAgentBodyInput
 ) {
@@ -7409,9 +16250,9 @@ export const sendNotificationAgent = /* GraphQL */ `mutation SendNotificationAge
   }
 }
 ` as GeneratedMutation<
-  APITypes.SendNotificationAgentMutationVariables,
-  APITypes.SendNotificationAgentMutation
->;
+    APITypes.SendNotificationAgentMutationVariables,
+    APITypes.SendNotificationAgentMutation
+  >;
 export const AddAgent = /* GraphQL */ `mutation AddAgent(
   $query: MutationAddAgentQueryInput
   $body: MutationAddAgentBodyInput
@@ -7431,7 +16272,8 @@ export const AddAgent = /* GraphQL */ `mutation AddAgent(
   APITypes.AddAgentMutationVariables,
   APITypes.AddAgentMutation
 >;
-export const AssignCourierToRelatedTasks = /* GraphQL */ `mutation AssignCourierToRelatedTasks(
+export const AssignCourierToRelatedTasks =
+  /* GraphQL */ `mutation AssignCourierToRelatedTasks(
   $query: MutationAssignCourierToRelatedTasksQueryInput
   $body: MutationAssignCourierToRelatedTasksBodyInput
 ) {
@@ -7442,10 +16284,11 @@ export const AssignCourierToRelatedTasks = /* GraphQL */ `mutation AssignCourier
   }
 }
 ` as GeneratedMutation<
-  APITypes.AssignCourierToRelatedTasksMutationVariables,
-  APITypes.AssignCourierToRelatedTasksMutation
->;
-export const CreateUpdateCustomTemplate = /* GraphQL */ `mutation CreateUpdateCustomTemplate(
+    APITypes.AssignCourierToRelatedTasksMutationVariables,
+    APITypes.AssignCourierToRelatedTasksMutation
+  >;
+export const CreateUpdateCustomTemplate =
+  /* GraphQL */ `mutation CreateUpdateCustomTemplate(
   $query: MutationCreateUpdateCustomTemplateQueryInput
   $body: MutationCreateUpdateCustomTemplateBodyInput
 ) {
@@ -7456,10 +16299,11 @@ export const CreateUpdateCustomTemplate = /* GraphQL */ `mutation CreateUpdateCu
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateUpdateCustomTemplateMutationVariables,
-  APITypes.CreateUpdateCustomTemplateMutation
->;
-export const deleteTrackingSettings = /* GraphQL */ `mutation DeleteTrackingSettings(
+    APITypes.CreateUpdateCustomTemplateMutationVariables,
+    APITypes.CreateUpdateCustomTemplateMutation
+  >;
+export const deleteTrackingSettings =
+  /* GraphQL */ `mutation DeleteTrackingSettings(
   $input: DeleteTrackingSettingsInput!
   $condition: ModelTrackingSettingsConditionInput
 ) {
@@ -7498,9 +16342,9 @@ export const deleteTrackingSettings = /* GraphQL */ `mutation DeleteTrackingSett
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteTrackingSettingsMutationVariables,
-  APITypes.DeleteTrackingSettingsMutation
->;
+    APITypes.DeleteTrackingSettingsMutationVariables,
+    APITypes.DeleteTrackingSettingsMutation
+  >;
 export const createAccount = /* GraphQL */ `mutation CreateAccount(
   $input: CreateAccountInput!
   $condition: ModelAccountConditionInput
@@ -7516,6 +16360,77 @@ export const createAccount = /* GraphQL */ `mutation CreateAccount(
         groups
         id
         name
+        salesSource {
+          items {
+            groups
+            id
+            warehouseId
+            warehouseName
+            type
+            downloadOrders
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            salesChannelSalesSourceId
+            storeConfigSalesSourcesId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        account {
+          groups
+          id
+          name
+          activeAccount
+          isVtexAccount
+          salesChannels {
+            nextToken
+            startedAt
+            __typename
+          }
+          storeConfig {
+            nextToken
+            startedAt
+            __typename
+          }
+          maxMonthlyOrders
+          actualOrders
+          configuration {
+            key
+            __typename
+          }
+          country
+          demo
+          contract
+          logo
+          email
+          contact
+          pro
+          plan {
+            id
+            name
+            description
+            ppo
+            appo
+            orders
+            maxOrders
+            initialDate
+            validUntil
+            active
+            metadata
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         type
         isActive
         paymentMethods
@@ -7523,6 +16438,22 @@ export const createAccount = /* GraphQL */ `mutation CreateAccount(
         shippingTypes
         commercialPolicies
         orderTags
+        packages {
+          id
+          type
+          name
+          description
+          code
+          dimensions {
+            width
+            height
+            length
+            weight
+            cubicweight
+            __typename
+          }
+          __typename
+        }
         globalOrders
         localOrders
         pickingMethod
@@ -7541,8 +16472,109 @@ export const createAccount = /* GraphQL */ `mutation CreateAccount(
         enableReplacementOptions
         enableSupportChat
         needsApproval
+        changesConfig {
+          allowAddItems
+          allowLimitOrderTotalChanges
+          allowPriceChanges
+          allowQuantityChanges
+          allowItemReplacements
+          allowItemRejections
+          sendChangesToVtexOms
+          itemChangesPriceThreshold
+          itemChangesQuantityThreshold
+          orderChangesTotalThreshold
+          rejectionReasons {
+            key
+            Value
+            __typename
+          }
+          replacementReasons {
+            key
+            Value
+            __typename
+          }
+          priceChangeReasons {
+            key
+            Value
+            __typename
+          }
+          __typename
+        }
         preparationTime
+        webhooks {
+          items {
+            id
+            salesChannelId
+            active
+            type
+            url
+            restType
+            facilities
+            showItems
+            showChanges
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        dynamicBarcodes {
+          allowDynamicBarcodes
+          productIdAsNumber
+          weight {
+            __typename
+          }
+          price {
+            __typename
+          }
+          quantity {
+            __typename
+          }
+          __typename
+        }
+        printing {
+          comanda {
+            active
+            fontSize
+            __typename
+          }
+          packages {
+            active
+            fontSize
+            __typename
+          }
+          delivery {
+            active
+            fontSize
+            __typename
+          }
+          __typename
+        }
         isMigratedFromFulfillment
+        itemsLocation {
+          active
+          fields {
+            id
+            label
+            type
+            __typename
+          }
+          codeFormat {
+            id
+            characters
+            order
+            __typename
+          }
+          separator
+          categoryLink
+          brandLink
+          __typename
+        }
         itemInformation
         showOrdersInfoTab
         showCustomerInfoPerOrder
@@ -7565,10 +16597,92 @@ export const createAccount = /* GraphQL */ `mutation CreateAccount(
         groups
         id
         name
+        general {
+          address
+          addressComplement
+          neighborhood
+          postalCode
+          reference
+          number
+          city
+          changePricesReasons {
+            id
+            name
+            __typename
+          }
+          contactInformation {
+            email
+            name
+            phone
+            __typename
+          }
+          country
+          deliveryWindow {
+            finalHour
+            initialHour
+            name
+            weekDay
+            __typename
+          }
+          location {
+            latitude
+            longitude
+            __typename
+          }
+          measurementUnit
+          name
+          replacementReasons {
+            id
+            name
+            __typename
+          }
+          state
+          __typename
+        }
+        categories {
+          id
+          priority
+          name
+          parentId
+          hasChildren
+          url
+          title
+          metaTagDescription
+          left
+          right
+          __typename
+        }
         batchInterval
         maxItemsPerBatch
         maxItemsPerWorksheet
+        salesSources {
+          items {
+            groups
+            id
+            warehouseId
+            warehouseName
+            type
+            downloadOrders
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            salesChannelSalesSourceId
+            storeConfigSalesSourcesId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         salesChannel
+        timezone {
+          offset
+          value
+          label
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -7635,6 +16749,77 @@ export const updateAccount = /* GraphQL */ `mutation UpdateAccount(
         groups
         id
         name
+        salesSource {
+          items {
+            groups
+            id
+            warehouseId
+            warehouseName
+            type
+            downloadOrders
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            salesChannelSalesSourceId
+            storeConfigSalesSourcesId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        account {
+          groups
+          id
+          name
+          activeAccount
+          isVtexAccount
+          salesChannels {
+            nextToken
+            startedAt
+            __typename
+          }
+          storeConfig {
+            nextToken
+            startedAt
+            __typename
+          }
+          maxMonthlyOrders
+          actualOrders
+          configuration {
+            key
+            __typename
+          }
+          country
+          demo
+          contract
+          logo
+          email
+          contact
+          pro
+          plan {
+            id
+            name
+            description
+            ppo
+            appo
+            orders
+            maxOrders
+            initialDate
+            validUntil
+            active
+            metadata
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         type
         isActive
         paymentMethods
@@ -7642,6 +16827,22 @@ export const updateAccount = /* GraphQL */ `mutation UpdateAccount(
         shippingTypes
         commercialPolicies
         orderTags
+        packages {
+          id
+          type
+          name
+          description
+          code
+          dimensions {
+            width
+            height
+            length
+            weight
+            cubicweight
+            __typename
+          }
+          __typename
+        }
         globalOrders
         localOrders
         pickingMethod
@@ -7660,8 +16861,109 @@ export const updateAccount = /* GraphQL */ `mutation UpdateAccount(
         enableReplacementOptions
         enableSupportChat
         needsApproval
+        changesConfig {
+          allowAddItems
+          allowLimitOrderTotalChanges
+          allowPriceChanges
+          allowQuantityChanges
+          allowItemReplacements
+          allowItemRejections
+          sendChangesToVtexOms
+          itemChangesPriceThreshold
+          itemChangesQuantityThreshold
+          orderChangesTotalThreshold
+          rejectionReasons {
+            key
+            Value
+            __typename
+          }
+          replacementReasons {
+            key
+            Value
+            __typename
+          }
+          priceChangeReasons {
+            key
+            Value
+            __typename
+          }
+          __typename
+        }
         preparationTime
+        webhooks {
+          items {
+            id
+            salesChannelId
+            active
+            type
+            url
+            restType
+            facilities
+            showItems
+            showChanges
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        dynamicBarcodes {
+          allowDynamicBarcodes
+          productIdAsNumber
+          weight {
+            __typename
+          }
+          price {
+            __typename
+          }
+          quantity {
+            __typename
+          }
+          __typename
+        }
+        printing {
+          comanda {
+            active
+            fontSize
+            __typename
+          }
+          packages {
+            active
+            fontSize
+            __typename
+          }
+          delivery {
+            active
+            fontSize
+            __typename
+          }
+          __typename
+        }
         isMigratedFromFulfillment
+        itemsLocation {
+          active
+          fields {
+            id
+            label
+            type
+            __typename
+          }
+          codeFormat {
+            id
+            characters
+            order
+            __typename
+          }
+          separator
+          categoryLink
+          brandLink
+          __typename
+        }
         itemInformation
         showOrdersInfoTab
         showCustomerInfoPerOrder
@@ -7684,10 +16986,92 @@ export const updateAccount = /* GraphQL */ `mutation UpdateAccount(
         groups
         id
         name
+        general {
+          address
+          addressComplement
+          neighborhood
+          postalCode
+          reference
+          number
+          city
+          changePricesReasons {
+            id
+            name
+            __typename
+          }
+          contactInformation {
+            email
+            name
+            phone
+            __typename
+          }
+          country
+          deliveryWindow {
+            finalHour
+            initialHour
+            name
+            weekDay
+            __typename
+          }
+          location {
+            latitude
+            longitude
+            __typename
+          }
+          measurementUnit
+          name
+          replacementReasons {
+            id
+            name
+            __typename
+          }
+          state
+          __typename
+        }
+        categories {
+          id
+          priority
+          name
+          parentId
+          hasChildren
+          url
+          title
+          metaTagDescription
+          left
+          right
+          __typename
+        }
         batchInterval
         maxItemsPerBatch
         maxItemsPerWorksheet
+        salesSources {
+          items {
+            groups
+            id
+            warehouseId
+            warehouseName
+            type
+            downloadOrders
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            salesChannelSalesSourceId
+            storeConfigSalesSourcesId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         salesChannel
+        timezone {
+          offset
+          value
+          label
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -7754,6 +17138,77 @@ export const deleteAccount = /* GraphQL */ `mutation DeleteAccount(
         groups
         id
         name
+        salesSource {
+          items {
+            groups
+            id
+            warehouseId
+            warehouseName
+            type
+            downloadOrders
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            salesChannelSalesSourceId
+            storeConfigSalesSourcesId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        account {
+          groups
+          id
+          name
+          activeAccount
+          isVtexAccount
+          salesChannels {
+            nextToken
+            startedAt
+            __typename
+          }
+          storeConfig {
+            nextToken
+            startedAt
+            __typename
+          }
+          maxMonthlyOrders
+          actualOrders
+          configuration {
+            key
+            __typename
+          }
+          country
+          demo
+          contract
+          logo
+          email
+          contact
+          pro
+          plan {
+            id
+            name
+            description
+            ppo
+            appo
+            orders
+            maxOrders
+            initialDate
+            validUntil
+            active
+            metadata
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         type
         isActive
         paymentMethods
@@ -7761,6 +17216,22 @@ export const deleteAccount = /* GraphQL */ `mutation DeleteAccount(
         shippingTypes
         commercialPolicies
         orderTags
+        packages {
+          id
+          type
+          name
+          description
+          code
+          dimensions {
+            width
+            height
+            length
+            weight
+            cubicweight
+            __typename
+          }
+          __typename
+        }
         globalOrders
         localOrders
         pickingMethod
@@ -7779,8 +17250,109 @@ export const deleteAccount = /* GraphQL */ `mutation DeleteAccount(
         enableReplacementOptions
         enableSupportChat
         needsApproval
+        changesConfig {
+          allowAddItems
+          allowLimitOrderTotalChanges
+          allowPriceChanges
+          allowQuantityChanges
+          allowItemReplacements
+          allowItemRejections
+          sendChangesToVtexOms
+          itemChangesPriceThreshold
+          itemChangesQuantityThreshold
+          orderChangesTotalThreshold
+          rejectionReasons {
+            key
+            Value
+            __typename
+          }
+          replacementReasons {
+            key
+            Value
+            __typename
+          }
+          priceChangeReasons {
+            key
+            Value
+            __typename
+          }
+          __typename
+        }
         preparationTime
+        webhooks {
+          items {
+            id
+            salesChannelId
+            active
+            type
+            url
+            restType
+            facilities
+            showItems
+            showChanges
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        dynamicBarcodes {
+          allowDynamicBarcodes
+          productIdAsNumber
+          weight {
+            __typename
+          }
+          price {
+            __typename
+          }
+          quantity {
+            __typename
+          }
+          __typename
+        }
+        printing {
+          comanda {
+            active
+            fontSize
+            __typename
+          }
+          packages {
+            active
+            fontSize
+            __typename
+          }
+          delivery {
+            active
+            fontSize
+            __typename
+          }
+          __typename
+        }
         isMigratedFromFulfillment
+        itemsLocation {
+          active
+          fields {
+            id
+            label
+            type
+            __typename
+          }
+          codeFormat {
+            id
+            characters
+            order
+            __typename
+          }
+          separator
+          categoryLink
+          brandLink
+          __typename
+        }
         itemInformation
         showOrdersInfoTab
         showCustomerInfoPerOrder
@@ -7803,10 +17375,92 @@ export const deleteAccount = /* GraphQL */ `mutation DeleteAccount(
         groups
         id
         name
+        general {
+          address
+          addressComplement
+          neighborhood
+          postalCode
+          reference
+          number
+          city
+          changePricesReasons {
+            id
+            name
+            __typename
+          }
+          contactInformation {
+            email
+            name
+            phone
+            __typename
+          }
+          country
+          deliveryWindow {
+            finalHour
+            initialHour
+            name
+            weekDay
+            __typename
+          }
+          location {
+            latitude
+            longitude
+            __typename
+          }
+          measurementUnit
+          name
+          replacementReasons {
+            id
+            name
+            __typename
+          }
+          state
+          __typename
+        }
+        categories {
+          id
+          priority
+          name
+          parentId
+          hasChildren
+          url
+          title
+          metaTagDescription
+          left
+          right
+          __typename
+        }
         batchInterval
         maxItemsPerBatch
         maxItemsPerWorksheet
+        salesSources {
+          items {
+            groups
+            id
+            warehouseId
+            warehouseName
+            type
+            downloadOrders
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            salesChannelSalesSourceId
+            storeConfigSalesSourcesId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         salesChannel
+        timezone {
+          offset
+          value
+          label
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -8023,10 +17677,130 @@ export const createCarrier = /* GraphQL */ `mutation CreateCarrier(
     }
     integration {
       dev {
+        endpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        cancelEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        pauseEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        rateEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        carriersEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
         webhookEndpoint
         __typename
       }
       prod {
+        endpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        cancelEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        pauseEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        rateEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        carriersEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
         webhookEndpoint
         __typename
       }
@@ -8088,10 +17862,130 @@ export const updateCarrier = /* GraphQL */ `mutation UpdateCarrier(
     }
     integration {
       dev {
+        endpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        cancelEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        pauseEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        rateEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        carriersEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
         webhookEndpoint
         __typename
       }
       prod {
+        endpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        cancelEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        pauseEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        rateEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        carriersEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
         webhookEndpoint
         __typename
       }
@@ -8153,10 +18047,130 @@ export const deleteCarrier = /* GraphQL */ `mutation DeleteCarrier(
     }
     integration {
       dev {
+        endpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        cancelEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        pauseEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        rateEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        carriersEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
         webhookEndpoint
         __typename
       }
       prod {
+        endpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        cancelEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        pauseEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        rateEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
+        carriersEndpoint {
+          url
+          method
+          protocol
+          variables {
+            type
+            key
+            value
+            __typename
+          }
+          __typename
+        }
         webhookEndpoint
         __typename
       }
@@ -8176,7 +18190,8 @@ export const deleteCarrier = /* GraphQL */ `mutation DeleteCarrier(
   APITypes.DeleteCarrierMutationVariables,
   APITypes.DeleteCarrierMutation
 >;
-export const createCarriersStoreConfig = /* GraphQL */ `mutation CreateCarriersStoreConfig(
+export const createCarriersStoreConfig =
+  /* GraphQL */ `mutation CreateCarriersStoreConfig(
   $input: CreateCarriersStoreConfigInput!
   $condition: ModelCarriersStoreConfigConditionInput
 ) {
@@ -8211,10 +18226,11 @@ export const createCarriersStoreConfig = /* GraphQL */ `mutation CreateCarriersS
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateCarriersStoreConfigMutationVariables,
-  APITypes.CreateCarriersStoreConfigMutation
->;
-export const updateCarriersStoreConfig = /* GraphQL */ `mutation UpdateCarriersStoreConfig(
+    APITypes.CreateCarriersStoreConfigMutationVariables,
+    APITypes.CreateCarriersStoreConfigMutation
+  >;
+export const updateCarriersStoreConfig =
+  /* GraphQL */ `mutation UpdateCarriersStoreConfig(
   $input: UpdateCarriersStoreConfigInput!
   $condition: ModelCarriersStoreConfigConditionInput
 ) {
@@ -8249,10 +18265,11 @@ export const updateCarriersStoreConfig = /* GraphQL */ `mutation UpdateCarriersS
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateCarriersStoreConfigMutationVariables,
-  APITypes.UpdateCarriersStoreConfigMutation
->;
-export const deleteCarriersStoreConfig = /* GraphQL */ `mutation DeleteCarriersStoreConfig(
+    APITypes.UpdateCarriersStoreConfigMutationVariables,
+    APITypes.UpdateCarriersStoreConfigMutation
+  >;
+export const deleteCarriersStoreConfig =
+  /* GraphQL */ `mutation DeleteCarriersStoreConfig(
   $input: DeleteCarriersStoreConfigInput!
   $condition: ModelCarriersStoreConfigConditionInput
 ) {
@@ -8287,10 +18304,11 @@ export const deleteCarriersStoreConfig = /* GraphQL */ `mutation DeleteCarriersS
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteCarriersStoreConfigMutationVariables,
-  APITypes.DeleteCarriersStoreConfigMutation
->;
-export const createCatalogHistory = /* GraphQL */ `mutation CreateCatalogHistory(
+    APITypes.DeleteCarriersStoreConfigMutationVariables,
+    APITypes.DeleteCarriersStoreConfigMutation
+  >;
+export const createCatalogHistory =
+  /* GraphQL */ `mutation CreateCatalogHistory(
   $input: CreateCatalogHistoryInput!
   $condition: ModelCatalogHistoryConditionInput
 ) {
@@ -8318,10 +18336,11 @@ export const createCatalogHistory = /* GraphQL */ `mutation CreateCatalogHistory
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateCatalogHistoryMutationVariables,
-  APITypes.CreateCatalogHistoryMutation
->;
-export const updateCatalogHistory = /* GraphQL */ `mutation UpdateCatalogHistory(
+    APITypes.CreateCatalogHistoryMutationVariables,
+    APITypes.CreateCatalogHistoryMutation
+  >;
+export const updateCatalogHistory =
+  /* GraphQL */ `mutation UpdateCatalogHistory(
   $input: UpdateCatalogHistoryInput!
   $condition: ModelCatalogHistoryConditionInput
 ) {
@@ -8349,10 +18368,11 @@ export const updateCatalogHistory = /* GraphQL */ `mutation UpdateCatalogHistory
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateCatalogHistoryMutationVariables,
-  APITypes.UpdateCatalogHistoryMutation
->;
-export const deleteCatalogHistory = /* GraphQL */ `mutation DeleteCatalogHistory(
+    APITypes.UpdateCatalogHistoryMutationVariables,
+    APITypes.UpdateCatalogHistoryMutation
+  >;
+export const deleteCatalogHistory =
+  /* GraphQL */ `mutation DeleteCatalogHistory(
   $input: DeleteCatalogHistoryInput!
   $condition: ModelCatalogHistoryConditionInput
 ) {
@@ -8380,9 +18400,9 @@ export const deleteCatalogHistory = /* GraphQL */ `mutation DeleteCatalogHistory
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteCatalogHistoryMutationVariables,
-  APITypes.DeleteCatalogHistoryMutation
->;
+    APITypes.DeleteCatalogHistoryMutationVariables,
+    APITypes.DeleteCatalogHistoryMutation
+  >;
 export const createCustomer = /* GraphQL */ `mutation CreateCustomer(
   $input: CreateCustomerInput!
   $condition: ModelCustomerConditionInput
@@ -8406,6 +18426,36 @@ export const createCustomer = /* GraphQL */ `mutation CreateCustomer(
         id
         contactName
         contactPhone
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
         publicContactName
         city
@@ -8417,6 +18467,65 @@ export const createCustomer = /* GraphQL */ `mutation CreateCustomer(
         reference
         number
         zipCode
+        location {
+          lat
+          lng
+          alt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -8432,10 +18541,102 @@ export const createCustomer = /* GraphQL */ `mutation CreateCustomer(
       items {
         groups
         id
+        billing {
+          id
+          discount
+          tax
+          freighAmount
+          total
+          __typename
+        }
         affiliateId
         conversationID
         notificationsID
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
+        address {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         addressId
         deliveryDate
         deliveryChannel
@@ -8443,21 +18644,163 @@ export const createCustomer = /* GraphQL */ `mutation CreateCustomer(
         categoriesIds
         hostname
         parentAccount
+        invoices {
+          invoiceKey
+          invoiceSubtotal
+          invoiceTaxes
+          invoiceTotal
+          invoiceUrl
+          invoiceCreationDate
+          invoiceReceiptDate
+          invoiceNumber
+          packages
+          __typename
+        }
         totalItems
         totalUnits
         totalCompletedItems
         totalCompletedUnits
+        items {
+          items {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         isInvoiced
         isOrderSplit
         metaData
+        marketingData {
+          id
+          utmSource
+          utmPartner
+          utmMedium
+          utmCampaign
+          utmipage
+          utmiPart
+          utmiCampaign
+          marketingTags
+          coupon
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         observations
+        orderAssignment {
+          hostname
+          worksheetId
+          status
+          initDate
+          finishedDate
+          __typename
+        }
         orderId
+        payment {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         prepareDate
         collectedDate
         salesSourceId
         salesChannel
         commercialPolicy
         sequence
+        shipping {
+          shippingInfo {
+            itemId
+            shippingType
+            __typename
+          }
+          orderUniqueAddress
+          tracking {
+            id
+            trackingKey
+            trackingUrl
+            carrier
+            packages
+            delivered
+            createDate
+            deliveredDate
+            __typename
+          }
+          __typename
+        }
         shippingEstimatedDateMin
         status
         lastStatus
@@ -8468,7 +18811,73 @@ export const createCustomer = /* GraphQL */ `mutation CreateCustomer(
         pickedAt
         packingStartedAt
         packedAt
+        packages {
+          items {
+            groups
+            id
+            orderId
+            envelope
+            courier
+            type
+            name
+            description
+            status
+            storeConfigId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        historicalOrder {
+          items {
+            id
+            orderId
+            lastStatus
+            orderStatus
+            source
+            user
+            description
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         tags
+        appliedAutomations {
+          automationId
+          action
+          value
+          lastInvocation
+          status
+          requestId
+          metadata
+          __typename
+        }
+        totals {
+          id
+          name
+          value
+          alternativeTotals {
+            id
+            name
+            value
+            __typename
+          }
+          __typename
+        }
         hasPendingRmas
         createdAt
         updatedAt
@@ -8516,6 +18925,36 @@ export const updateCustomer = /* GraphQL */ `mutation UpdateCustomer(
         id
         contactName
         contactPhone
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
         publicContactName
         city
@@ -8527,6 +18966,65 @@ export const updateCustomer = /* GraphQL */ `mutation UpdateCustomer(
         reference
         number
         zipCode
+        location {
+          lat
+          lng
+          alt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -8542,10 +19040,102 @@ export const updateCustomer = /* GraphQL */ `mutation UpdateCustomer(
       items {
         groups
         id
+        billing {
+          id
+          discount
+          tax
+          freighAmount
+          total
+          __typename
+        }
         affiliateId
         conversationID
         notificationsID
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
+        address {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         addressId
         deliveryDate
         deliveryChannel
@@ -8553,21 +19143,163 @@ export const updateCustomer = /* GraphQL */ `mutation UpdateCustomer(
         categoriesIds
         hostname
         parentAccount
+        invoices {
+          invoiceKey
+          invoiceSubtotal
+          invoiceTaxes
+          invoiceTotal
+          invoiceUrl
+          invoiceCreationDate
+          invoiceReceiptDate
+          invoiceNumber
+          packages
+          __typename
+        }
         totalItems
         totalUnits
         totalCompletedItems
         totalCompletedUnits
+        items {
+          items {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         isInvoiced
         isOrderSplit
         metaData
+        marketingData {
+          id
+          utmSource
+          utmPartner
+          utmMedium
+          utmCampaign
+          utmipage
+          utmiPart
+          utmiCampaign
+          marketingTags
+          coupon
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         observations
+        orderAssignment {
+          hostname
+          worksheetId
+          status
+          initDate
+          finishedDate
+          __typename
+        }
         orderId
+        payment {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         prepareDate
         collectedDate
         salesSourceId
         salesChannel
         commercialPolicy
         sequence
+        shipping {
+          shippingInfo {
+            itemId
+            shippingType
+            __typename
+          }
+          orderUniqueAddress
+          tracking {
+            id
+            trackingKey
+            trackingUrl
+            carrier
+            packages
+            delivered
+            createDate
+            deliveredDate
+            __typename
+          }
+          __typename
+        }
         shippingEstimatedDateMin
         status
         lastStatus
@@ -8578,7 +19310,73 @@ export const updateCustomer = /* GraphQL */ `mutation UpdateCustomer(
         pickedAt
         packingStartedAt
         packedAt
+        packages {
+          items {
+            groups
+            id
+            orderId
+            envelope
+            courier
+            type
+            name
+            description
+            status
+            storeConfigId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        historicalOrder {
+          items {
+            id
+            orderId
+            lastStatus
+            orderStatus
+            source
+            user
+            description
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         tags
+        appliedAutomations {
+          automationId
+          action
+          value
+          lastInvocation
+          status
+          requestId
+          metadata
+          __typename
+        }
+        totals {
+          id
+          name
+          value
+          alternativeTotals {
+            id
+            name
+            value
+            __typename
+          }
+          __typename
+        }
         hasPendingRmas
         createdAt
         updatedAt
@@ -8626,6 +19424,36 @@ export const deleteCustomer = /* GraphQL */ `mutation DeleteCustomer(
         id
         contactName
         contactPhone
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
         publicContactName
         city
@@ -8637,6 +19465,65 @@ export const deleteCustomer = /* GraphQL */ `mutation DeleteCustomer(
         reference
         number
         zipCode
+        location {
+          lat
+          lng
+          alt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -8652,10 +19539,102 @@ export const deleteCustomer = /* GraphQL */ `mutation DeleteCustomer(
       items {
         groups
         id
+        billing {
+          id
+          discount
+          tax
+          freighAmount
+          total
+          __typename
+        }
         affiliateId
         conversationID
         notificationsID
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
+        address {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         addressId
         deliveryDate
         deliveryChannel
@@ -8663,21 +19642,163 @@ export const deleteCustomer = /* GraphQL */ `mutation DeleteCustomer(
         categoriesIds
         hostname
         parentAccount
+        invoices {
+          invoiceKey
+          invoiceSubtotal
+          invoiceTaxes
+          invoiceTotal
+          invoiceUrl
+          invoiceCreationDate
+          invoiceReceiptDate
+          invoiceNumber
+          packages
+          __typename
+        }
         totalItems
         totalUnits
         totalCompletedItems
         totalCompletedUnits
+        items {
+          items {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         isInvoiced
         isOrderSplit
         metaData
+        marketingData {
+          id
+          utmSource
+          utmPartner
+          utmMedium
+          utmCampaign
+          utmipage
+          utmiPart
+          utmiCampaign
+          marketingTags
+          coupon
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         observations
+        orderAssignment {
+          hostname
+          worksheetId
+          status
+          initDate
+          finishedDate
+          __typename
+        }
         orderId
+        payment {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         prepareDate
         collectedDate
         salesSourceId
         salesChannel
         commercialPolicy
         sequence
+        shipping {
+          shippingInfo {
+            itemId
+            shippingType
+            __typename
+          }
+          orderUniqueAddress
+          tracking {
+            id
+            trackingKey
+            trackingUrl
+            carrier
+            packages
+            delivered
+            createDate
+            deliveredDate
+            __typename
+          }
+          __typename
+        }
         shippingEstimatedDateMin
         status
         lastStatus
@@ -8688,7 +19809,73 @@ export const deleteCustomer = /* GraphQL */ `mutation DeleteCustomer(
         pickedAt
         packingStartedAt
         packedAt
+        packages {
+          items {
+            groups
+            id
+            orderId
+            envelope
+            courier
+            type
+            name
+            description
+            status
+            storeConfigId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        historicalOrder {
+          items {
+            id
+            orderId
+            lastStatus
+            orderStatus
+            source
+            user
+            description
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         tags
+        appliedAutomations {
+          automationId
+          action
+          value
+          lastInvocation
+          status
+          requestId
+          metadata
+          __typename
+        }
+        totals {
+          id
+          name
+          value
+          alternativeTotals {
+            id
+            name
+            value
+            __typename
+          }
+          __typename
+        }
         hasPendingRmas
         createdAt
         updatedAt
@@ -8736,11 +19923,258 @@ export const createAddress = /* GraphQL */ `mutation CreateAddress(
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -8773,10 +20207,102 @@ export const createAddress = /* GraphQL */ `mutation CreateAddress(
       items {
         groups
         id
+        billing {
+          id
+          discount
+          tax
+          freighAmount
+          total
+          __typename
+        }
         affiliateId
         conversationID
         notificationsID
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
+        address {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         addressId
         deliveryDate
         deliveryChannel
@@ -8784,21 +20310,163 @@ export const createAddress = /* GraphQL */ `mutation CreateAddress(
         categoriesIds
         hostname
         parentAccount
+        invoices {
+          invoiceKey
+          invoiceSubtotal
+          invoiceTaxes
+          invoiceTotal
+          invoiceUrl
+          invoiceCreationDate
+          invoiceReceiptDate
+          invoiceNumber
+          packages
+          __typename
+        }
         totalItems
         totalUnits
         totalCompletedItems
         totalCompletedUnits
+        items {
+          items {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         isInvoiced
         isOrderSplit
         metaData
+        marketingData {
+          id
+          utmSource
+          utmPartner
+          utmMedium
+          utmCampaign
+          utmipage
+          utmiPart
+          utmiCampaign
+          marketingTags
+          coupon
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         observations
+        orderAssignment {
+          hostname
+          worksheetId
+          status
+          initDate
+          finishedDate
+          __typename
+        }
         orderId
+        payment {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         prepareDate
         collectedDate
         salesSourceId
         salesChannel
         commercialPolicy
         sequence
+        shipping {
+          shippingInfo {
+            itemId
+            shippingType
+            __typename
+          }
+          orderUniqueAddress
+          tracking {
+            id
+            trackingKey
+            trackingUrl
+            carrier
+            packages
+            delivered
+            createDate
+            deliveredDate
+            __typename
+          }
+          __typename
+        }
         shippingEstimatedDateMin
         status
         lastStatus
@@ -8809,7 +20477,73 @@ export const createAddress = /* GraphQL */ `mutation CreateAddress(
         pickedAt
         packingStartedAt
         packedAt
+        packages {
+          items {
+            groups
+            id
+            orderId
+            envelope
+            courier
+            type
+            name
+            description
+            status
+            storeConfigId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        historicalOrder {
+          items {
+            id
+            orderId
+            lastStatus
+            orderStatus
+            source
+            user
+            description
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         tags
+        appliedAutomations {
+          automationId
+          action
+          value
+          lastInvocation
+          status
+          requestId
+          metadata
+          __typename
+        }
+        totals {
+          id
+          name
+          value
+          alternativeTotals {
+            id
+            name
+            value
+            __typename
+          }
+          __typename
+        }
         hasPendingRmas
         createdAt
         updatedAt
@@ -8857,11 +20591,258 @@ export const updateAddress = /* GraphQL */ `mutation UpdateAddress(
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -8894,10 +20875,102 @@ export const updateAddress = /* GraphQL */ `mutation UpdateAddress(
       items {
         groups
         id
+        billing {
+          id
+          discount
+          tax
+          freighAmount
+          total
+          __typename
+        }
         affiliateId
         conversationID
         notificationsID
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
+        address {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         addressId
         deliveryDate
         deliveryChannel
@@ -8905,21 +20978,163 @@ export const updateAddress = /* GraphQL */ `mutation UpdateAddress(
         categoriesIds
         hostname
         parentAccount
+        invoices {
+          invoiceKey
+          invoiceSubtotal
+          invoiceTaxes
+          invoiceTotal
+          invoiceUrl
+          invoiceCreationDate
+          invoiceReceiptDate
+          invoiceNumber
+          packages
+          __typename
+        }
         totalItems
         totalUnits
         totalCompletedItems
         totalCompletedUnits
+        items {
+          items {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         isInvoiced
         isOrderSplit
         metaData
+        marketingData {
+          id
+          utmSource
+          utmPartner
+          utmMedium
+          utmCampaign
+          utmipage
+          utmiPart
+          utmiCampaign
+          marketingTags
+          coupon
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         observations
+        orderAssignment {
+          hostname
+          worksheetId
+          status
+          initDate
+          finishedDate
+          __typename
+        }
         orderId
+        payment {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         prepareDate
         collectedDate
         salesSourceId
         salesChannel
         commercialPolicy
         sequence
+        shipping {
+          shippingInfo {
+            itemId
+            shippingType
+            __typename
+          }
+          orderUniqueAddress
+          tracking {
+            id
+            trackingKey
+            trackingUrl
+            carrier
+            packages
+            delivered
+            createDate
+            deliveredDate
+            __typename
+          }
+          __typename
+        }
         shippingEstimatedDateMin
         status
         lastStatus
@@ -8930,7 +21145,73 @@ export const updateAddress = /* GraphQL */ `mutation UpdateAddress(
         pickedAt
         packingStartedAt
         packedAt
+        packages {
+          items {
+            groups
+            id
+            orderId
+            envelope
+            courier
+            type
+            name
+            description
+            status
+            storeConfigId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        historicalOrder {
+          items {
+            id
+            orderId
+            lastStatus
+            orderStatus
+            source
+            user
+            description
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         tags
+        appliedAutomations {
+          automationId
+          action
+          value
+          lastInvocation
+          status
+          requestId
+          metadata
+          __typename
+        }
+        totals {
+          id
+          name
+          value
+          alternativeTotals {
+            id
+            name
+            value
+            __typename
+          }
+          __typename
+        }
         hasPendingRmas
         createdAt
         updatedAt
@@ -8978,11 +21259,258 @@ export const deleteAddress = /* GraphQL */ `mutation DeleteAddress(
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -9015,10 +21543,102 @@ export const deleteAddress = /* GraphQL */ `mutation DeleteAddress(
       items {
         groups
         id
+        billing {
+          id
+          discount
+          tax
+          freighAmount
+          total
+          __typename
+        }
         affiliateId
         conversationID
         notificationsID
+        customer {
+          groups
+          id
+          profileId
+          publicName
+          firstName
+          lastName
+          document
+          documentType
+          anonymized
+          phone
+          email
+          hashedEmail
+          addresses {
+            nextToken
+            startedAt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         customerId
+        address {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         addressId
         deliveryDate
         deliveryChannel
@@ -9026,21 +21646,163 @@ export const deleteAddress = /* GraphQL */ `mutation DeleteAddress(
         categoriesIds
         hostname
         parentAccount
+        invoices {
+          invoiceKey
+          invoiceSubtotal
+          invoiceTaxes
+          invoiceTotal
+          invoiceUrl
+          invoiceCreationDate
+          invoiceReceiptDate
+          invoiceNumber
+          packages
+          __typename
+        }
         totalItems
         totalUnits
         totalCompletedItems
         totalCompletedUnits
+        items {
+          items {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         isInvoiced
         isOrderSplit
         metaData
+        marketingData {
+          id
+          utmSource
+          utmPartner
+          utmMedium
+          utmCampaign
+          utmipage
+          utmiPart
+          utmiCampaign
+          marketingTags
+          coupon
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         observations
+        orderAssignment {
+          hostname
+          worksheetId
+          status
+          initDate
+          finishedDate
+          __typename
+        }
         orderId
+        payment {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         prepareDate
         collectedDate
         salesSourceId
         salesChannel
         commercialPolicy
         sequence
+        shipping {
+          shippingInfo {
+            itemId
+            shippingType
+            __typename
+          }
+          orderUniqueAddress
+          tracking {
+            id
+            trackingKey
+            trackingUrl
+            carrier
+            packages
+            delivered
+            createDate
+            deliveredDate
+            __typename
+          }
+          __typename
+        }
         shippingEstimatedDateMin
         status
         lastStatus
@@ -9051,7 +21813,73 @@ export const deleteAddress = /* GraphQL */ `mutation DeleteAddress(
         pickedAt
         packingStartedAt
         packedAt
+        packages {
+          items {
+            groups
+            id
+            orderId
+            envelope
+            courier
+            type
+            name
+            description
+            status
+            storeConfigId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        historicalOrder {
+          items {
+            id
+            orderId
+            lastStatus
+            orderStatus
+            source
+            user
+            description
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         tags
+        appliedAutomations {
+          automationId
+          action
+          value
+          lastInvocation
+          status
+          requestId
+          metadata
+          __typename
+        }
+        totals {
+          id
+          name
+          value
+          alternativeTotals {
+            id
+            name
+            value
+            __typename
+          }
+          __typename
+        }
         hasPendingRmas
         createdAt
         updatedAt
@@ -9076,7 +21904,8 @@ export const deleteAddress = /* GraphQL */ `mutation DeleteAddress(
   APITypes.DeleteAddressMutationVariables,
   APITypes.DeleteAddressMutation
 >;
-export const createHistoricalOrder = /* GraphQL */ `mutation CreateHistoricalOrder(
+export const createHistoricalOrder =
+  /* GraphQL */ `mutation CreateHistoricalOrder(
   $input: CreateHistoricalOrderInput!
   $condition: ModelHistoricalOrderConditionInput
 ) {
@@ -9098,10 +21927,11 @@ export const createHistoricalOrder = /* GraphQL */ `mutation CreateHistoricalOrd
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateHistoricalOrderMutationVariables,
-  APITypes.CreateHistoricalOrderMutation
->;
-export const updateHistoricalOrder = /* GraphQL */ `mutation UpdateHistoricalOrder(
+    APITypes.CreateHistoricalOrderMutationVariables,
+    APITypes.CreateHistoricalOrderMutation
+  >;
+export const updateHistoricalOrder =
+  /* GraphQL */ `mutation UpdateHistoricalOrder(
   $input: UpdateHistoricalOrderInput!
   $condition: ModelHistoricalOrderConditionInput
 ) {
@@ -9123,10 +21953,11 @@ export const updateHistoricalOrder = /* GraphQL */ `mutation UpdateHistoricalOrd
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateHistoricalOrderMutationVariables,
-  APITypes.UpdateHistoricalOrderMutation
->;
-export const deleteHistoricalOrder = /* GraphQL */ `mutation DeleteHistoricalOrder(
+    APITypes.UpdateHistoricalOrderMutationVariables,
+    APITypes.UpdateHistoricalOrderMutation
+  >;
+export const deleteHistoricalOrder =
+  /* GraphQL */ `mutation DeleteHistoricalOrder(
   $input: DeleteHistoricalOrderInput!
   $condition: ModelHistoricalOrderConditionInput
 ) {
@@ -9148,10 +21979,11 @@ export const deleteHistoricalOrder = /* GraphQL */ `mutation DeleteHistoricalOrd
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteHistoricalOrderMutationVariables,
-  APITypes.DeleteHistoricalOrderMutation
->;
-export const createHistoricalWorksheet = /* GraphQL */ `mutation CreateHistoricalWorksheet(
+    APITypes.DeleteHistoricalOrderMutationVariables,
+    APITypes.DeleteHistoricalOrderMutation
+  >;
+export const createHistoricalWorksheet =
+  /* GraphQL */ `mutation CreateHistoricalWorksheet(
   $input: CreateHistoricalWorksheetInput!
   $condition: ModelHistoricalWorksheetConditionInput
 ) {
@@ -9173,10 +22005,11 @@ export const createHistoricalWorksheet = /* GraphQL */ `mutation CreateHistorica
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateHistoricalWorksheetMutationVariables,
-  APITypes.CreateHistoricalWorksheetMutation
->;
-export const updateHistoricalWorksheet = /* GraphQL */ `mutation UpdateHistoricalWorksheet(
+    APITypes.CreateHistoricalWorksheetMutationVariables,
+    APITypes.CreateHistoricalWorksheetMutation
+  >;
+export const updateHistoricalWorksheet =
+  /* GraphQL */ `mutation UpdateHistoricalWorksheet(
   $input: UpdateHistoricalWorksheetInput!
   $condition: ModelHistoricalWorksheetConditionInput
 ) {
@@ -9198,10 +22031,11 @@ export const updateHistoricalWorksheet = /* GraphQL */ `mutation UpdateHistorica
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateHistoricalWorksheetMutationVariables,
-  APITypes.UpdateHistoricalWorksheetMutation
->;
-export const deleteHistoricalWorksheet = /* GraphQL */ `mutation DeleteHistoricalWorksheet(
+    APITypes.UpdateHistoricalWorksheetMutationVariables,
+    APITypes.UpdateHistoricalWorksheetMutation
+  >;
+export const deleteHistoricalWorksheet =
+  /* GraphQL */ `mutation DeleteHistoricalWorksheet(
   $input: DeleteHistoricalWorksheetInput!
   $condition: ModelHistoricalWorksheetConditionInput
 ) {
@@ -9223,9 +22057,9 @@ export const deleteHistoricalWorksheet = /* GraphQL */ `mutation DeleteHistorica
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteHistoricalWorksheetMutationVariables,
-  APITypes.DeleteHistoricalWorksheetMutation
->;
+    APITypes.DeleteHistoricalWorksheetMutationVariables,
+    APITypes.DeleteHistoricalWorksheetMutation
+  >;
 export const createItemTransfer = /* GraphQL */ `mutation CreateItemTransfer(
   $input: CreateItemTransferInput!
   $condition: ModelItemTransferConditionInput
@@ -9371,6 +22205,114 @@ export const createItemV2 = /* GraphQL */ `mutation CreateItemV2(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -9379,6 +22321,11 @@ export const createItemV2 = /* GraphQL */ `mutation CreateItemV2(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -9389,6 +22336,53 @@ export const createItemV2 = /* GraphQL */ `mutation CreateItemV2(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -9424,6 +22418,11 @@ export const createItemV2 = /* GraphQL */ `mutation CreateItemV2(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -9434,6 +22433,11 @@ export const createItemV2 = /* GraphQL */ `mutation CreateItemV2(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -9532,6 +22536,114 @@ export const updateItemV2 = /* GraphQL */ `mutation UpdateItemV2(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -9540,6 +22652,11 @@ export const updateItemV2 = /* GraphQL */ `mutation UpdateItemV2(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -9550,6 +22667,53 @@ export const updateItemV2 = /* GraphQL */ `mutation UpdateItemV2(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -9585,6 +22749,11 @@ export const updateItemV2 = /* GraphQL */ `mutation UpdateItemV2(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -9595,6 +22764,11 @@ export const updateItemV2 = /* GraphQL */ `mutation UpdateItemV2(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -9693,6 +22867,114 @@ export const deleteItemV2 = /* GraphQL */ `mutation DeleteItemV2(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -9701,6 +22983,11 @@ export const deleteItemV2 = /* GraphQL */ `mutation DeleteItemV2(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -9711,6 +22998,53 @@ export const deleteItemV2 = /* GraphQL */ `mutation DeleteItemV2(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -9746,6 +23080,11 @@ export const deleteItemV2 = /* GraphQL */ `mutation DeleteItemV2(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -9756,6 +23095,11 @@ export const deleteItemV2 = /* GraphQL */ `mutation DeleteItemV2(
       children {
         id
         name
+        children {
+          id
+          name
+          __typename
+        }
         __typename
       }
       __typename
@@ -9854,6 +23198,95 @@ export const createFulfillmentV2 = /* GraphQL */ `mutation CreateFulfillmentV2(
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -9873,11 +23306,31 @@ export const createFulfillmentV2 = /* GraphQL */ `mutation CreateFulfillmentV2(
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -9983,6 +23436,11 @@ export const createFulfillmentV2 = /* GraphQL */ `mutation CreateFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -9991,10 +23449,24 @@ export const createFulfillmentV2 = /* GraphQL */ `mutation CreateFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -10003,6 +23475,11 @@ export const createFulfillmentV2 = /* GraphQL */ `mutation CreateFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -10057,6 +23534,95 @@ export const updateFulfillmentV2 = /* GraphQL */ `mutation UpdateFulfillmentV2(
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -10076,11 +23642,31 @@ export const updateFulfillmentV2 = /* GraphQL */ `mutation UpdateFulfillmentV2(
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -10186,6 +23772,11 @@ export const updateFulfillmentV2 = /* GraphQL */ `mutation UpdateFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -10194,10 +23785,24 @@ export const updateFulfillmentV2 = /* GraphQL */ `mutation UpdateFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -10206,6 +23811,11 @@ export const updateFulfillmentV2 = /* GraphQL */ `mutation UpdateFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -10260,6 +23870,95 @@ export const deleteFulfillmentV2 = /* GraphQL */ `mutation DeleteFulfillmentV2(
       productId
       orderId
       fulfillment {
+        items {
+          groups
+          id
+          item {
+            pickers
+            groups
+            id
+            images
+            itemId
+            productId
+            orderId
+            eans
+            skus
+            refs
+            isWeighable
+            currencyCode
+            name
+            unitOfMeasure
+            quantity
+            completedQuantity
+            unitMultiplier
+            listPrice
+            sellingPrice
+            temperature
+            status
+            weighableProduct
+            addedOnFulfillment
+            account
+            warehouse
+            metaData
+            type
+            rmaId
+            rmaItemId
+            clusterId
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          itemId
+          orderId
+          worksheetId
+          assignedAt
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          facility {
+            id
+            name
+            __typename
+          }
+          hostname
+          itemLocation
+          quantity
+          originalQuantity
+          originalUnitMultiplier
+          addedOnFulfillment
+          isReplacement
+          isTransfer
+          priority
+          pickerId
+          picking {
+            __typename
+          }
+          packing {
+            packageID
+            unitMultiplier
+            listPrice
+            sellingPrice
+            packedQuantity
+            packageLocation
+            __typename
+          }
+          sorted
+          isCompleted
+          isCancelled
+          picker_facility
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          itemV2FulfillmentId
+          worksheetFulfillmentId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -10279,11 +23978,31 @@ export const deleteFulfillmentV2 = /* GraphQL */ `mutation DeleteFulfillmentV2(
       brand {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       categories {
         id
         name
+        children {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       notes {
@@ -10389,6 +24108,11 @@ export const deleteFulfillmentV2 = /* GraphQL */ `mutation DeleteFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       picked {
@@ -10397,10 +24121,24 @@ export const deleteFulfillmentV2 = /* GraphQL */ `mutation DeleteFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       replaced {
         quantity
+        replacements {
+          replacedBy
+          quantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          audit
+          __typename
+        }
         __typename
       }
       rejected {
@@ -10409,6 +24147,11 @@ export const deleteFulfillmentV2 = /* GraphQL */ `mutation DeleteFulfillmentV2(
         unitOfMeasure
         listPrice
         sellingPrice
+        audit {
+          id
+          name
+          __typename
+        }
         __typename
       }
       transferred {
@@ -10550,16 +24293,6 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
       phone
       email
       hashedEmail
-      addresses {
-        nextToken
-        startedAt
-        __typename
-      }
-      orders {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
@@ -10573,26 +24306,6 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
       id
       contactName
       contactPhone
-      customer {
-        groups
-        id
-        profileId
-        publicName
-        firstName
-        lastName
-        document
-        documentType
-        anonymized
-        phone
-        email
-        hashedEmail
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
       customerId
       publicContactName
       city
@@ -10608,11 +24321,6 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
         lat
         lng
         alt
-        __typename
-      }
-      orders {
-        nextToken
-        startedAt
         __typename
       }
       createdAt
@@ -10654,6 +24362,45 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -10666,13 +24413,88 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -10770,6 +24592,17 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -10806,8 +24639,32 @@ export const createOrder = /* GraphQL */ `mutation CreateOrder(
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -10907,16 +24764,6 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
       phone
       email
       hashedEmail
-      addresses {
-        nextToken
-        startedAt
-        __typename
-      }
-      orders {
-        nextToken
-        startedAt
-        __typename
-      }
       createdAt
       updatedAt
       _version
@@ -10930,26 +24777,6 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
       id
       contactName
       contactPhone
-      customer {
-        groups
-        id
-        profileId
-        publicName
-        firstName
-        lastName
-        document
-        documentType
-        anonymized
-        phone
-        email
-        hashedEmail
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        __typename
-      }
       customerId
       publicContactName
       city
@@ -10965,11 +24792,6 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
         lat
         lng
         alt
-        __typename
-      }
-      orders {
-        nextToken
-        startedAt
         __typename
       }
       createdAt
@@ -11011,6 +24833,45 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -11023,13 +24884,88 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -11127,6 +25063,17 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -11163,8 +25110,32 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -11233,62 +25204,6 @@ export const updateOrder = /* GraphQL */ `mutation UpdateOrder(
   APITypes.UpdateOrderMutationVariables,
   APITypes.UpdateOrderMutation
 >;
-
-export const updateOrderCustom = /* GraphQL */ `mutation UpdateOrder(
-  $input: UpdateOrderInput!
-  $condition: ModelOrderConditionInput
-) {
-  updateOrder(input: $input, condition: $condition) {
-    groups
-    id
-    billing {
-      id
-      discount
-      __typename
-    }
-    affiliateId
-    conversationID
-    notificationsID
-    customer {
-      groups
-      id
-      profileId
-      publicName
-      addresses {
-        items {
-          groups
-          id
-          contactName
-        }
-        nextToken
-        startedAt
-        __typename
-      }
-    }
-    customerId
-    address {
-      groups
-      id
-      contactName
-      contactPhone
-      customer {
-        groups
-        id
-        lastName
-      }
-    }
-    updatedAt
-    _version
-    _deleted
-    _lastChangedAt
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.UpdateOrderMutationVariables,
-  APITypes.UpdateOrderMutation
->;
-
 export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
   $input: DeleteOrderInput!
   $condition: ModelOrderConditionInput
@@ -11321,11 +25236,258 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
       email
       hashedEmail
       addresses {
+        items {
+          groups
+          id
+          contactName
+          contactPhone
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          publicContactName
+          city
+          state
+          country
+          neighborhood
+          address
+          addressComplement
+          reference
+          number
+          zipCode
+          location {
+            lat
+            lng
+            alt
+            __typename
+          }
+          orders {
+            nextToken
+            startedAt
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -11356,6 +25518,87 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
         phone
         email
         hashedEmail
+        addresses {
+          items {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        orders {
+          items {
+            groups
+            id
+            affiliateId
+            conversationID
+            notificationsID
+            customerId
+            addressId
+            deliveryDate
+            deliveryChannel
+            finishedDate
+            categoriesIds
+            hostname
+            parentAccount
+            totalItems
+            totalUnits
+            totalCompletedItems
+            totalCompletedUnits
+            isInvoiced
+            isOrderSplit
+            metaData
+            observations
+            orderId
+            prepareDate
+            collectedDate
+            salesSourceId
+            salesChannel
+            commercialPolicy
+            sequence
+            shippingEstimatedDateMin
+            status
+            lastStatus
+            lastStatusChange
+            storeConfigId
+            transactionDate
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            tags
+            hasPendingRmas
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -11381,6 +25624,199 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
         __typename
       }
       orders {
+        items {
+          groups
+          id
+          billing {
+            id
+            discount
+            tax
+            freighAmount
+            total
+            __typename
+          }
+          affiliateId
+          conversationID
+          notificationsID
+          customer {
+            groups
+            id
+            profileId
+            publicName
+            firstName
+            lastName
+            document
+            documentType
+            anonymized
+            phone
+            email
+            hashedEmail
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          customerId
+          address {
+            groups
+            id
+            contactName
+            contactPhone
+            customerId
+            publicContactName
+            city
+            state
+            country
+            neighborhood
+            address
+            addressComplement
+            reference
+            number
+            zipCode
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          addressId
+          deliveryDate
+          deliveryChannel
+          finishedDate
+          categoriesIds
+          hostname
+          parentAccount
+          invoices {
+            invoiceKey
+            invoiceSubtotal
+            invoiceTaxes
+            invoiceTotal
+            invoiceUrl
+            invoiceCreationDate
+            invoiceReceiptDate
+            invoiceNumber
+            packages
+            __typename
+          }
+          totalItems
+          totalUnits
+          totalCompletedItems
+          totalCompletedUnits
+          items {
+            nextToken
+            startedAt
+            __typename
+          }
+          isInvoiced
+          isOrderSplit
+          metaData
+          marketingData {
+            id
+            utmSource
+            utmPartner
+            utmMedium
+            utmCampaign
+            utmipage
+            utmiPart
+            utmiCampaign
+            marketingTags
+            coupon
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          observations
+          orderAssignment {
+            hostname
+            worksheetId
+            status
+            initDate
+            finishedDate
+            __typename
+          }
+          orderId
+          payment {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          prepareDate
+          collectedDate
+          salesSourceId
+          salesChannel
+          commercialPolicy
+          sequence
+          shipping {
+            orderUniqueAddress
+            __typename
+          }
+          shippingEstimatedDateMin
+          status
+          lastStatus
+          lastStatusChange
+          storeConfigId
+          transactionDate
+          pickingStartedAt
+          pickedAt
+          packingStartedAt
+          packedAt
+          packages {
+            nextToken
+            startedAt
+            __typename
+          }
+          historicalOrder {
+            nextToken
+            startedAt
+            __typename
+          }
+          tags
+          appliedAutomations {
+            automationId
+            action
+            value
+            lastInvocation
+            status
+            requestId
+            metadata
+            __typename
+          }
+          totals {
+            id
+            name
+            value
+            __typename
+          }
+          hasPendingRmas
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -11424,6 +25860,45 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
         itemId
         productId
         orderId
+        fulfillment {
+          items {
+            groups
+            id
+            itemId
+            orderId
+            worksheetId
+            assignedAt
+            pickingStartedAt
+            pickedAt
+            packingStartedAt
+            packedAt
+            hostname
+            itemLocation
+            quantity
+            originalQuantity
+            originalUnitMultiplier
+            addedOnFulfillment
+            isReplacement
+            isTransfer
+            priority
+            pickerId
+            sorted
+            isCompleted
+            isCancelled
+            picker_facility
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            itemV2FulfillmentId
+            worksheetFulfillmentId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         eans
         skus
         refs
@@ -11436,13 +25911,88 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
         unitMultiplier
         listPrice
         sellingPrice
+        brand {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        categories {
+          id
+          name
+          children {
+            id
+            name
+            __typename
+          }
+          __typename
+        }
+        notes {
+          type
+          value
+          createdAt
+          __typename
+        }
         temperature
+        dimensions {
+          cubicweight
+          height
+          length
+          weight
+          width
+          __typename
+        }
         status
+        pickingOptions {
+          onNotFound
+          alternateOptions
+          __typename
+        }
+        invoices {
+          id
+          quantity
+          __typename
+        }
+        transfers {
+          rejectedWorksheetId
+          transferredWorksheetId
+          quantity
+          status
+          __typename
+        }
+        returns {
+          id
+          stockedQuantity
+          quantity
+          __typename
+        }
         weighableProduct
         addedOnFulfillment
         account
         warehouse
         metaData
+        location {
+          location
+          hostname
+          warehouse
+          __typename
+        }
+        facility {
+          facilityId
+          quantity
+          isAssigned
+          __typename
+        }
+        inventoryData {
+          warehouseId
+          warehouseName
+          quantity
+          __typename
+        }
         type
         rmaId
         rmaItemId
@@ -11540,6 +26090,17 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
       shippingInfo {
         itemId
         shippingType
+        schedule {
+          fromDate
+          toDate
+          __typename
+        }
+        selectedSla {
+          id
+          courierName
+          name
+          __typename
+        }
         __typename
       }
       orderUniqueAddress
@@ -11576,8 +26137,32 @@ export const deleteOrder = /* GraphQL */ `mutation DeleteOrder(
         type
         name
         description
+        items {
+          id
+          ean
+          refId
+          quantity
+          description
+          imageUrl
+          __typename
+        }
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         status
         storeConfigId
+        packageLocation {
+          storeConfigId
+          location
+          assignedDate
+          current
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -11877,7 +26462,8 @@ export const deletePackage = /* GraphQL */ `mutation DeletePackage(
   APITypes.DeletePackageMutationVariables,
   APITypes.DeletePackageMutation
 >;
-export const createPickingActions = /* GraphQL */ `mutation CreatePickingActions(
+export const createPickingActions =
+  /* GraphQL */ `mutation CreatePickingActions(
   $input: CreatePickingActionsInput!
   $condition: ModelPickingActionsConditionInput
 ) {
@@ -11916,10 +26502,11 @@ export const createPickingActions = /* GraphQL */ `mutation CreatePickingActions
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreatePickingActionsMutationVariables,
-  APITypes.CreatePickingActionsMutation
->;
-export const updatePickingActions = /* GraphQL */ `mutation UpdatePickingActions(
+    APITypes.CreatePickingActionsMutationVariables,
+    APITypes.CreatePickingActionsMutation
+  >;
+export const updatePickingActions =
+  /* GraphQL */ `mutation UpdatePickingActions(
   $input: UpdatePickingActionsInput!
   $condition: ModelPickingActionsConditionInput
 ) {
@@ -11958,10 +26545,11 @@ export const updatePickingActions = /* GraphQL */ `mutation UpdatePickingActions
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdatePickingActionsMutationVariables,
-  APITypes.UpdatePickingActionsMutation
->;
-export const deletePickingActions = /* GraphQL */ `mutation DeletePickingActions(
+    APITypes.UpdatePickingActionsMutationVariables,
+    APITypes.UpdatePickingActionsMutation
+  >;
+export const deletePickingActions =
+  /* GraphQL */ `mutation DeletePickingActions(
   $input: DeletePickingActionsInput!
   $condition: ModelPickingActionsConditionInput
 ) {
@@ -12000,9 +26588,9 @@ export const deletePickingActions = /* GraphQL */ `mutation DeletePickingActions
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeletePickingActionsMutationVariables,
-  APITypes.DeletePickingActionsMutation
->;
+    APITypes.DeletePickingActionsMutationVariables,
+    APITypes.DeletePickingActionsMutation
+  >;
 export const createReturn = /* GraphQL */ `mutation CreateReturn(
   $input: CreateReturnInput!
   $condition: ModelReturnConditionInput
@@ -12043,10 +26631,26 @@ export const createReturn = /* GraphQL */ `mutation CreateReturn(
       store {
         storeConfigId
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       deliveryAddress {
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       shippingServiceId
@@ -12080,8 +26684,223 @@ export const createReturn = /* GraphQL */ `mutation CreateReturn(
         status
         storeConfigId
         deliveryReference
+        sage {
+          id
+          rmaId
+          itemId
+          approved
+          storeConfigId
+          images {
+            id
+            URL
+            tags
+            __typename
+          }
+          productMatch {
+            brand
+            model
+            color
+            product
+            size
+            image
+            __typename
+          }
+          justification {
+            imageMatchProduct
+            accurateDescription
+            __typename
+          }
+          accuracy
+          result
+          shortDescription
+          errors
+          lang
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         requestedResolution
         requestType
+        input {
+          reasonId
+          returnReason
+          reasonType
+          quantity
+          attachments {
+            type
+            URL
+            __typename
+          }
+          recommendedItem {
+            id
+            storeId
+            name
+            image
+            quantity
+            sellingPrice
+            adjustedPrice
+            difference
+            additionalCost
+            paymentType
+            __typename
+          }
+          __typename
+        }
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
+        notes {
+          note
+          type
+          createdBy
+          creationDate
+          __typename
+        }
+        resolution {
+          id
+          backToStockQuantity
+          approved
+          type
+          quantity
+          replacement {
+            id
+            itemId
+            rmaId
+            quantity
+            status
+            storeConfigId
+            worksheetId
+            fulfillmentStatus
+            approvedBy
+            action
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            rMAReplacementRefundId
+            rMAReplacementStoreCreditId
+            __typename
+          }
+          refund {
+            id
+            storeConfigId
+            storeId
+            transactionId
+            confirmationId
+            customerId
+            paymentMethod
+            rmaId
+            itemId
+            amount
+            status
+            confirmationDate
+            itemQuantity
+            createdBy
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          storeCredit {
+            id
+            rmaId
+            itemId
+            orderId
+            customerId
+            currencyCode
+            storeConfigId
+            reason
+            type
+            storeCreditId
+            creationDate
+            startDate
+            expirationDate
+            amount
+            quantity
+            status
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          coupon {
+            idCalculatorConfiguration
+            name
+            beginDateUtc
+            endDateUtc
+            utmSource
+            utmCampaign
+            amount
+            __typename
+          }
+          giftcard {
+            id
+            name
+            redemptionCode
+            expiringDate
+            emissionDate
+            amount
+            __typename
+          }
+          attachments {
+            type
+            URL
+            __typename
+          }
+          action
+          transaction {
+            transactionId
+            status
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          rMAItemResolutionReplacementId
+          rMAItemResolutionRefundId
+          rMAItemResolutionStoreCreditId
+          __typename
+        }
+        itemLogs {
+          items {
+            id
+            orderId
+            itemId
+            uniqueId
+            status
+            lastStatus
+            description
+            metadata
+            timestamp
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         policyId
         createdAt
         updatedAt
@@ -12221,10 +27040,26 @@ export const updateReturn = /* GraphQL */ `mutation UpdateReturn(
       store {
         storeConfigId
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       deliveryAddress {
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       shippingServiceId
@@ -12258,8 +27093,223 @@ export const updateReturn = /* GraphQL */ `mutation UpdateReturn(
         status
         storeConfigId
         deliveryReference
+        sage {
+          id
+          rmaId
+          itemId
+          approved
+          storeConfigId
+          images {
+            id
+            URL
+            tags
+            __typename
+          }
+          productMatch {
+            brand
+            model
+            color
+            product
+            size
+            image
+            __typename
+          }
+          justification {
+            imageMatchProduct
+            accurateDescription
+            __typename
+          }
+          accuracy
+          result
+          shortDescription
+          errors
+          lang
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         requestedResolution
         requestType
+        input {
+          reasonId
+          returnReason
+          reasonType
+          quantity
+          attachments {
+            type
+            URL
+            __typename
+          }
+          recommendedItem {
+            id
+            storeId
+            name
+            image
+            quantity
+            sellingPrice
+            adjustedPrice
+            difference
+            additionalCost
+            paymentType
+            __typename
+          }
+          __typename
+        }
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
+        notes {
+          note
+          type
+          createdBy
+          creationDate
+          __typename
+        }
+        resolution {
+          id
+          backToStockQuantity
+          approved
+          type
+          quantity
+          replacement {
+            id
+            itemId
+            rmaId
+            quantity
+            status
+            storeConfigId
+            worksheetId
+            fulfillmentStatus
+            approvedBy
+            action
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            rMAReplacementRefundId
+            rMAReplacementStoreCreditId
+            __typename
+          }
+          refund {
+            id
+            storeConfigId
+            storeId
+            transactionId
+            confirmationId
+            customerId
+            paymentMethod
+            rmaId
+            itemId
+            amount
+            status
+            confirmationDate
+            itemQuantity
+            createdBy
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          storeCredit {
+            id
+            rmaId
+            itemId
+            orderId
+            customerId
+            currencyCode
+            storeConfigId
+            reason
+            type
+            storeCreditId
+            creationDate
+            startDate
+            expirationDate
+            amount
+            quantity
+            status
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          coupon {
+            idCalculatorConfiguration
+            name
+            beginDateUtc
+            endDateUtc
+            utmSource
+            utmCampaign
+            amount
+            __typename
+          }
+          giftcard {
+            id
+            name
+            redemptionCode
+            expiringDate
+            emissionDate
+            amount
+            __typename
+          }
+          attachments {
+            type
+            URL
+            __typename
+          }
+          action
+          transaction {
+            transactionId
+            status
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          rMAItemResolutionReplacementId
+          rMAItemResolutionRefundId
+          rMAItemResolutionStoreCreditId
+          __typename
+        }
+        itemLogs {
+          items {
+            id
+            orderId
+            itemId
+            uniqueId
+            status
+            lastStatus
+            description
+            metadata
+            timestamp
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         policyId
         createdAt
         updatedAt
@@ -12399,10 +27449,26 @@ export const deleteReturn = /* GraphQL */ `mutation DeleteReturn(
       store {
         storeConfigId
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       deliveryAddress {
         name
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       shippingServiceId
@@ -12436,8 +27502,223 @@ export const deleteReturn = /* GraphQL */ `mutation DeleteReturn(
         status
         storeConfigId
         deliveryReference
+        sage {
+          id
+          rmaId
+          itemId
+          approved
+          storeConfigId
+          images {
+            id
+            URL
+            tags
+            __typename
+          }
+          productMatch {
+            brand
+            model
+            color
+            product
+            size
+            image
+            __typename
+          }
+          justification {
+            imageMatchProduct
+            accurateDescription
+            __typename
+          }
+          accuracy
+          result
+          shortDescription
+          errors
+          lang
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         requestedResolution
         requestType
+        input {
+          reasonId
+          returnReason
+          reasonType
+          quantity
+          attachments {
+            type
+            URL
+            __typename
+          }
+          recommendedItem {
+            id
+            storeId
+            name
+            image
+            quantity
+            sellingPrice
+            adjustedPrice
+            difference
+            additionalCost
+            paymentType
+            __typename
+          }
+          __typename
+        }
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
+        notes {
+          note
+          type
+          createdBy
+          creationDate
+          __typename
+        }
+        resolution {
+          id
+          backToStockQuantity
+          approved
+          type
+          quantity
+          replacement {
+            id
+            itemId
+            rmaId
+            quantity
+            status
+            storeConfigId
+            worksheetId
+            fulfillmentStatus
+            approvedBy
+            action
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            rMAReplacementRefundId
+            rMAReplacementStoreCreditId
+            __typename
+          }
+          refund {
+            id
+            storeConfigId
+            storeId
+            transactionId
+            confirmationId
+            customerId
+            paymentMethod
+            rmaId
+            itemId
+            amount
+            status
+            confirmationDate
+            itemQuantity
+            createdBy
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          storeCredit {
+            id
+            rmaId
+            itemId
+            orderId
+            customerId
+            currencyCode
+            storeConfigId
+            reason
+            type
+            storeCreditId
+            creationDate
+            startDate
+            expirationDate
+            amount
+            quantity
+            status
+            approvedBy
+            metadata
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          coupon {
+            idCalculatorConfiguration
+            name
+            beginDateUtc
+            endDateUtc
+            utmSource
+            utmCampaign
+            amount
+            __typename
+          }
+          giftcard {
+            id
+            name
+            redemptionCode
+            expiringDate
+            emissionDate
+            amount
+            __typename
+          }
+          attachments {
+            type
+            URL
+            __typename
+          }
+          action
+          transaction {
+            transactionId
+            status
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          rMAItemResolutionReplacementId
+          rMAItemResolutionRefundId
+          rMAItemResolutionStoreCreditId
+          __typename
+        }
+        itemLogs {
+          items {
+            id
+            orderId
+            itemId
+            uniqueId
+            status
+            lastStatus
+            description
+            metadata
+            timestamp
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         policyId
         createdAt
         updatedAt
@@ -12835,10 +28116,118 @@ export const createRMAItems = /* GraphQL */ `mutation CreateRMAItems(
         itemId
         rmaId
         quantity
+        replacementItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        recommendedItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        refund {
+          id
+          storeConfigId
+          storeId
+          transactionId
+          confirmationId
+          customerId
+          paymentMethod
+          paymentData {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          rmaId
+          itemId
+          amount
+          status
+          confirmationDate
+          itemQuantity
+          createdBy
+          approvedBy
+          metadata
+          attachments {
+            type
+            URL
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        storeCredit {
+          id
+          rmaId
+          itemId
+          orderId
+          customerId
+          currencyCode
+          storeConfigId
+          reason
+          type
+          storeCreditId
+          creationDate
+          startDate
+          expirationDate
+          amount
+          quantity
+          status
+          approvedBy
+          metadata
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         status
         storeConfigId
         worksheetId
         fulfillmentStatus
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
         approvedBy
         action
         createdAt
@@ -12858,6 +28247,46 @@ export const createRMAItems = /* GraphQL */ `mutation CreateRMAItems(
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -12867,6 +28296,11 @@ export const createRMAItems = /* GraphQL */ `mutation CreateRMAItems(
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -13083,10 +28517,118 @@ export const updateRMAItems = /* GraphQL */ `mutation UpdateRMAItems(
         itemId
         rmaId
         quantity
+        replacementItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        recommendedItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        refund {
+          id
+          storeConfigId
+          storeId
+          transactionId
+          confirmationId
+          customerId
+          paymentMethod
+          paymentData {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          rmaId
+          itemId
+          amount
+          status
+          confirmationDate
+          itemQuantity
+          createdBy
+          approvedBy
+          metadata
+          attachments {
+            type
+            URL
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        storeCredit {
+          id
+          rmaId
+          itemId
+          orderId
+          customerId
+          currencyCode
+          storeConfigId
+          reason
+          type
+          storeCreditId
+          creationDate
+          startDate
+          expirationDate
+          amount
+          quantity
+          status
+          approvedBy
+          metadata
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         status
         storeConfigId
         worksheetId
         fulfillmentStatus
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
         approvedBy
         action
         createdAt
@@ -13106,6 +28648,46 @@ export const updateRMAItems = /* GraphQL */ `mutation UpdateRMAItems(
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -13115,6 +28697,11 @@ export const updateRMAItems = /* GraphQL */ `mutation UpdateRMAItems(
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -13331,10 +28918,118 @@ export const deleteRMAItems = /* GraphQL */ `mutation DeleteRMAItems(
         itemId
         rmaId
         quantity
+        replacementItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        recommendedItem {
+          id
+          storeId
+          name
+          image
+          quantity
+          sellingPrice
+          adjustedPrice
+          difference
+          additionalCost
+          paymentType
+          __typename
+        }
+        refund {
+          id
+          storeConfigId
+          storeId
+          transactionId
+          confirmationId
+          customerId
+          paymentMethod
+          paymentData {
+            paymentId
+            paymentName
+            paymentHolder
+            date
+            baseTotal
+            discount
+            tax
+            grandTotal
+            method
+            transactionId
+            transactionRef
+            authorization
+            lastDigits
+            firstDigits
+            installments
+            cardNumber
+            plcConversionRate
+            __typename
+          }
+          rmaId
+          itemId
+          amount
+          status
+          confirmationDate
+          itemQuantity
+          createdBy
+          approvedBy
+          metadata
+          attachments {
+            type
+            URL
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        storeCredit {
+          id
+          rmaId
+          itemId
+          orderId
+          customerId
+          currencyCode
+          storeConfigId
+          reason
+          type
+          storeCreditId
+          creationDate
+          startDate
+          expirationDate
+          amount
+          quantity
+          status
+          approvedBy
+          metadata
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         status
         storeConfigId
         worksheetId
         fulfillmentStatus
+        shipping {
+          id
+          packageID
+          quantity
+          status
+          __typename
+        }
         approvedBy
         action
         createdAt
@@ -13354,6 +29049,46 @@ export const deleteRMAItems = /* GraphQL */ `mutation DeleteRMAItems(
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -13363,6 +29098,11 @@ export const deleteRMAItems = /* GraphQL */ `mutation DeleteRMAItems(
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -13473,7 +29213,8 @@ export const deleteRMAItems = /* GraphQL */ `mutation DeleteRMAItems(
   APITypes.DeleteRMAItemsMutationVariables,
   APITypes.DeleteRMAItemsMutation
 >;
-export const createRMAReplacement = /* GraphQL */ `mutation CreateRMAReplacement(
+export const createRMAReplacement =
+  /* GraphQL */ `mutation CreateRMAReplacement(
   $input: CreateRMAReplacementInput!
   $condition: ModelRMAReplacementConditionInput
 ) {
@@ -13525,6 +29266,16 @@ export const createRMAReplacement = /* GraphQL */ `mutation CreateRMAReplacement
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -13534,6 +29285,16 @@ export const createRMAReplacement = /* GraphQL */ `mutation CreateRMAReplacement
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       rmaId
@@ -13607,10 +29368,11 @@ export const createRMAReplacement = /* GraphQL */ `mutation CreateRMAReplacement
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAReplacementMutationVariables,
-  APITypes.CreateRMAReplacementMutation
->;
-export const updateRMAReplacement = /* GraphQL */ `mutation UpdateRMAReplacement(
+    APITypes.CreateRMAReplacementMutationVariables,
+    APITypes.CreateRMAReplacementMutation
+  >;
+export const updateRMAReplacement =
+  /* GraphQL */ `mutation UpdateRMAReplacement(
   $input: UpdateRMAReplacementInput!
   $condition: ModelRMAReplacementConditionInput
 ) {
@@ -13662,6 +29424,16 @@ export const updateRMAReplacement = /* GraphQL */ `mutation UpdateRMAReplacement
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -13671,6 +29443,16 @@ export const updateRMAReplacement = /* GraphQL */ `mutation UpdateRMAReplacement
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       rmaId
@@ -13744,10 +29526,11 @@ export const updateRMAReplacement = /* GraphQL */ `mutation UpdateRMAReplacement
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMAReplacementMutationVariables,
-  APITypes.UpdateRMAReplacementMutation
->;
-export const deleteRMAReplacement = /* GraphQL */ `mutation DeleteRMAReplacement(
+    APITypes.UpdateRMAReplacementMutationVariables,
+    APITypes.UpdateRMAReplacementMutation
+  >;
+export const deleteRMAReplacement =
+  /* GraphQL */ `mutation DeleteRMAReplacement(
   $input: DeleteRMAReplacementInput!
   $condition: ModelRMAReplacementConditionInput
 ) {
@@ -13799,6 +29582,16 @@ export const deleteRMAReplacement = /* GraphQL */ `mutation DeleteRMAReplacement
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -13808,6 +29601,16 @@ export const deleteRMAReplacement = /* GraphQL */ `mutation DeleteRMAReplacement
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       rmaId
@@ -13881,9 +29684,9 @@ export const deleteRMAReplacement = /* GraphQL */ `mutation DeleteRMAReplacement
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMAReplacementMutationVariables,
-  APITypes.DeleteRMAReplacementMutation
->;
+    APITypes.DeleteRMAReplacementMutationVariables,
+    APITypes.DeleteRMAReplacementMutation
+  >;
 export const createRMARefund = /* GraphQL */ `mutation CreateRMARefund(
   $input: CreateRMARefundInput!
   $condition: ModelRMARefundConditionInput
@@ -14118,7 +29921,8 @@ export const deleteRMARefund = /* GraphQL */ `mutation DeleteRMARefund(
   APITypes.DeleteRMARefundMutationVariables,
   APITypes.DeleteRMARefundMutation
 >;
-export const createRMAStoreCredit = /* GraphQL */ `mutation CreateRMAStoreCredit(
+export const createRMAStoreCredit =
+  /* GraphQL */ `mutation CreateRMAStoreCredit(
   $input: CreateRMAStoreCreditInput!
   $condition: ModelRMAStoreCreditConditionInput
 ) {
@@ -14150,10 +29954,11 @@ export const createRMAStoreCredit = /* GraphQL */ `mutation CreateRMAStoreCredit
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAStoreCreditMutationVariables,
-  APITypes.CreateRMAStoreCreditMutation
->;
-export const updateRMAStoreCredit = /* GraphQL */ `mutation UpdateRMAStoreCredit(
+    APITypes.CreateRMAStoreCreditMutationVariables,
+    APITypes.CreateRMAStoreCreditMutation
+  >;
+export const updateRMAStoreCredit =
+  /* GraphQL */ `mutation UpdateRMAStoreCredit(
   $input: UpdateRMAStoreCreditInput!
   $condition: ModelRMAStoreCreditConditionInput
 ) {
@@ -14185,10 +29990,11 @@ export const updateRMAStoreCredit = /* GraphQL */ `mutation UpdateRMAStoreCredit
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMAStoreCreditMutationVariables,
-  APITypes.UpdateRMAStoreCreditMutation
->;
-export const deleteRMAStoreCredit = /* GraphQL */ `mutation DeleteRMAStoreCredit(
+    APITypes.UpdateRMAStoreCreditMutationVariables,
+    APITypes.UpdateRMAStoreCreditMutation
+  >;
+export const deleteRMAStoreCredit =
+  /* GraphQL */ `mutation DeleteRMAStoreCredit(
   $input: DeleteRMAStoreCreditInput!
   $condition: ModelRMAStoreCreditConditionInput
 ) {
@@ -14220,9 +30026,9 @@ export const deleteRMAStoreCredit = /* GraphQL */ `mutation DeleteRMAStoreCredit
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMAStoreCreditMutationVariables,
-  APITypes.DeleteRMAStoreCreditMutation
->;
+    APITypes.DeleteRMAStoreCreditMutationVariables,
+    APITypes.DeleteRMAStoreCreditMutation
+  >;
 export const createRMASageItem = /* GraphQL */ `mutation CreateRMASageItem(
   $input: CreateRMASageItemInput!
   $condition: ModelRMASageItemConditionInput
@@ -14364,7 +30170,8 @@ export const deleteRMASageItem = /* GraphQL */ `mutation DeleteRMASageItem(
   APITypes.DeleteRMASageItemMutationVariables,
   APITypes.DeleteRMASageItemMutation
 >;
-export const createRMAItemResolution = /* GraphQL */ `mutation CreateRMAItemResolution(
+export const createRMAItemResolution =
+  /* GraphQL */ `mutation CreateRMAItemResolution(
   $input: CreateRMAItemResolutionInput!
   $condition: ModelRMAItemResolutionConditionInput
 ) {
@@ -14413,6 +30220,46 @@ export const createRMAItemResolution = /* GraphQL */ `mutation CreateRMAItemReso
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -14422,6 +30269,11 @@ export const createRMAItemResolution = /* GraphQL */ `mutation CreateRMAItemReso
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -14494,6 +30346,16 @@ export const createRMAItemResolution = /* GraphQL */ `mutation CreateRMAItemReso
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -14503,6 +30365,16 @@ export const createRMAItemResolution = /* GraphQL */ `mutation CreateRMAItemReso
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       rmaId
@@ -14594,10 +30466,11 @@ export const createRMAItemResolution = /* GraphQL */ `mutation CreateRMAItemReso
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAItemResolutionMutationVariables,
-  APITypes.CreateRMAItemResolutionMutation
->;
-export const updateRMAItemResolution = /* GraphQL */ `mutation UpdateRMAItemResolution(
+    APITypes.CreateRMAItemResolutionMutationVariables,
+    APITypes.CreateRMAItemResolutionMutation
+  >;
+export const updateRMAItemResolution =
+  /* GraphQL */ `mutation UpdateRMAItemResolution(
   $input: UpdateRMAItemResolutionInput!
   $condition: ModelRMAItemResolutionConditionInput
 ) {
@@ -14646,6 +30519,46 @@ export const updateRMAItemResolution = /* GraphQL */ `mutation UpdateRMAItemReso
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -14655,6 +30568,11 @@ export const updateRMAItemResolution = /* GraphQL */ `mutation UpdateRMAItemReso
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -14727,6 +30645,16 @@ export const updateRMAItemResolution = /* GraphQL */ `mutation UpdateRMAItemReso
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -14736,6 +30664,16 @@ export const updateRMAItemResolution = /* GraphQL */ `mutation UpdateRMAItemReso
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       rmaId
@@ -14827,10 +30765,11 @@ export const updateRMAItemResolution = /* GraphQL */ `mutation UpdateRMAItemReso
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMAItemResolutionMutationVariables,
-  APITypes.UpdateRMAItemResolutionMutation
->;
-export const deleteRMAItemResolution = /* GraphQL */ `mutation DeleteRMAItemResolution(
+    APITypes.UpdateRMAItemResolutionMutationVariables,
+    APITypes.UpdateRMAItemResolutionMutation
+  >;
+export const deleteRMAItemResolution =
+  /* GraphQL */ `mutation DeleteRMAItemResolution(
   $input: DeleteRMAItemResolutionInput!
   $condition: ModelRMAItemResolutionConditionInput
 ) {
@@ -14879,6 +30818,46 @@ export const deleteRMAItemResolution = /* GraphQL */ `mutation DeleteRMAItemReso
         confirmationId
         customerId
         paymentMethod
+        paymentData {
+          paymentId
+          paymentName
+          paymentHolder
+          date
+          baseTotal
+          discount
+          tax
+          grandTotal
+          currency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          method
+          transactionId
+          transactionRef
+          authorization
+          lastDigits
+          firstDigits
+          installments
+          cardNumber
+          plcConversionRate
+          priceListCurrency {
+            name
+            code
+            symbol
+            decimalDigits
+            decimalSeparator
+            groupSeparator
+            groupSize
+            __typename
+          }
+          __typename
+        }
         rmaId
         itemId
         amount
@@ -14888,6 +30867,11 @@ export const deleteRMAItemResolution = /* GraphQL */ `mutation DeleteRMAItemReso
         createdBy
         approvedBy
         metadata
+        attachments {
+          type
+          URL
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -14960,6 +30944,16 @@ export const deleteRMAItemResolution = /* GraphQL */ `mutation DeleteRMAItemReso
         discount
         tax
         grandTotal
+        currency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         method
         transactionId
         transactionRef
@@ -14969,6 +30963,16 @@ export const deleteRMAItemResolution = /* GraphQL */ `mutation DeleteRMAItemReso
         installments
         cardNumber
         plcConversionRate
+        priceListCurrency {
+          name
+          code
+          symbol
+          decimalDigits
+          decimalSeparator
+          groupSeparator
+          groupSize
+          __typename
+        }
         __typename
       }
       rmaId
@@ -15060,10 +31064,11 @@ export const deleteRMAItemResolution = /* GraphQL */ `mutation DeleteRMAItemReso
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMAItemResolutionMutationVariables,
-  APITypes.DeleteRMAItemResolutionMutation
->;
-export const createRMATransaction = /* GraphQL */ `mutation CreateRMATransaction(
+    APITypes.DeleteRMAItemResolutionMutationVariables,
+    APITypes.DeleteRMAItemResolutionMutation
+  >;
+export const createRMATransaction =
+  /* GraphQL */ `mutation CreateRMATransaction(
   $input: CreateRMATransactionInput!
   $condition: ModelRMATransactionConditionInput
 ) {
@@ -15091,10 +31096,11 @@ export const createRMATransaction = /* GraphQL */ `mutation CreateRMATransaction
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMATransactionMutationVariables,
-  APITypes.CreateRMATransactionMutation
->;
-export const updateRMATransaction = /* GraphQL */ `mutation UpdateRMATransaction(
+    APITypes.CreateRMATransactionMutationVariables,
+    APITypes.CreateRMATransactionMutation
+  >;
+export const updateRMATransaction =
+  /* GraphQL */ `mutation UpdateRMATransaction(
   $input: UpdateRMATransactionInput!
   $condition: ModelRMATransactionConditionInput
 ) {
@@ -15122,10 +31128,11 @@ export const updateRMATransaction = /* GraphQL */ `mutation UpdateRMATransaction
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMATransactionMutationVariables,
-  APITypes.UpdateRMATransactionMutation
->;
-export const deleteRMATransaction = /* GraphQL */ `mutation DeleteRMATransaction(
+    APITypes.UpdateRMATransactionMutationVariables,
+    APITypes.UpdateRMATransactionMutation
+  >;
+export const deleteRMATransaction =
+  /* GraphQL */ `mutation DeleteRMATransaction(
   $input: DeleteRMATransactionInput!
   $condition: ModelRMATransactionConditionInput
 ) {
@@ -15153,9 +31160,9 @@ export const deleteRMATransaction = /* GraphQL */ `mutation DeleteRMATransaction
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMATransactionMutationVariables,
-  APITypes.DeleteRMATransactionMutation
->;
+    APITypes.DeleteRMATransactionMutationVariables,
+    APITypes.DeleteRMATransactionMutation
+  >;
 export const createRMAHistory = /* GraphQL */ `mutation CreateRMAHistory(
   $input: CreateRMAHistoryInput!
   $condition: ModelRMAHistoryConditionInput
@@ -15264,7 +31271,37 @@ export const createRMASettings = /* GraphQL */ `mutation CreateRMASettings(
         description
         storeConfigId
         rmaSettingsId
+        group {
+          id
+          storeConfigId
+          rmaSettingsId
+          name
+          description
+          active
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         active
+        rules {
+          items {
+            id
+            rmaPolicyId
+            name
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15284,6 +31321,49 @@ export const createRMASettings = /* GraphQL */ `mutation CreateRMASettings(
         title
         description
         website_url
+        returnReasons {
+          items {
+            id
+            priority
+            rmaSettingsId
+            name
+            description
+            type
+            active
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        policyGroup {
+          id
+          storeConfigId
+          rmaSettingsId
+          name
+          description
+          active
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        fields {
+          id
+          name
+          type
+          required
+          options
+          metadata
+          __typename
+        }
         finalInstructions
         createdAt
         updatedAt
@@ -15305,6 +31385,38 @@ export const createRMASettings = /* GraphQL */ `mutation CreateRMASettings(
         name
         description
         type
+        rules {
+          id
+          name
+          seller
+          model
+          facilities
+          typeMethod
+          createdAt
+          actions {
+            action
+            field
+            value
+            model
+            metadata
+            __typename
+          }
+          query {
+            not
+            field
+            value
+            operator
+            combinator
+            rules
+            __typename
+          }
+          isActive
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         active
         createdAt
         updatedAt
@@ -15346,6 +31458,23 @@ export const createRMASettings = /* GraphQL */ `mutation CreateRMASettings(
         facilities
         typeMethod
         createdAt
+        actions {
+          action
+          field
+          value
+          model
+          metadata
+          __typename
+        }
+        query {
+          not
+          field
+          value
+          operator
+          combinator
+          rules
+          __typename
+        }
         isActive
         updatedAt
         _version
@@ -15367,6 +31496,34 @@ export const createRMASettings = /* GraphQL */ `mutation CreateRMASettings(
       items {
         id
         rmaSettingsId
+        pickup {
+          active
+          metadata
+          __typename
+        }
+        deliveryToStore {
+          active
+          availableStores {
+            id
+            name
+            active
+            __typename
+          }
+          __typename
+        }
+        deliveryToAddress {
+          account
+          availableAddress {
+            id
+            name
+            active
+            courierId
+            courierName
+            courierLogo
+            __typename
+          }
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15386,6 +31543,13 @@ export const createRMASettings = /* GraphQL */ `mutation CreateRMASettings(
         office
         city
         country
+        hours {
+          name
+          weekDay
+          initialHour
+          finalHour
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15447,7 +31611,37 @@ export const updateRMASettings = /* GraphQL */ `mutation UpdateRMASettings(
         description
         storeConfigId
         rmaSettingsId
+        group {
+          id
+          storeConfigId
+          rmaSettingsId
+          name
+          description
+          active
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         active
+        rules {
+          items {
+            id
+            rmaPolicyId
+            name
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15467,6 +31661,49 @@ export const updateRMASettings = /* GraphQL */ `mutation UpdateRMASettings(
         title
         description
         website_url
+        returnReasons {
+          items {
+            id
+            priority
+            rmaSettingsId
+            name
+            description
+            type
+            active
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        policyGroup {
+          id
+          storeConfigId
+          rmaSettingsId
+          name
+          description
+          active
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        fields {
+          id
+          name
+          type
+          required
+          options
+          metadata
+          __typename
+        }
         finalInstructions
         createdAt
         updatedAt
@@ -15488,6 +31725,38 @@ export const updateRMASettings = /* GraphQL */ `mutation UpdateRMASettings(
         name
         description
         type
+        rules {
+          id
+          name
+          seller
+          model
+          facilities
+          typeMethod
+          createdAt
+          actions {
+            action
+            field
+            value
+            model
+            metadata
+            __typename
+          }
+          query {
+            not
+            field
+            value
+            operator
+            combinator
+            rules
+            __typename
+          }
+          isActive
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         active
         createdAt
         updatedAt
@@ -15529,6 +31798,23 @@ export const updateRMASettings = /* GraphQL */ `mutation UpdateRMASettings(
         facilities
         typeMethod
         createdAt
+        actions {
+          action
+          field
+          value
+          model
+          metadata
+          __typename
+        }
+        query {
+          not
+          field
+          value
+          operator
+          combinator
+          rules
+          __typename
+        }
         isActive
         updatedAt
         _version
@@ -15550,6 +31836,34 @@ export const updateRMASettings = /* GraphQL */ `mutation UpdateRMASettings(
       items {
         id
         rmaSettingsId
+        pickup {
+          active
+          metadata
+          __typename
+        }
+        deliveryToStore {
+          active
+          availableStores {
+            id
+            name
+            active
+            __typename
+          }
+          __typename
+        }
+        deliveryToAddress {
+          account
+          availableAddress {
+            id
+            name
+            active
+            courierId
+            courierName
+            courierLogo
+            __typename
+          }
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15569,6 +31883,13 @@ export const updateRMASettings = /* GraphQL */ `mutation UpdateRMASettings(
         office
         city
         country
+        hours {
+          name
+          weekDay
+          initialHour
+          finalHour
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15630,7 +31951,37 @@ export const deleteRMASettings = /* GraphQL */ `mutation DeleteRMASettings(
         description
         storeConfigId
         rmaSettingsId
+        group {
+          id
+          storeConfigId
+          rmaSettingsId
+          name
+          description
+          active
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         active
+        rules {
+          items {
+            id
+            rmaPolicyId
+            name
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15650,6 +32001,49 @@ export const deleteRMASettings = /* GraphQL */ `mutation DeleteRMASettings(
         title
         description
         website_url
+        returnReasons {
+          items {
+            id
+            priority
+            rmaSettingsId
+            name
+            description
+            type
+            active
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        policyGroup {
+          id
+          storeConfigId
+          rmaSettingsId
+          name
+          description
+          active
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
+        fields {
+          id
+          name
+          type
+          required
+          options
+          metadata
+          __typename
+        }
         finalInstructions
         createdAt
         updatedAt
@@ -15671,6 +32065,38 @@ export const deleteRMASettings = /* GraphQL */ `mutation DeleteRMASettings(
         name
         description
         type
+        rules {
+          id
+          name
+          seller
+          model
+          facilities
+          typeMethod
+          createdAt
+          actions {
+            action
+            field
+            value
+            model
+            metadata
+            __typename
+          }
+          query {
+            not
+            field
+            value
+            operator
+            combinator
+            rules
+            __typename
+          }
+          isActive
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         active
         createdAt
         updatedAt
@@ -15712,6 +32138,23 @@ export const deleteRMASettings = /* GraphQL */ `mutation DeleteRMASettings(
         facilities
         typeMethod
         createdAt
+        actions {
+          action
+          field
+          value
+          model
+          metadata
+          __typename
+        }
+        query {
+          not
+          field
+          value
+          operator
+          combinator
+          rules
+          __typename
+        }
         isActive
         updatedAt
         _version
@@ -15733,6 +32176,34 @@ export const deleteRMASettings = /* GraphQL */ `mutation DeleteRMASettings(
       items {
         id
         rmaSettingsId
+        pickup {
+          active
+          metadata
+          __typename
+        }
+        deliveryToStore {
+          active
+          availableStores {
+            id
+            name
+            active
+            __typename
+          }
+          __typename
+        }
+        deliveryToAddress {
+          account
+          availableAddress {
+            id
+            name
+            active
+            courierId
+            courierName
+            courierLogo
+            __typename
+          }
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15752,6 +32223,13 @@ export const deleteRMASettings = /* GraphQL */ `mutation DeleteRMASettings(
         office
         city
         country
+        hours {
+          name
+          weekDay
+          initialHour
+          finalHour
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15811,6 +32289,15 @@ export const createRMAPolicies = /* GraphQL */ `mutation CreateRMAPolicies(
         id
         rmaPolicyId
         name
+        query {
+          not
+          field
+          value
+          operator
+          combinator
+          rules
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15866,6 +32353,15 @@ export const updateRMAPolicies = /* GraphQL */ `mutation UpdateRMAPolicies(
         id
         rmaPolicyId
         name
+        query {
+          not
+          field
+          value
+          operator
+          combinator
+          rules
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15921,6 +32417,15 @@ export const deleteRMAPolicies = /* GraphQL */ `mutation DeleteRMAPolicies(
         id
         rmaPolicyId
         name
+        query {
+          not
+          field
+          value
+          operator
+          combinator
+          rules
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -15945,7 +32450,8 @@ export const deleteRMAPolicies = /* GraphQL */ `mutation DeleteRMAPolicies(
   APITypes.DeleteRMAPoliciesMutationVariables,
   APITypes.DeleteRMAPoliciesMutation
 >;
-export const createRMAPoliciesRules = /* GraphQL */ `mutation CreateRMAPoliciesRules(
+export const createRMAPoliciesRules =
+  /* GraphQL */ `mutation CreateRMAPoliciesRules(
   $input: CreateRMAPoliciesRulesInput!
   $condition: ModelRMAPoliciesRulesConditionInput
 ) {
@@ -15971,10 +32477,11 @@ export const createRMAPoliciesRules = /* GraphQL */ `mutation CreateRMAPoliciesR
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAPoliciesRulesMutationVariables,
-  APITypes.CreateRMAPoliciesRulesMutation
->;
-export const updateRMAPoliciesRules = /* GraphQL */ `mutation UpdateRMAPoliciesRules(
+    APITypes.CreateRMAPoliciesRulesMutationVariables,
+    APITypes.CreateRMAPoliciesRulesMutation
+  >;
+export const updateRMAPoliciesRules =
+  /* GraphQL */ `mutation UpdateRMAPoliciesRules(
   $input: UpdateRMAPoliciesRulesInput!
   $condition: ModelRMAPoliciesRulesConditionInput
 ) {
@@ -16000,10 +32507,11 @@ export const updateRMAPoliciesRules = /* GraphQL */ `mutation UpdateRMAPoliciesR
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMAPoliciesRulesMutationVariables,
-  APITypes.UpdateRMAPoliciesRulesMutation
->;
-export const deleteRMAPoliciesRules = /* GraphQL */ `mutation DeleteRMAPoliciesRules(
+    APITypes.UpdateRMAPoliciesRulesMutationVariables,
+    APITypes.UpdateRMAPoliciesRulesMutation
+  >;
+export const deleteRMAPoliciesRules =
+  /* GraphQL */ `mutation DeleteRMAPoliciesRules(
   $input: DeleteRMAPoliciesRulesInput!
   $condition: ModelRMAPoliciesRulesConditionInput
 ) {
@@ -16029,10 +32537,11 @@ export const deleteRMAPoliciesRules = /* GraphQL */ `mutation DeleteRMAPoliciesR
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMAPoliciesRulesMutationVariables,
-  APITypes.DeleteRMAPoliciesRulesMutation
->;
-export const createRMAPoliciesGroup = /* GraphQL */ `mutation CreateRMAPoliciesGroup(
+    APITypes.DeleteRMAPoliciesRulesMutationVariables,
+    APITypes.DeleteRMAPoliciesRulesMutation
+  >;
+export const createRMAPoliciesGroup =
+  /* GraphQL */ `mutation CreateRMAPoliciesGroup(
   $input: CreateRMAPoliciesGroupInput!
   $condition: ModelRMAPoliciesGroupConditionInput
 ) {
@@ -16052,10 +32561,11 @@ export const createRMAPoliciesGroup = /* GraphQL */ `mutation CreateRMAPoliciesG
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAPoliciesGroupMutationVariables,
-  APITypes.CreateRMAPoliciesGroupMutation
->;
-export const updateRMAPoliciesGroup = /* GraphQL */ `mutation UpdateRMAPoliciesGroup(
+    APITypes.CreateRMAPoliciesGroupMutationVariables,
+    APITypes.CreateRMAPoliciesGroupMutation
+  >;
+export const updateRMAPoliciesGroup =
+  /* GraphQL */ `mutation UpdateRMAPoliciesGroup(
   $input: UpdateRMAPoliciesGroupInput!
   $condition: ModelRMAPoliciesGroupConditionInput
 ) {
@@ -16075,10 +32585,11 @@ export const updateRMAPoliciesGroup = /* GraphQL */ `mutation UpdateRMAPoliciesG
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMAPoliciesGroupMutationVariables,
-  APITypes.UpdateRMAPoliciesGroupMutation
->;
-export const deleteRMAPoliciesGroup = /* GraphQL */ `mutation DeleteRMAPoliciesGroup(
+    APITypes.UpdateRMAPoliciesGroupMutationVariables,
+    APITypes.UpdateRMAPoliciesGroupMutation
+  >;
+export const deleteRMAPoliciesGroup =
+  /* GraphQL */ `mutation DeleteRMAPoliciesGroup(
   $input: DeleteRMAPoliciesGroupInput!
   $condition: ModelRMAPoliciesGroupConditionInput
 ) {
@@ -16098,9 +32609,9 @@ export const deleteRMAPoliciesGroup = /* GraphQL */ `mutation DeleteRMAPoliciesG
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMAPoliciesGroupMutationVariables,
-  APITypes.DeleteRMAPoliciesGroupMutation
->;
+    APITypes.DeleteRMAPoliciesGroupMutationVariables,
+    APITypes.DeleteRMAPoliciesGroupMutation
+  >;
 export const createRMAForms = /* GraphQL */ `mutation CreateRMAForms(
   $input: CreateRMAFormsInput!
   $condition: ModelRMAFormsConditionInput
@@ -16470,7 +32981,8 @@ export const deleteRMAPerks = /* GraphQL */ `mutation DeleteRMAPerks(
   APITypes.DeleteRMAPerksMutationVariables,
   APITypes.DeleteRMAPerksMutation
 >;
-export const createRMAReturnReasons = /* GraphQL */ `mutation CreateRMAReturnReasons(
+export const createRMAReturnReasons =
+  /* GraphQL */ `mutation CreateRMAReturnReasons(
   $input: CreateRMAReturnReasonsInput!
   $condition: ModelRMAReturnReasonsConditionInput
 ) {
@@ -16491,10 +33003,11 @@ export const createRMAReturnReasons = /* GraphQL */ `mutation CreateRMAReturnRea
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMAReturnReasonsMutationVariables,
-  APITypes.CreateRMAReturnReasonsMutation
->;
-export const updateRMAReturnReasons = /* GraphQL */ `mutation UpdateRMAReturnReasons(
+    APITypes.CreateRMAReturnReasonsMutationVariables,
+    APITypes.CreateRMAReturnReasonsMutation
+  >;
+export const updateRMAReturnReasons =
+  /* GraphQL */ `mutation UpdateRMAReturnReasons(
   $input: UpdateRMAReturnReasonsInput!
   $condition: ModelRMAReturnReasonsConditionInput
 ) {
@@ -16515,10 +33028,11 @@ export const updateRMAReturnReasons = /* GraphQL */ `mutation UpdateRMAReturnRea
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMAReturnReasonsMutationVariables,
-  APITypes.UpdateRMAReturnReasonsMutation
->;
-export const deleteRMAReturnReasons = /* GraphQL */ `mutation DeleteRMAReturnReasons(
+    APITypes.UpdateRMAReturnReasonsMutationVariables,
+    APITypes.UpdateRMAReturnReasonsMutation
+  >;
+export const deleteRMAReturnReasons =
+  /* GraphQL */ `mutation DeleteRMAReturnReasons(
   $input: DeleteRMAReturnReasonsInput!
   $condition: ModelRMAReturnReasonsConditionInput
 ) {
@@ -16539,10 +33053,11 @@ export const deleteRMAReturnReasons = /* GraphQL */ `mutation DeleteRMAReturnRea
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMAReturnReasonsMutationVariables,
-  APITypes.DeleteRMAReturnReasonsMutation
->;
-export const createRMASettingDeliveryMethod = /* GraphQL */ `mutation CreateRMASettingDeliveryMethod(
+    APITypes.DeleteRMAReturnReasonsMutationVariables,
+    APITypes.DeleteRMAReturnReasonsMutation
+  >;
+export const createRMASettingDeliveryMethod =
+  /* GraphQL */ `mutation CreateRMASettingDeliveryMethod(
   $input: CreateRMASettingDeliveryMethodInput!
   $condition: ModelRMASettingDeliveryMethodConditionInput
 ) {
@@ -16573,6 +33088,14 @@ export const createRMASettingDeliveryMethod = /* GraphQL */ `mutation CreateRMAS
         courierId
         courierName
         courierLogo
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       __typename
@@ -16586,10 +33109,11 @@ export const createRMASettingDeliveryMethod = /* GraphQL */ `mutation CreateRMAS
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateRMASettingDeliveryMethodMutationVariables,
-  APITypes.CreateRMASettingDeliveryMethodMutation
->;
-export const updateRMASettingDeliveryMethod = /* GraphQL */ `mutation UpdateRMASettingDeliveryMethod(
+    APITypes.CreateRMASettingDeliveryMethodMutationVariables,
+    APITypes.CreateRMASettingDeliveryMethodMutation
+  >;
+export const updateRMASettingDeliveryMethod =
+  /* GraphQL */ `mutation UpdateRMASettingDeliveryMethod(
   $input: UpdateRMASettingDeliveryMethodInput!
   $condition: ModelRMASettingDeliveryMethodConditionInput
 ) {
@@ -16620,6 +33144,14 @@ export const updateRMASettingDeliveryMethod = /* GraphQL */ `mutation UpdateRMAS
         courierId
         courierName
         courierLogo
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       __typename
@@ -16633,10 +33165,11 @@ export const updateRMASettingDeliveryMethod = /* GraphQL */ `mutation UpdateRMAS
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateRMASettingDeliveryMethodMutationVariables,
-  APITypes.UpdateRMASettingDeliveryMethodMutation
->;
-export const deleteRMASettingDeliveryMethod = /* GraphQL */ `mutation DeleteRMASettingDeliveryMethod(
+    APITypes.UpdateRMASettingDeliveryMethodMutationVariables,
+    APITypes.UpdateRMASettingDeliveryMethodMutation
+  >;
+export const deleteRMASettingDeliveryMethod =
+  /* GraphQL */ `mutation DeleteRMASettingDeliveryMethod(
   $input: DeleteRMASettingDeliveryMethodInput!
   $condition: ModelRMASettingDeliveryMethodConditionInput
 ) {
@@ -16667,6 +33200,14 @@ export const deleteRMASettingDeliveryMethod = /* GraphQL */ `mutation DeleteRMAS
         courierId
         courierName
         courierLogo
+        address {
+          street
+          city
+          state
+          zip
+          country
+          __typename
+        }
         __typename
       }
       __typename
@@ -16680,9 +33221,9 @@ export const deleteRMASettingDeliveryMethod = /* GraphQL */ `mutation DeleteRMAS
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteRMASettingDeliveryMethodMutationVariables,
-  APITypes.DeleteRMASettingDeliveryMethodMutation
->;
+    APITypes.DeleteRMASettingDeliveryMethodMutationVariables,
+    APITypes.DeleteRMASettingDeliveryMethodMutation
+  >;
 export const createRMALogistics = /* GraphQL */ `mutation CreateRMALogistics(
   $input: CreateRMALogisticsInput!
   $condition: ModelRMALogisticsConditionInput
@@ -16788,6 +33329,176 @@ export const createSalesChannel = /* GraphQL */ `mutation CreateSalesChannel(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -16809,11 +33520,177 @@ export const createSalesChannel = /* GraphQL */ `mutation CreateSalesChannel(
       activeAccount
       isVtexAccount
       salesChannels {
+        items {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       storeConfig {
+        items {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -16930,6 +33807,16 @@ export const createSalesChannel = /* GraphQL */ `mutation CreateSalesChannel(
         type
         url
         restType
+        headers {
+          key
+          value
+          __typename
+        }
+        params {
+          key
+          value
+          __typename
+        }
         facilities
         showItems
         showChanges
@@ -16948,12 +33835,57 @@ export const createSalesChannel = /* GraphQL */ `mutation CreateSalesChannel(
       allowDynamicBarcodes
       productIdAsNumber
       weight {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       price {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       quantity {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       __typename
@@ -16961,17 +33893,103 @@ export const createSalesChannel = /* GraphQL */ `mutation CreateSalesChannel(
     printing {
       comanda {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
+        properties {
+          showOrderIds
+          splitItemsWithOrders
+          comandaBarcodes {
+            show
+            options
+            __typename
+          }
+          customerInformation {
+            show
+            options
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       packages {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
+        properties {
+          showPackagesQuantity
+          showPackageLocation
+          packageBarcode {
+            show
+            options
+            __typename
+          }
+          orderInformation {
+            show
+            options
+            __typename
+          }
+          customerInformation {
+            show
+            options
+            __typename
+          }
+          shippingInformation {
+            show
+            options
+            __typename
+          }
+          pickingInformation {
+            show
+            options
+            __typename
+          }
+          itemsInformation {
+            show
+            options
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       delivery {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
         __typename
       }
       __typename
@@ -17029,6 +34047,176 @@ export const updateSalesChannel = /* GraphQL */ `mutation UpdateSalesChannel(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -17050,11 +34238,177 @@ export const updateSalesChannel = /* GraphQL */ `mutation UpdateSalesChannel(
       activeAccount
       isVtexAccount
       salesChannels {
+        items {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       storeConfig {
+        items {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -17171,6 +34525,16 @@ export const updateSalesChannel = /* GraphQL */ `mutation UpdateSalesChannel(
         type
         url
         restType
+        headers {
+          key
+          value
+          __typename
+        }
+        params {
+          key
+          value
+          __typename
+        }
         facilities
         showItems
         showChanges
@@ -17189,12 +34553,57 @@ export const updateSalesChannel = /* GraphQL */ `mutation UpdateSalesChannel(
       allowDynamicBarcodes
       productIdAsNumber
       weight {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       price {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       quantity {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       __typename
@@ -17202,17 +34611,103 @@ export const updateSalesChannel = /* GraphQL */ `mutation UpdateSalesChannel(
     printing {
       comanda {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
+        properties {
+          showOrderIds
+          splitItemsWithOrders
+          comandaBarcodes {
+            show
+            options
+            __typename
+          }
+          customerInformation {
+            show
+            options
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       packages {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
+        properties {
+          showPackagesQuantity
+          showPackageLocation
+          packageBarcode {
+            show
+            options
+            __typename
+          }
+          orderInformation {
+            show
+            options
+            __typename
+          }
+          customerInformation {
+            show
+            options
+            __typename
+          }
+          shippingInformation {
+            show
+            options
+            __typename
+          }
+          pickingInformation {
+            show
+            options
+            __typename
+          }
+          itemsInformation {
+            show
+            options
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       delivery {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
         __typename
       }
       __typename
@@ -17270,6 +34765,176 @@ export const deleteSalesChannel = /* GraphQL */ `mutation DeleteSalesChannel(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -17291,11 +34956,177 @@ export const deleteSalesChannel = /* GraphQL */ `mutation DeleteSalesChannel(
       activeAccount
       isVtexAccount
       salesChannels {
+        items {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
         nextToken
         startedAt
         __typename
       }
       storeConfig {
+        items {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -17412,6 +35243,16 @@ export const deleteSalesChannel = /* GraphQL */ `mutation DeleteSalesChannel(
         type
         url
         restType
+        headers {
+          key
+          value
+          __typename
+        }
+        params {
+          key
+          value
+          __typename
+        }
         facilities
         showItems
         showChanges
@@ -17430,12 +35271,57 @@ export const deleteSalesChannel = /* GraphQL */ `mutation DeleteSalesChannel(
       allowDynamicBarcodes
       productIdAsNumber
       weight {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       price {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       quantity {
+        prefix {
+          digits
+          values
+          __typename
+        }
+        itemIdentifier {
+          digits
+          model
+          __typename
+        }
+        decimals {
+          digits
+          value
+          __typename
+        }
         __typename
       }
       __typename
@@ -17443,17 +35329,103 @@ export const deleteSalesChannel = /* GraphQL */ `mutation DeleteSalesChannel(
     printing {
       comanda {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
+        properties {
+          showOrderIds
+          splitItemsWithOrders
+          comandaBarcodes {
+            show
+            options
+            __typename
+          }
+          customerInformation {
+            show
+            options
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       packages {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
+        properties {
+          showPackagesQuantity
+          showPackageLocation
+          packageBarcode {
+            show
+            options
+            __typename
+          }
+          orderInformation {
+            show
+            options
+            __typename
+          }
+          customerInformation {
+            show
+            options
+            __typename
+          }
+          shippingInformation {
+            show
+            options
+            __typename
+          }
+          pickingInformation {
+            show
+            options
+            __typename
+          }
+          itemsInformation {
+            show
+            options
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       delivery {
         active
+        dimensions {
+          width
+          height
+          __typename
+        }
         fontSize
+        margin {
+          left
+          right
+          top
+          bottom
+          __typename
+        }
         __typename
       }
       __typename
@@ -18265,6 +36237,176 @@ export const createStoreConfig = /* GraphQL */ `mutation CreateStoreConfig(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -18372,6 +36514,176 @@ export const updateStoreConfig = /* GraphQL */ `mutation UpdateStoreConfig(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -18479,6 +36791,176 @@ export const deleteStoreConfig = /* GraphQL */ `mutation DeleteStoreConfig(
         warehouseId
         warehouseName
         type
+        salesChannel {
+          groups
+          id
+          name
+          salesSource {
+            nextToken
+            startedAt
+            __typename
+          }
+          account {
+            groups
+            id
+            name
+            activeAccount
+            isVtexAccount
+            maxMonthlyOrders
+            actualOrders
+            country
+            demo
+            contract
+            logo
+            email
+            contact
+            pro
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            __typename
+          }
+          type
+          isActive
+          paymentMethods
+          shippingMethods
+          shippingTypes
+          commercialPolicies
+          orderTags
+          packages {
+            id
+            type
+            name
+            description
+            code
+            __typename
+          }
+          globalOrders
+          localOrders
+          pickingMethod
+          allowQuickCollection
+          allowOrderNotes
+          allowItemNotes
+          allowAutomaticPacking
+          allowMultiPicking
+          allowExpressFulfillment
+          allowWorksheetsReAssign
+          allowStartedWorksheetsReAssign
+          allowPackagesReport
+          allowItemTransfers
+          autoAcceptIncomingTransfers
+          enableWorksheetsNotes
+          enableReplacementOptions
+          enableSupportChat
+          needsApproval
+          changesConfig {
+            allowAddItems
+            allowLimitOrderTotalChanges
+            allowPriceChanges
+            allowQuantityChanges
+            allowItemReplacements
+            allowItemRejections
+            sendChangesToVtexOms
+            itemChangesPriceThreshold
+            itemChangesQuantityThreshold
+            orderChangesTotalThreshold
+            __typename
+          }
+          preparationTime
+          webhooks {
+            nextToken
+            startedAt
+            __typename
+          }
+          dynamicBarcodes {
+            allowDynamicBarcodes
+            productIdAsNumber
+            __typename
+          }
+          printing {
+            __typename
+          }
+          isMigratedFromFulfillment
+          itemsLocation {
+            active
+            separator
+            categoryLink
+            brandLink
+            __typename
+          }
+          itemInformation
+          showOrdersInfoTab
+          showCustomerInfoPerOrder
+          askPickingConfirmation
+          forceConfirmEANs
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountSalesChannelsId
+          __typename
+        }
+        storeConfig {
+          groups
+          id
+          name
+          general {
+            address
+            addressComplement
+            neighborhood
+            postalCode
+            reference
+            number
+            city
+            country
+            measurementUnit
+            name
+            state
+            __typename
+          }
+          categories {
+            id
+            priority
+            name
+            parentId
+            hasChildren
+            url
+            title
+            metaTagDescription
+            left
+            right
+            __typename
+          }
+          batchInterval
+          maxItemsPerBatch
+          maxItemsPerWorksheet
+          salesSources {
+            nextToken
+            startedAt
+            __typename
+          }
+          salesChannel
+          timezone {
+            offset
+            value
+            label
+            __typename
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          accountStoreConfigId
+          __typename
+        }
+        configuration {
+          key
+          __typename
+        }
         downloadOrders
         createdAt
         updatedAt
@@ -18642,7 +37124,8 @@ export const deleteTrackingLabel = /* GraphQL */ `mutation DeleteTrackingLabel(
   APITypes.DeleteTrackingLabelMutationVariables,
   APITypes.DeleteTrackingLabelMutation
 >;
-export const createTrackingSettings = /* GraphQL */ `mutation CreateTrackingSettings(
+export const createTrackingSettings =
+  /* GraphQL */ `mutation CreateTrackingSettings(
   $input: CreateTrackingSettingsInput!
   $condition: ModelTrackingSettingsConditionInput
 ) {
@@ -18681,10 +37164,11 @@ export const createTrackingSettings = /* GraphQL */ `mutation CreateTrackingSett
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateTrackingSettingsMutationVariables,
-  APITypes.CreateTrackingSettingsMutation
->;
-export const updateTrackingSettings = /* GraphQL */ `mutation UpdateTrackingSettings(
+    APITypes.CreateTrackingSettingsMutationVariables,
+    APITypes.CreateTrackingSettingsMutation
+  >;
+export const updateTrackingSettings =
+  /* GraphQL */ `mutation UpdateTrackingSettings(
   $input: UpdateTrackingSettingsInput!
   $condition: ModelTrackingSettingsConditionInput
 ) {
@@ -18723,10 +37207,11 @@ export const updateTrackingSettings = /* GraphQL */ `mutation UpdateTrackingSett
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateTrackingSettingsMutationVariables,
-  APITypes.UpdateTrackingSettingsMutation
->;
-export const createTrackingTimeline = /* GraphQL */ `mutation CreateTrackingTimeline(
+    APITypes.UpdateTrackingSettingsMutationVariables,
+    APITypes.UpdateTrackingSettingsMutation
+  >;
+export const createTrackingTimeline =
+  /* GraphQL */ `mutation CreateTrackingTimeline(
   $input: CreateTrackingTimelineInput!
   $condition: ModelTrackingTimelineConditionInput
 ) {
@@ -18747,10 +37232,11 @@ export const createTrackingTimeline = /* GraphQL */ `mutation CreateTrackingTime
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreateTrackingTimelineMutationVariables,
-  APITypes.CreateTrackingTimelineMutation
->;
-export const updateTrackingTimeline = /* GraphQL */ `mutation UpdateTrackingTimeline(
+    APITypes.CreateTrackingTimelineMutationVariables,
+    APITypes.CreateTrackingTimelineMutation
+  >;
+export const updateTrackingTimeline =
+  /* GraphQL */ `mutation UpdateTrackingTimeline(
   $input: UpdateTrackingTimelineInput!
   $condition: ModelTrackingTimelineConditionInput
 ) {
@@ -18771,10 +37257,11 @@ export const updateTrackingTimeline = /* GraphQL */ `mutation UpdateTrackingTime
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdateTrackingTimelineMutationVariables,
-  APITypes.UpdateTrackingTimelineMutation
->;
-export const deleteTrackingTimeline = /* GraphQL */ `mutation DeleteTrackingTimeline(
+    APITypes.UpdateTrackingTimelineMutationVariables,
+    APITypes.UpdateTrackingTimelineMutation
+  >;
+export const deleteTrackingTimeline =
+  /* GraphQL */ `mutation DeleteTrackingTimeline(
   $input: DeleteTrackingTimelineInput!
   $condition: ModelTrackingTimelineConditionInput
 ) {
@@ -18795,9 +37282,9 @@ export const deleteTrackingTimeline = /* GraphQL */ `mutation DeleteTrackingTime
   }
 }
 ` as GeneratedMutation<
-  APITypes.DeleteTrackingTimelineMutationVariables,
-  APITypes.DeleteTrackingTimelineMutation
->;
+    APITypes.DeleteTrackingTimelineMutationVariables,
+    APITypes.DeleteTrackingTimelineMutation
+  >;
 export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
   $input: CreateSalesSourceInput!
   $condition: ModelSalesSourceConditionInput
@@ -18813,6 +37300,86 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
       id
       name
       salesSource {
+        items {
+          groups
+          id
+          warehouseId
+          warehouseName
+          type
+          salesChannel {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          storeConfig {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          configuration {
+            key
+            __typename
+          }
+          downloadOrders
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          salesChannelSalesSourceId
+          storeConfigSalesSourcesId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -18823,8 +37390,82 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
         name
         activeAccount
         isVtexAccount
+        salesChannels {
+          items {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        storeConfig {
+          items {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         maxMonthlyOrders
         actualOrders
+        configuration {
+          key
+          __typename
+        }
         country
         demo
         contract
@@ -18832,6 +37473,20 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
         email
         contact
         pro
+        plan {
+          id
+          name
+          description
+          ppo
+          appo
+          orders
+          maxOrders
+          initialDate
+          validUntil
+          active
+          metadata
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -18852,6 +37507,14 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
         name
         description
         code
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         __typename
       }
       globalOrders
@@ -18883,10 +37546,52 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
         itemChangesPriceThreshold
         itemChangesQuantityThreshold
         orderChangesTotalThreshold
+        rejectionReasons {
+          key
+          Value
+          __typename
+        }
+        replacementReasons {
+          key
+          Value
+          __typename
+        }
+        priceChangeReasons {
+          key
+          Value
+          __typename
+        }
         __typename
       }
       preparationTime
       webhooks {
+        items {
+          id
+          salesChannelId
+          active
+          type
+          url
+          restType
+          headers {
+            key
+            value
+            __typename
+          }
+          params {
+            key
+            value
+            __typename
+          }
+          facilities
+          showItems
+          showChanges
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -18894,14 +37599,141 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
       dynamicBarcodes {
         allowDynamicBarcodes
         productIdAsNumber
+        weight {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
+        price {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
+        quantity {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       printing {
+        comanda {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          properties {
+            showOrderIds
+            splitItemsWithOrders
+            __typename
+          }
+          __typename
+        }
+        packages {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          properties {
+            showPackagesQuantity
+            showPackageLocation
+            __typename
+          }
+          __typename
+        }
+        delivery {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       isMigratedFromFulfillment
       itemsLocation {
         active
+        fields {
+          id
+          label
+          type
+          __typename
+        }
+        codeFormat {
+          id
+          characters
+          order
+          __typename
+        }
         separator
         categoryLink
         brandLink
@@ -18932,9 +37764,37 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
         reference
         number
         city
+        changePricesReasons {
+          id
+          name
+          __typename
+        }
+        contactInformation {
+          email
+          name
+          phone
+          __typename
+        }
         country
+        deliveryWindow {
+          finalHour
+          initialHour
+          name
+          weekDay
+          __typename
+        }
+        location {
+          latitude
+          longitude
+          __typename
+        }
         measurementUnit
         name
+        replacementReasons {
+          id
+          name
+          __typename
+        }
         state
         __typename
       }
@@ -18955,6 +37815,86 @@ export const createSalesSource = /* GraphQL */ `mutation CreateSalesSource(
       maxItemsPerBatch
       maxItemsPerWorksheet
       salesSources {
+        items {
+          groups
+          id
+          warehouseId
+          warehouseName
+          type
+          salesChannel {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          storeConfig {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          configuration {
+            key
+            __typename
+          }
+          downloadOrders
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          salesChannelSalesSourceId
+          storeConfigSalesSourcesId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19008,6 +37948,86 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
       id
       name
       salesSource {
+        items {
+          groups
+          id
+          warehouseId
+          warehouseName
+          type
+          salesChannel {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          storeConfig {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          configuration {
+            key
+            __typename
+          }
+          downloadOrders
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          salesChannelSalesSourceId
+          storeConfigSalesSourcesId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19018,8 +38038,82 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
         name
         activeAccount
         isVtexAccount
+        salesChannels {
+          items {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        storeConfig {
+          items {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         maxMonthlyOrders
         actualOrders
+        configuration {
+          key
+          __typename
+        }
         country
         demo
         contract
@@ -19027,6 +38121,20 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
         email
         contact
         pro
+        plan {
+          id
+          name
+          description
+          ppo
+          appo
+          orders
+          maxOrders
+          initialDate
+          validUntil
+          active
+          metadata
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -19047,6 +38155,14 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
         name
         description
         code
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         __typename
       }
       globalOrders
@@ -19078,10 +38194,52 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
         itemChangesPriceThreshold
         itemChangesQuantityThreshold
         orderChangesTotalThreshold
+        rejectionReasons {
+          key
+          Value
+          __typename
+        }
+        replacementReasons {
+          key
+          Value
+          __typename
+        }
+        priceChangeReasons {
+          key
+          Value
+          __typename
+        }
         __typename
       }
       preparationTime
       webhooks {
+        items {
+          id
+          salesChannelId
+          active
+          type
+          url
+          restType
+          headers {
+            key
+            value
+            __typename
+          }
+          params {
+            key
+            value
+            __typename
+          }
+          facilities
+          showItems
+          showChanges
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19089,14 +38247,141 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
       dynamicBarcodes {
         allowDynamicBarcodes
         productIdAsNumber
+        weight {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
+        price {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
+        quantity {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       printing {
+        comanda {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          properties {
+            showOrderIds
+            splitItemsWithOrders
+            __typename
+          }
+          __typename
+        }
+        packages {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          properties {
+            showPackagesQuantity
+            showPackageLocation
+            __typename
+          }
+          __typename
+        }
+        delivery {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       isMigratedFromFulfillment
       itemsLocation {
         active
+        fields {
+          id
+          label
+          type
+          __typename
+        }
+        codeFormat {
+          id
+          characters
+          order
+          __typename
+        }
         separator
         categoryLink
         brandLink
@@ -19127,9 +38412,37 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
         reference
         number
         city
+        changePricesReasons {
+          id
+          name
+          __typename
+        }
+        contactInformation {
+          email
+          name
+          phone
+          __typename
+        }
         country
+        deliveryWindow {
+          finalHour
+          initialHour
+          name
+          weekDay
+          __typename
+        }
+        location {
+          latitude
+          longitude
+          __typename
+        }
         measurementUnit
         name
+        replacementReasons {
+          id
+          name
+          __typename
+        }
         state
         __typename
       }
@@ -19150,6 +38463,86 @@ export const updateSalesSource = /* GraphQL */ `mutation UpdateSalesSource(
       maxItemsPerBatch
       maxItemsPerWorksheet
       salesSources {
+        items {
+          groups
+          id
+          warehouseId
+          warehouseName
+          type
+          salesChannel {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          storeConfig {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          configuration {
+            key
+            __typename
+          }
+          downloadOrders
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          salesChannelSalesSourceId
+          storeConfigSalesSourcesId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19203,6 +38596,86 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
       id
       name
       salesSource {
+        items {
+          groups
+          id
+          warehouseId
+          warehouseName
+          type
+          salesChannel {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          storeConfig {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          configuration {
+            key
+            __typename
+          }
+          downloadOrders
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          salesChannelSalesSourceId
+          storeConfigSalesSourcesId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19213,8 +38686,82 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
         name
         activeAccount
         isVtexAccount
+        salesChannels {
+          items {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
+        storeConfig {
+          items {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          nextToken
+          startedAt
+          __typename
+        }
         maxMonthlyOrders
         actualOrders
+        configuration {
+          key
+          __typename
+        }
         country
         demo
         contract
@@ -19222,6 +38769,20 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
         email
         contact
         pro
+        plan {
+          id
+          name
+          description
+          ppo
+          appo
+          orders
+          maxOrders
+          initialDate
+          validUntil
+          active
+          metadata
+          __typename
+        }
         createdAt
         updatedAt
         _version
@@ -19242,6 +38803,14 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
         name
         description
         code
+        dimensions {
+          width
+          height
+          length
+          weight
+          cubicweight
+          __typename
+        }
         __typename
       }
       globalOrders
@@ -19273,10 +38842,52 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
         itemChangesPriceThreshold
         itemChangesQuantityThreshold
         orderChangesTotalThreshold
+        rejectionReasons {
+          key
+          Value
+          __typename
+        }
+        replacementReasons {
+          key
+          Value
+          __typename
+        }
+        priceChangeReasons {
+          key
+          Value
+          __typename
+        }
         __typename
       }
       preparationTime
       webhooks {
+        items {
+          id
+          salesChannelId
+          active
+          type
+          url
+          restType
+          headers {
+            key
+            value
+            __typename
+          }
+          params {
+            key
+            value
+            __typename
+          }
+          facilities
+          showItems
+          showChanges
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19284,14 +38895,141 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
       dynamicBarcodes {
         allowDynamicBarcodes
         productIdAsNumber
+        weight {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
+        price {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
+        quantity {
+          prefix {
+            digits
+            values
+            __typename
+          }
+          itemIdentifier {
+            digits
+            model
+            __typename
+          }
+          decimals {
+            digits
+            value
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       printing {
+        comanda {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          properties {
+            showOrderIds
+            splitItemsWithOrders
+            __typename
+          }
+          __typename
+        }
+        packages {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          properties {
+            showPackagesQuantity
+            showPackageLocation
+            __typename
+          }
+          __typename
+        }
+        delivery {
+          active
+          dimensions {
+            width
+            height
+            __typename
+          }
+          fontSize
+          margin {
+            left
+            right
+            top
+            bottom
+            __typename
+          }
+          __typename
+        }
         __typename
       }
       isMigratedFromFulfillment
       itemsLocation {
         active
+        fields {
+          id
+          label
+          type
+          __typename
+        }
+        codeFormat {
+          id
+          characters
+          order
+          __typename
+        }
         separator
         categoryLink
         brandLink
@@ -19322,9 +39060,37 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
         reference
         number
         city
+        changePricesReasons {
+          id
+          name
+          __typename
+        }
+        contactInformation {
+          email
+          name
+          phone
+          __typename
+        }
         country
+        deliveryWindow {
+          finalHour
+          initialHour
+          name
+          weekDay
+          __typename
+        }
+        location {
+          latitude
+          longitude
+          __typename
+        }
         measurementUnit
         name
+        replacementReasons {
+          id
+          name
+          __typename
+        }
         state
         __typename
       }
@@ -19345,6 +39111,86 @@ export const deleteSalesSource = /* GraphQL */ `mutation DeleteSalesSource(
       maxItemsPerBatch
       maxItemsPerWorksheet
       salesSources {
+        items {
+          groups
+          id
+          warehouseId
+          warehouseName
+          type
+          salesChannel {
+            groups
+            id
+            name
+            type
+            isActive
+            paymentMethods
+            shippingMethods
+            shippingTypes
+            commercialPolicies
+            orderTags
+            globalOrders
+            localOrders
+            pickingMethod
+            allowQuickCollection
+            allowOrderNotes
+            allowItemNotes
+            allowAutomaticPacking
+            allowMultiPicking
+            allowExpressFulfillment
+            allowWorksheetsReAssign
+            allowStartedWorksheetsReAssign
+            allowPackagesReport
+            allowItemTransfers
+            autoAcceptIncomingTransfers
+            enableWorksheetsNotes
+            enableReplacementOptions
+            enableSupportChat
+            needsApproval
+            preparationTime
+            isMigratedFromFulfillment
+            itemInformation
+            showOrdersInfoTab
+            showCustomerInfoPerOrder
+            askPickingConfirmation
+            forceConfirmEANs
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountSalesChannelsId
+            __typename
+          }
+          storeConfig {
+            groups
+            id
+            name
+            batchInterval
+            maxItemsPerBatch
+            maxItemsPerWorksheet
+            salesChannel
+            createdAt
+            updatedAt
+            _version
+            _deleted
+            _lastChangedAt
+            accountStoreConfigId
+            __typename
+          }
+          configuration {
+            key
+            __typename
+          }
+          downloadOrders
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          salesChannelSalesSourceId
+          storeConfigSalesSourcesId
+          __typename
+        }
         nextToken
         startedAt
         __typename
@@ -19503,6 +39349,114 @@ export const createWorksheet = /* GraphQL */ `mutation CreateWorksheet(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -19511,6 +39465,11 @@ export const createWorksheet = /* GraphQL */ `mutation CreateWorksheet(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -19521,6 +39480,53 @@ export const createWorksheet = /* GraphQL */ `mutation CreateWorksheet(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -19670,6 +39676,114 @@ export const updateWorksheet = /* GraphQL */ `mutation UpdateWorksheet(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -19678,6 +39792,11 @@ export const updateWorksheet = /* GraphQL */ `mutation UpdateWorksheet(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -19688,6 +39807,53 @@ export const updateWorksheet = /* GraphQL */ `mutation UpdateWorksheet(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled
@@ -19837,6 +40003,114 @@ export const deleteWorksheet = /* GraphQL */ `mutation DeleteWorksheet(
       items {
         groups
         id
+        item {
+          pickers
+          groups
+          id
+          images
+          itemId
+          productId
+          orderId
+          fulfillment {
+            nextToken
+            startedAt
+            __typename
+          }
+          eans
+          skus
+          refs
+          isWeighable
+          currencyCode
+          name
+          unitOfMeasure
+          quantity
+          completedQuantity
+          unitMultiplier
+          listPrice
+          sellingPrice
+          brand {
+            id
+            name
+            __typename
+          }
+          categories {
+            id
+            name
+            __typename
+          }
+          notes {
+            type
+            value
+            createdAt
+            __typename
+          }
+          temperature
+          dimensions {
+            cubicweight
+            height
+            length
+            weight
+            width
+            __typename
+          }
+          status
+          pickingOptions {
+            onNotFound
+            alternateOptions
+            __typename
+          }
+          invoices {
+            id
+            quantity
+            __typename
+          }
+          transfers {
+            rejectedWorksheetId
+            transferredWorksheetId
+            quantity
+            status
+            __typename
+          }
+          returns {
+            id
+            stockedQuantity
+            quantity
+            __typename
+          }
+          weighableProduct
+          addedOnFulfillment
+          account
+          warehouse
+          metaData
+          location {
+            location
+            hostname
+            warehouse
+            __typename
+          }
+          facility {
+            facilityId
+            quantity
+            isAssigned
+            __typename
+          }
+          inventoryData {
+            warehouseId
+            warehouseName
+            quantity
+            __typename
+          }
+          type
+          rmaId
+          rmaItemId
+          clusterId
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          __typename
+        }
         itemId
         orderId
         worksheetId
@@ -19845,6 +40119,11 @@ export const deleteWorksheet = /* GraphQL */ `mutation DeleteWorksheet(
         pickedAt
         packingStartedAt
         packedAt
+        facility {
+          id
+          name
+          __typename
+        }
         hostname
         itemLocation
         quantity
@@ -19855,6 +40134,53 @@ export const deleteWorksheet = /* GraphQL */ `mutation DeleteWorksheet(
         isTransfer
         priority
         pickerId
+        picking {
+          added {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          picked {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          replaced {
+            quantity
+            __typename
+          }
+          rejected {
+            quantity
+            unitMultiplier
+            unitOfMeasure
+            listPrice
+            sellingPrice
+            __typename
+          }
+          transferred {
+            quantity
+            transferredTo
+            status
+            audit
+            __typename
+          }
+          __typename
+        }
+        packing {
+          packageID
+          unitMultiplier
+          listPrice
+          sellingPrice
+          packedQuantity
+          packageLocation
+          __typename
+        }
         sorted
         isCompleted
         isCancelled

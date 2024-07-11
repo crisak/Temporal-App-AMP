@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 import * as mutations from './amplify/graphql/mutations';
 import { visit, print, parse } from 'graphql';
 import { ParseGql } from './types/ParseGql';
@@ -16,11 +16,7 @@ function parseQuery(options: string | any, ...filteredFields: string[]) {
     }
 
     const parsedQuery = parse(query)
-    console.log('Query filter: ', parsedQuery)
-    console.log('Query string: ', query)
-    //      gql`
-    //     ${query}
-    //   `;
+
 
     const listLogs = [];
 
@@ -124,13 +120,11 @@ export default function ButtonUdate(props: any) {
         const newQuery = parseQuery(
             {
                 query: mutations.updateOrder,
+                include: true
             },
-            'customer',
-            'address',
-            'items',
-            'packages',
-            'historicalOrder',
-            'appliedAutomations',
+            'orderId',
+            'packages.items.id',
+            'packages.items.name',
         );
         console.log('filterQuery:', '\n', newQuery);
     };
